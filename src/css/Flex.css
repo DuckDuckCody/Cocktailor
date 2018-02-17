@@ -1,0 +1,19 @@
+.flex-container {
+  display: flex;
+}
+
+.flex-item {
+  flex: 0 1 auto;
+}
+
+.flex-basis-50 {
+  flex-basis: 50%!important;
+}
+
+.flex-basis-75 {
+  flex-basis: 75%!important;
+}
+
+.flex-basis-25 {
+  flex-basis: 25%!important;
+}

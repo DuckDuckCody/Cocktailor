@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  box-sizing: border-box;
   background-color: #CAF0FF;
 }
 
@@ -18,4 +18,32 @@
   border: 1px solid grey;
   margin: 10px 0px;
   box-shadow: 2px 2px 2px grey;
+}
+
+.card-text {
+  text-align: center;
+}
+
+.card-conatiner {
+  margin: 0 10px;
+}
+
+.picture-container-small {
+  width: 200px;
+  height: 200px;
+}
+
+.button-close {
+  background-color: none!important;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
+
+.button-close-icon {
+  width: 100%;
+  height: 100%;
 }

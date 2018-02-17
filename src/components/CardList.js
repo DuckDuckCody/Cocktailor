@@ -4,10 +4,14 @@ import Card from './Card'
 
 class CardList extends Component {
   render() {
-    const cardsData = this.props.listData;
-    const cards = cardsData.map((cardData) =>
-      <Card cardData = {cardData} />
+    let cards = this.props.ingredients.map((ingredient) =>
+      <Card
+        ingredient = {ingredient}
+        key= {ingredient.ingredientId}
+        removeIngredient = {this.props.removeIngredient}
+       />
     );
+
     return (
       <div>
         {cards}
