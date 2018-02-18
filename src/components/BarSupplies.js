@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
-import Title from './Title';
 import CardList from './CardList';
 import Search from './Search'
+import Toggle from './Toggle'
 import ingredients from '../assets/data/ingredients.js'
-import {validateIngredient} from './validate.js'
+import {validateIngredient} from '../helpers/validate.js'
 
 class BarSupplies extends Component {
   constructor(props) {
     super(props);
-    this.state = {currentIngredients: []};
+    this.state = {
+      currentIngredients: [],
+      toggledSearch: false
+    };
+    this.toggleSearch = this.toggleSearch.bind(this);
     this.removeIngredient = this.removeIngredient.bind(this);
     this.addIngredient = this.addIngredient.bind(this);
+    this.searchChange = this.searchChange.bind(this);
     this.dismissWarning = this.dismissWarning.bind(this);
   }
 
-  removeIngredient(e, ingredientId) {
+  toggleSearch() {
+    let toggled = this.state.toggledSearch;
+    this.setState({toggledSearch: !toggled});
+  }
+
+  removeIngredient(ingredientId) {
     let updateIngredients = this.state.currentIngredients;
     _.remove(updateIngredients, {ingredientId: ingredientId});
     this.setState({
@@ -32,13 +42,17 @@ class BarSupplies extends Component {
           this.setState({
             currentIngredients: currentIngredients,
             searchError: false,
+            toggledSearch: false
           })
       }
     });
   }
 
-  dismissWarning(e) {
-    console.log('dismisswarning')
+  searchChange() {
+    this.dismissWarning();
+  }
+
+  dismissWarning() {
     this.setState({
       searchError: false,
       searchErrorText: ''
@@ -48,17 +62,36 @@ class BarSupplies extends Component {
   render() {
     return (
       <div className="card-conatiner">
-        <Title title="Bar Supplies" />
-        <Search
-          searchValues = {ingredients}
-          onAdd = {this.addIngredient}
-          error = {this.state.searchError}
-          errorText = {this.state.searchErrorText}
-          dismissWarning = {this.dismissWarning}
-         />
+        <div className="flex-container jumbotron">
+          <span className="flex-item flex-basis-75">
+            Bar Supplies
+          </span>
+          <Toggle
+             onToggle = {this.toggleSearch}
+             toggled = {this.state.toggledSearch}
+             inactiveText = "Add Ingredient"
+             activeText = "Cancel"
+             className = "flex-item flex-basis-25"
+          />
+        </div>
+        { this.state.toggledSearch
+          ? (
+            <Search
+              searchValues = {ingredients}
+              onAdd = {this.addIngredient}
+              handleChange = {this.searchChange}
+              error = {this.state.searchError}
+              errorText = {this.state.searchErrorText}
+              dismissWarning = {this.dismissWarning}
+            />
+          )
+          : ''
+        }
         <CardList
           ingredients={this.state.currentIngredients}
           removeIngredient={this.removeIngredient}
+          emptyTextTitle = "No ingredients have been added yet"
+          emptyTextDesc = " Click add ingredient to add ingredients to your bar supplies"
         />
       </div>
     );

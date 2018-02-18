@@ -19,6 +19,7 @@ class Search extends Component {
 
   handleChange = (selectedOption) => {
     this.setState({ selectedOption });
+    this.props.handleChange();
   }
 
   render() {
@@ -47,7 +48,7 @@ class Search extends Component {
         {this.props.error
            ? (
              <div className="flex-container">
-               <span className="flex-item flex-basis-75">
+               <span className="flex-item flex-basis-75 error-text">
                  {this.props.errorText}
                </span>
                  <button
@@ -55,6 +56,7 @@ class Search extends Component {
                    className="flex-item flex-basis-25 button-close"
                    onClick={this.props.dismissWarning}
                  >
+                   Dismiss &nbsp;
                    <i className="fa fa-close fa-10x"></i>
                  </button>
              </div>

@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import BarSupplies from './components/BarSupplies'
-import './css/Flex.css';
-import './css/App.css';
-import '../node_modules/font-awesome/css/font-awesome.css';
 
 class App extends Component {
   render() {

@@ -1,6 +1,6 @@
-import rum from '../images/rum.jpg'
-import coke from '../images/coca-cola.jpg'
-import lime from '../images/lime.jpg'
+import rum from '../images/rum.png'
+import coke from '../images/coca-cola.png'
+import lime from '../images/lime.png'
 
 export default  [
     {
