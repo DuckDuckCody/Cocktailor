@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
 .App {
   box-sizing: border-box;
   background-color: #CAF0FF;
@@ -52,7 +58,7 @@
   color: red;
 }
 
-.empty-text-container {
+.empty-data-container {
   margin: 50px 0;
   text-align: center;
 }

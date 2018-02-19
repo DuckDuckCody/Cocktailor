@@ -24,18 +24,20 @@ class Search extends Component {
 
   render() {
     const { selectedOption } = this.state;
-    const value = selectedOption && selectedOption.value;
+    const value = selectedOption && selectedOption[this.props.valueKey];
 
     return (
       <div>
         <div className="flex-container">
           <Select
-            placeholder="Add a ingredient"
+            placeholder={this.props.placeholder}
             name="form-field-name"
             value={value}
             onChange={this.handleChange}
             options={this.props.searchValues}
             className="flex-item flex-basis-75"
+            labelKey={this.props.labelKey}
+            valueKey={this.props.valueKey}
           />
           <button
             type="button"
