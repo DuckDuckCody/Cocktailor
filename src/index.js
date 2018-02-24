@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import './css/Flex.css';
 import './css/App.css';
 import '../node_modules/font-awesome/css/font-awesome.css';
-import CocktailBar from './CocktailBar';
+import Bartender from './Bartender';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<CocktailBar />, document.getElementById('root'));
+ReactDOM.render(<Bartender />, document.getElementById('root'));
 registerServiceWorker();

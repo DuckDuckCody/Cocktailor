@@ -5,21 +5,15 @@ import 'react-select/dist/react-select.css';
 class Search extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      selectedOption: '',
-      optionIsValid: false
-    }
-    this.onAdd = this.onAdd.bind(this);
-  }
-
-  onAdd(e) {
-    this.props.onAdd(e, this.state.selectedOption);
-    this.setState({selectedOption: ''})
+    this.state = { selectedOption: '' }
   }
 
   handleChange = (selectedOption) => {
-    this.setState({ selectedOption });
-    this.props.handleChange();
+    this.setState({ selectedOption }, function() {
+        this.props.handleChange(this.state.selectedOption);
+        this.setState({selectedOption: ''});
+      }
+    );
   }
 
   render() {
@@ -35,21 +29,13 @@ class Search extends Component {
             value={value}
             onChange={this.handleChange}
             options={this.props.searchValues}
-            className="flex-item flex-basis-75"
+            className="flex-item flex-basis-100"
             labelKey={this.props.labelKey}
             valueKey={this.props.valueKey}
           />
-          <button
-            type="button"
-            className="flex-item flex-basis-25"
-            onClick={this.onAdd}
-          >
-            Add
-          </button>
         </div>
         {this.props.error
-           ? (
-             <div className="flex-container">
+           ? (<div className="flex-container">
                <span className="flex-item flex-basis-75 error-text">
                  {this.props.errorText}
                </span>
@@ -61,8 +47,8 @@ class Search extends Component {
                    Dismiss &nbsp;
                    <i className="fa fa-close fa-10x"></i>
                  </button>
-             </div>
-           ) : ""
+             </div>)
+           : ""
          }
       </div>
     );

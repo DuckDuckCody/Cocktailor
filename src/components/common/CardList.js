@@ -10,6 +10,7 @@ class CardList extends Component {
           cardData = {data}
           key = {data[this.props.keyName]}
           removeCard = {this.props.removeCard}
+          removable = {this.props.removable}
          />
       );
     } else {

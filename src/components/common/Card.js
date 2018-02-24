@@ -42,7 +42,7 @@ class Card extends Component {
           </button>
         </div>
         )
-    } else {
+    } else if (this.props.removable) {
       remove = (
         <button
           type="button"
