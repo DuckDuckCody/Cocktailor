@@ -1,4 +1,4 @@
-Cocktail Bar, A React App.
+Bartender, A React App.
 
 Get recommendations on what cocktails to make based on your bar supplies.
 
