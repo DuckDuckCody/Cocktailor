@@ -67,3 +67,7 @@ body {
   color: grey;
   font-style: italic;
 }
+
+.cocktail-card {
+  cursor: pointer
+}

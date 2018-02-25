@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Card extends Component {
+class IngredientCard extends Component {
   constructor(props) {
     super(props);
     this.state = { removing: false };
@@ -42,7 +42,7 @@ class Card extends Component {
           </button>
         </div>
         )
-    } else if (this.props.removable) {
+    } else {
       remove = (
         <button
           type="button"
@@ -71,4 +71,4 @@ class Card extends Component {
   }
 }
 
-export default Card;
+export default IngredientCard;

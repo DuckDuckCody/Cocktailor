@@ -94,12 +94,12 @@ class BarSupplies extends Component {
         {/* end of Search */}
         {/* CardList */}
         <CardList
+          cardType = 'ingredient'
           cardData = {this.props.selectedIngredients}
           removeCard = {this.removeIngredient}
           keyName = "ingredientId"
           emptyDataTitle = "No ingredients have been added yet"
           emptyDataDesc = " Click add ingredient to add ingredients to your bar supplies"
-          removable = {this.props.removable}
         />
         {/* end of CardList */}
       </div>

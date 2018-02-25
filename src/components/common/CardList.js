@@ -1,18 +1,33 @@
 import React, { Component } from 'react';
-import Card from './Card'
+import IngredientCard from './IngredientCard'
+import CocktailCard from './CocktailCard'
 
-class CardList extends Component {
+class IngredientCardList extends Component {
   render() {
     let cards = null;
     if (this.props.cardData.length > 0) {
-      cards = this.props.cardData.map((data) =>
-        <Card
-          cardData = {data}
-          key = {data[this.props.keyName]}
-          removeCard = {this.props.removeCard}
-          removable = {this.props.removable}
-         />
-      );
+      switch (this.props.cardType) {
+        case 'ingredient':
+          cards = this.props.cardData.map((data) =>
+            <IngredientCard
+              cardData = {data}
+              key = {data[this.props.keyName]}
+              removeCard = {this.props.removeCard}
+            />
+          );
+          break;
+        case 'cocktail':
+          cards = this.props.cardData.map((data) =>
+            <CocktailCard
+              ingredients = {this.props.ingredients}
+              cardData = {data}
+              key = {data[this.props.keyName]}
+            />
+          );
+          break;
+        default:
+          cards = <p> Unrecognised Card Type </p>
+      }
     } else {
       cards = (
         <div className="empty-data-container">
@@ -30,4 +45,4 @@ class CardList extends Component {
   }
 }
 
-export default CardList;
+export default IngredientCardList;

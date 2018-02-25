@@ -24,6 +24,10 @@ class CocktailBar extends Component {
     this.setState(
       {
         selectedIngredients: _.filter(this.state.selectedIngredients, item => item.ingredientId !== ingredient.ingredientId)
+      }, function() {
+        this.setState({
+          matchedCocktails: matchCocktails(this.state.cocktails, this.state.selectedIngredients)
+        })
       }
     );
   }
@@ -55,13 +59,12 @@ class CocktailBar extends Component {
             selectedIngredients = {this.state.selectedIngredients}
             addIngredient = {this.addIngredient}
             removeIngredient = {this.removeIngredient}
-            removable = {true}
           />
         </div>
         <div className="flex-item flex-basis-50">
           <Cocktails
+            ingredients = {this.state.ingredients}
             matchedCocktails = {this.state.matchedCocktails}
-            removable = {false}
           />
         </div>
       </div>
