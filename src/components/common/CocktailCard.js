@@ -1,33 +1,29 @@
 import React, { Component } from 'react';
-import _ from 'lodash'
+import {formatIngredientNames} from '../../helpers/formatIngredientNames'
 
-class CocktailCard extends Component {
-  constructor(props) {
-    super(props);
-  }
+const CocktailCard = (props) => {
 
-  render() {
-    let ingredientNames = this.props.cardData.ingredients.map((ingredient) =>
-      _.find(this.props.ingredients, {ingredientId: ingredient}).name
-    )
+  let ingredientNames = formatIngredientNames(
+    props.ingredients,
+    props.selectedIngredients,
+    props.cardData.ingredients
+  )
 
-    return (
-      <div className="card cocktail-card flex-container">
-        <div className="flex-item flex-basis-50 card-text">
-          <h3> {this.props.cardData.name} </h3>
-          <p><i> {this.props.cardData.desc} </i></p>
-          <p><i> {ingredientNames.join(', ' )} </i></p>
-        </div>
-        <div className="flex-item flex-basis-50">
-          <img className=" picture-container-small"
-            src={this.props.cardData.imgUrl}
-            alt={this.props.cardData.name}
-          />
-        </div>
+  return (
+    <div className="card cocktail-card flex-container">
+      <div className="flex-item flex-basis-50 card-text">
+        <h3> {props.cardData.name} </h3>
+        <p><i> {props.cardData.desc} </i></p>
+        <p>{ingredientNames}</p>
       </div>
-
-    );
-  }
-}
+      <div className="flex-item flex-basis-50">
+        <img className=" picture-container-small"
+          src={props.cardData.imgUrl}
+          alt={props.cardData.name}
+        />
+      </div>
+    </div>
+  );
+};
 
 export default CocktailCard;

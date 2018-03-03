@@ -50,7 +50,7 @@ class CocktailBar extends Component {
         <BarSupplies ingredients={this.state.ingredients} selectedIngredients={this.state.selectedIngredients} addIngredient={this.addIngredient} removeIngredient={this.removeIngredient}/>
       </div>
       <div className="flex-item flex-basis-50">
-        <Cocktails ingredients={this.state.ingredients} matchedCocktails={this.state.matchedCocktails}/>
+        <Cocktails selectedIngredients={this.state.selectedIngredients} ingredients={this.state.ingredients} matchedCocktails={this.state.matchedCocktails}/>
       </div>
     </div>);
   }

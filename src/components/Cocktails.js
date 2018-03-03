@@ -16,6 +16,7 @@ class Cocktails extends Component {
         <CardList
           cardType = 'cocktail'
           ingredients = {this.props.ingredients}
+          selectedIngredients = {this.props.selectedIngredients}
           cardData = {this.props.matchedCocktails}
           keyName = "cocktailId"
           emptyDataTitle = "No cocktails have been matched yet."

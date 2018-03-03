@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import IngredientCard from './IngredientCard'
 import CocktailCard from './CocktailCard'
+import {formatIngredientNames} from '../../helpers/formatIngredientNames';
 
 class IngredientCardList extends Component {
   render() {
@@ -11,7 +12,11 @@ class IngredientCardList extends Component {
           cards = this.props.cardData.map((data) => <IngredientCard cardData={data} key={data[this.props.keyName]} removeCard={this.props.removeCard} />);
           break;
         case 'cocktail':
-          cards = this.props.cardData.map((data) => <CocktailCard cardData={data} key={data[this.props.keyName]} ingredients={this.props.ingredients} />);
+          cards = this.props.cardData.map((data) =>
+          <CocktailCard cardData={data} key={data[this.props.keyName]}
+            ingredients={this.props.ingredients} s
+            selectedIngredients={this.props.selectedIngredients}
+            />);
           break;
         default:
           cards = <p>

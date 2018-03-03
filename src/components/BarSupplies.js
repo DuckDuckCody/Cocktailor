@@ -25,29 +25,10 @@ class BarSupplies extends Component {
 
   removeIngredient(ingredient) {
     this.props.removeIngredient(ingredient)
-    /*
-    this.setState(
-      {
-        currentIngredients: _.filter(this.state.currentIngredients, item => item.ingredientId !== ingredient.ingredientId)
-      }
-    );
-    */
   }
 
   searchChange(ingredient) {
     this.props.addIngredient(ingredient)
-    /*
-    let currentIngredients = this.state.currentIngredients;
-    this.setState(validateIngredient(currentIngredients, ingredient),
-    function() {
-      if ( !this.state.searchError ) {
-          this.setState({
-            currentIngredients: currentIngredients.concat(ingredient),
-            searchError: false
-          })
-      }
-    });
-    */
   }
 
   dismissWarning() {

@@ -1,31 +1,25 @@
 import React, { Component } from 'react';
 
-class Toggle extends Component {
-  constructor(props) {
-    super(props);
-    this.toggle = this.toggle.bind(this);
+const Toggle = (props) => {
+  function toggle() {
+    props.onToggle()
   }
 
-  toggle() {
-    this.props.onToggle()
-  }
+  return (
+    <div className={props.className}>
+      <button
+        type="button"
+        onClick={toggle}
+        className="button-toggle"
+      >
+        {props.toggled
+          ? props.activeText
+          : props.inactiveText
+        }
+      </button>
+    </div>
+  );
 
-  render() {
-    return (
-      <div className={this.props.className}>
-        <button
-          type="button"
-          onClick={this.toggle}
-          className="button-toggle"
-        >
-          {this.props.toggled
-            ? this.props.activeText
-            : this.props.inactiveText
-          }
-        </button>
-      </div>
-    );
-  }
 }
 
 export default Toggle;
