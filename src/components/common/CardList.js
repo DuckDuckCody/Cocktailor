@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import IngredientCard from './IngredientCard'
 import CocktailCard from './CocktailCard'
 
@@ -8,40 +8,30 @@ class IngredientCardList extends Component {
     if (this.props.cardData.length > 0) {
       switch (this.props.cardType) {
         case 'ingredient':
-          cards = this.props.cardData.map((data) =>
-            <IngredientCard
-              cardData = {data}
-              key = {data[this.props.keyName]}
-              removeCard = {this.props.removeCard}
-            />
-          );
+          cards = this.props.cardData.map((data) => <IngredientCard cardData={data} key={data[this.props.keyName]} removeCard={this.props.removeCard} />);
           break;
         case 'cocktail':
-          cards = this.props.cardData.map((data) =>
-            <CocktailCard
-              ingredients = {this.props.ingredients}
-              cardData = {data}
-              key = {data[this.props.keyName]}
-            />
-          );
+          cards = this.props.cardData.map((data) => <CocktailCard cardData={data} key={data[this.props.keyName]} ingredients={this.props.ingredients} />);
           break;
         default:
-          cards = <p> Unrecognised Card Type </p>
+          cards = <p>
+            Unrecognised Card Type
+          </p>
       }
     } else {
-      cards = (
-        <div className="empty-data-container">
-          <h3> {this.props.emptyDataTitle} </h3>
-          <p>  {this.props.emptyDataDesc} </p>
-        </div>
-      );
+      cards = (<div className="empty-data-container">
+        <h3>
+          {this.props.emptyDataTitle}
+        </h3>
+        <p>
+          {this.props.emptyDataDesc}
+        </p>
+      </div>);
     }
 
-    return (
-      <div>
-        {cards}
-      </div>
-    );
+    return (<div>
+      {cards}
+    </div>);
   }
 }
 

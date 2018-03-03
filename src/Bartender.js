@@ -1,10 +1,11 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import BarSupplies from './components/BarSupplies'
 import Cocktails from './components/Cocktails'
 import ingredients from './assets/data/ingredients.js'
 import cocktails from './assets/data/cocktails.js'
-import {validateIngredient} from './helpers/validate.js'
+import {validateIngredient} from './helpers/validateIngredients.js'
 import {matchCocktails} from './helpers/matchCocktails.js'
+import {removeIngredient, addIngredient} from './helpers/updateIngredients.js'
 import _ from 'lodash';
 
 class CocktailBar extends Component {
@@ -21,54 +22,37 @@ class CocktailBar extends Component {
   }
 
   removeIngredient(ingredient) {
-    this.setState(
-      {
-        selectedIngredients: _.filter(this.state.selectedIngredients, item => item.ingredientId !== ingredient.ingredientId)
-      }, function() {
-        this.setState({
-          matchedCocktails: matchCocktails(this.state.cocktails, this.state.selectedIngredients)
-        })
-      }
-    );
+    this.setState({
+      selectedIngredients: removeIngredient(this.state.selectedIngredients, ingredient)
+    }, function() {
+      this.setState({
+        matchedCocktails: matchCocktails(this.state.cocktails, this.state.selectedIngredients)
+      })
+    });
   }
 
   addIngredient(ingredient) {
     let selectedIngredients = this.state.selectedIngredients;
-    this.setState(validateIngredient(selectedIngredients, ingredient),
-    function() {
-      if ( !this.state.searchError ) {
+    this.setState(validateIngredient(selectedIngredients, ingredient), function() {
+      if (!this.state.searchError) {
+        this.setState(addIngredient(selectedIngredients, ingredient), function() {
           this.setState({
-            selectedIngredients: selectedIngredients.concat(ingredient),
-            searchError: false
-          }, function() {
-            this.setState({
-              matchedCocktails: matchCocktails(this.state.cocktails, this.state.selectedIngredients)
-            })
+            matchedCocktails: matchCocktails(this.state.cocktails, this.state.selectedIngredients)
           })
+        })
       }
     });
-
   }
 
   render() {
-    return (
-      <div className="App flex-container">
-        <div className="flex-item flex-basis-50">
-          <BarSupplies
-            ingredients = {this.state.ingredients}
-            selectedIngredients = {this.state.selectedIngredients}
-            addIngredient = {this.addIngredient}
-            removeIngredient = {this.removeIngredient}
-          />
-        </div>
-        <div className="flex-item flex-basis-50">
-          <Cocktails
-            ingredients = {this.state.ingredients}
-            matchedCocktails = {this.state.matchedCocktails}
-          />
-        </div>
+    return (<div className="App flex-container">
+      <div className="flex-item flex-basis-50">
+        <BarSupplies ingredients={this.state.ingredients} selectedIngredients={this.state.selectedIngredients} addIngredient={this.addIngredient} removeIngredient={this.removeIngredient}/>
       </div>
-    );
+      <div className="flex-item flex-basis-50">
+        <Cocktails ingredients={this.state.ingredients} matchedCocktails={this.state.matchedCocktails}/>
+      </div>
+    </div>);
   }
 }
 
