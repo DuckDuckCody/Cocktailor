@@ -10,13 +10,13 @@ const CocktailCard = (props) => {
   )
 
   return (
-    <div className="card cocktail-card flex-container">
-      <div className="flex-item flex-basis-50 card-text">
+    <div className="card cocktail-card flex-container card-text">
+      <div className="flex-item flex-basis-50">
         <h3> {props.cardData.name} </h3>
         <p>{ingredientNames}</p>
       </div>
       <div className="flex-item flex-basis-50">
-        <img className=" picture-container-small"
+        <img className="picture-container-small"
           src={props.cardData.imgUrl}
           alt={props.cardData.name}
         />
