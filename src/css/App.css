@@ -1,3 +1,11 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -9,14 +17,30 @@ body {
   background-color: #CAF0FF;
 }
 
+.close-button {
+  font-size: 2em!important;
+  cursor: pointer;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.close-button:hover {
+  color: grey;
+  background-color: white;
+}
+
+.scrollable {
+  height: 90vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 .half-width {
   width: 50%;
   display: inline-block;
 }
 
 .jumbotron {
-  padding: 50px 0px;
-  font-size: 2em;
+  height: 10vh;
 }
 
 .card {
@@ -26,12 +50,12 @@ body {
   box-shadow: 2px 2px 2px grey;
 }
 
-.card-text {
+.center-text {
   text-align: center;
 }
 
-.card-conatiner {
-  margin: 0 10px;
+.toggle-button {
+  height: 50px;
 }
 
 .picture-container-small {

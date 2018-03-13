@@ -13,10 +13,14 @@ class IngredientCardList extends Component {
           break;
         case 'cocktail':
           cards = this.props.cardData.map((data) =>
-          <CocktailCard cardData={data} key={data[this.props.keyName]}
-            ingredients={this.props.ingredients}
-            selectedIngredients={this.props.selectedIngredients}
-            />);
+            <CocktailCard
+              cardData={data}
+              key={data[this.props.keyName]}
+              ingredients={this.props.ingredients}
+              selectedIngredients={this.props.selectedIngredients}
+              cocktailClick={this.props.cocktailClick}
+            />
+          );
           break;
         default:
           cards = <p>
@@ -34,9 +38,11 @@ class IngredientCardList extends Component {
       </div>);
     }
 
-    return (<div>
-      {cards}
-    </div>);
+    return (
+      <div className="scrollable">
+        {cards}
+      </div>
+    );
   }
 }
 

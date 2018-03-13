@@ -8,12 +8,13 @@ class Cocktails extends Component {
         <div className="flex-container jumbotron">
           {/* Title */}
           <span className="flex-item flex-basis-75">
-            Cocktails
+            <h2> Cocktails </h2>
           </span>
           {/* end of Title */}
         </div>
         {/* CardList */}
         <CardList
+          cocktailClick = {this.props.cocktailClick}
           cardType = 'cocktail'
           ingredients = {this.props.ingredients}
           selectedIngredients = {this.props.selectedIngredients}

@@ -21,7 +21,7 @@ class Search extends Component {
     const value = selectedOption && selectedOption[this.props.valueKey];
 
     return (
-      <div>
+      <div className="flex-item flex-basis-100">
         <div className="flex-container">
           <Select
             placeholder={this.props.placeholder}

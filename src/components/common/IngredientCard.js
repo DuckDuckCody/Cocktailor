@@ -54,7 +54,7 @@ class IngredientCard extends Component {
 
     return (
       <div className="card flex-container">
-        <div className="flex-item flex-basis-50 card-text">
+        <div className="flex-item flex-basis-50 center-text">
           <h3> {this.props.cardData.name} </h3>
           <p><i> {this.props.cardData.desc} </i></p>
           {remove}

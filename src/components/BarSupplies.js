@@ -42,11 +42,11 @@ class BarSupplies extends Component {
     let ingredients = this.props.ingredients
 
     return (
-      <div className="card-conatiner">
-        <div className="flex-container jumbotron">
+      <div>
+        <div className="flex-container flex-wrap jumbotron">
           {/* Title */}
           <span className="flex-item flex-basis-75">
-            Bar Supplies
+            <h2> Bar Supplies </h2>
           </span>
           {/* end of Title */}
           {/* Toggle search button */}
@@ -55,24 +55,24 @@ class BarSupplies extends Component {
              toggled = {this.state.toggledSearch}
              inactiveText = "Add Ingredients"
              activeText = "Cancel"
-             className = "flex-item flex-basis-25"
+             className = "flex-item flex-basis-25 toggle-button"
           />
           {/* end of Toggle */}
+          {/* Search */}
+          { this.state.toggledSearch
+            ? (<Search
+                searchValues = {ingredients}
+                handleChange = {this.searchChange}
+                error = {this.state.searchError}
+                errorText = {this.state.searchErrorText}
+                dismissWarning = {this.dismissWarning}
+                labelKey = "name"
+                valueKey = "ingredientId"
+              />
+            ) : ''
+          }
+          {/* end of Search */}
         </div>
-        {/* Search */}
-        { this.state.toggledSearch
-          ? (<Search
-              searchValues = {ingredients}
-              handleChange = {this.searchChange}
-              error = {this.state.searchError}
-              errorText = {this.state.searchErrorText}
-              dismissWarning = {this.dismissWarning}
-              labelKey = "name"
-              valueKey = "ingredientId"
-            />
-          ) : ''
-        }
-        {/* end of Search */}
         {/* CardList */}
         <CardList
           cardType = 'ingredient'
