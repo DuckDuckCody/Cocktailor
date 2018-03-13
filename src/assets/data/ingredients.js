@@ -1,6 +1,6 @@
-import rum from '../images/rum.png'
-import coke from '../images/coca-cola.png'
-import lime from '../images/lime.png'
+import rum from '../images/ingredients/rum.png'
+import coke from '../images/ingredients/coca-cola.png'
+import lime from '../images/ingredients/lime.png'
 
 export default  [
     {
@@ -227,7 +227,7 @@ export default  [
     },
     {
       ingredientId: 38,
-      name: "Dry White Wine",
+      name: "White Wine",
       desc: "placeholder",
       imgUrl: ""
     },
@@ -264,12 +264,6 @@ export default  [
     {
       ingredientId: 44,
       name: "Orgeat Syrup",
-      desc: "placeholder",
-      imgUrl: ""
-    },
-    {
-      ingredientId: 45,
-      name: "Cointreau",
       desc: "placeholder",
       imgUrl: ""
     },
@@ -318,12 +312,6 @@ export default  [
     {
       ingredientId: 55,
       name: "Cherry Liqueur",
-      desc: "placeholder",
-      imgUrl: ""
-    },
-    {
-      ingredientId: 56,
-      name: "Cointreau",
       desc: "placeholder",
       imgUrl: ""
     },

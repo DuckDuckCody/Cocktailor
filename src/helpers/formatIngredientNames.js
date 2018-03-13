@@ -1,23 +1,35 @@
 import _ from 'lodash';
+import React from 'react';
 
-export var formatIngredientNames = function(ingredients, selectedIngredients, cocktailIngredients) {
-  let foundIngredient = null;
-  let ingredientNames = {};
-  _.forEach(cocktailIngredients, function(cocktailIngredient) {
-    console.log(cocktailIngredient);
-    foundIngredient = _.find(selectedIngredients, {ingredientId: cocktailIngredient})
-    _.isUndefined(foundIngredient)
-      ? foundIngredient =_.find(ingredients, {ingredientId: cocktailIngredient})
-      : foundIngredient
-    console.log('foundIngredient')
-    console.log(foundIngredient)
-  })
+export function formatIngredientNames(ingredients, selectedIngredients, cocktailIngredients) {
+  let ingredientNames = [];
+  let ingredientName = "";
 
-/*
-  return cocktailIngredients.map((cocktailIngredient) =>
-    _.isUndefined(_.find(selectedIngredients, {ingredientId: cocktailIngredient}))
-      ? _.find(selectedIngredients, {ingredientId: cocktailIngredient}).name
-      : _.find(ingredients, {ingredientId: cocktailIngredient}).name
-  ).join(', ');
-  */
+  _.forEach(cocktailIngredients, function(cocktailIngredient, index) {
+    ingredientName = _.find(selectedIngredients, {
+      ingredientId: cocktailIngredient
+    })
+    //if ingredient is selected
+    if (ingredientName) {
+      ingredientNames.push(
+        <span key = {index}>
+          { index ? ', ' : '' }
+          <b>{ingredientName.name}</b>
+        </span>
+      )
+    // else ingredient is not selected
+    } else {
+      ingredientName = _.find(ingredients, {
+        ingredientId: cocktailIngredient
+      })
+        ingredientNames.push(
+          <span key = {index} >
+            {index ? ', ' : ''}
+            {ingredientName.name}
+          </span>
+        )
+    }
+  });
+
+  return ingredientNames;
 }

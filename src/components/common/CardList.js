@@ -14,7 +14,7 @@ class IngredientCardList extends Component {
         case 'cocktail':
           cards = this.props.cardData.map((data) =>
           <CocktailCard cardData={data} key={data[this.props.keyName]}
-            ingredients={this.props.ingredients} s
+            ingredients={this.props.ingredients}
             selectedIngredients={this.props.selectedIngredients}
             />);
           break;

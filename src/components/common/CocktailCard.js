@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {formatIngredientNames} from '../../helpers/formatIngredientNames'
 
 const CocktailCard = (props) => {
@@ -13,7 +13,6 @@ const CocktailCard = (props) => {
     <div className="card cocktail-card flex-container">
       <div className="flex-item flex-basis-50 card-text">
         <h3> {props.cardData.name} </h3>
-        <p><i> {props.cardData.desc} </i></p>
         <p>{ingredientNames}</p>
       </div>
       <div className="flex-item flex-basis-50">

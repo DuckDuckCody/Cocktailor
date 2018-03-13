@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-export var validateIngredient = function(currentIngredients, ingredient) {
+export function validateIngredient(currentIngredients, ingredient) {
   if (
     !_.isUndefined(
       _.find(

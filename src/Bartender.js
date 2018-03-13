@@ -6,7 +6,6 @@ import cocktails from './assets/data/cocktails.js'
 import {validateIngredient} from './helpers/validateIngredients.js'
 import {matchCocktails} from './helpers/matchCocktails.js'
 import {removeIngredient, addIngredient} from './helpers/updateIngredients.js'
-import _ from 'lodash';
 
 class CocktailBar extends Component {
   constructor(props) {
