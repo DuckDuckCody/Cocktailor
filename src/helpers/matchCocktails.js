@@ -3,9 +3,11 @@ import _ from 'lodash';
 export var matchCocktails = function(cocktails, ingredients) {
   let matchedCocktails = [];
   let ingredientIds = ingredients.map(ingredient => ingredient.ingredientId);
-  
+  let cocktailIngredientIds = [];
+
   _.forEach(cocktails, function(cocktail) {
-    findOne(ingredientIds, cocktail.ingredients)
+    cocktailIngredientIds = cocktail.ingredients.map(ingredient => ingredient.ingredientId)
+    findOne(ingredientIds, cocktailIngredientIds)
       ? matchedCocktails.push(cocktail)
       : "";
   })

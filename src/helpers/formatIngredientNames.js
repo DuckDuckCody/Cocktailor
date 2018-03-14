@@ -7,7 +7,7 @@ export function formatIngredientNames(ingredients, selectedIngredients, cocktail
 
   _.forEach(cocktailIngredients, function(cocktailIngredient, index) {
     ingredientName = _.find(selectedIngredients, {
-      ingredientId: cocktailIngredient
+      ingredientId: cocktailIngredient.ingredientId
     })
     //if ingredient is selected
     if (ingredientName) {
@@ -20,7 +20,7 @@ export function formatIngredientNames(ingredients, selectedIngredients, cocktail
     // else ingredient is not selected
     } else {
       ingredientName = _.find(ingredients, {
-        ingredientId: cocktailIngredient
+        ingredientId: cocktailIngredient.ingredientId
       })
         ingredientNames.push(
           <span key = {index} >

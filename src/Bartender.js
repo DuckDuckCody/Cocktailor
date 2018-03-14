@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import BarSupplies from './components/BarSupplies'
 import Cocktails from './components/Cocktails'
+import Drawer from './components/common/Drawer'
 import ingredients from './assets/data/ingredients.js'
 import cocktails from './assets/data/cocktails.js'
-import Modal from 'react-modal';
 import {validateIngredient} from './helpers/validateIngredients.js'
 import {matchCocktails} from './helpers/matchCocktails.js'
 import {removeIngredient, addIngredient} from './helpers/updateIngredients.js'
@@ -16,13 +16,12 @@ class CocktailBar extends Component {
       selectedIngredients: [],
       cocktails: cocktails,
       matchedCocktails: [],
-      selectedCocktail: {},
-      modalIsOpen: false
+      selectedCocktail: null
     }
     this.removeIngredient = this.removeIngredient.bind(this);
     this.addIngredient = this.addIngredient.bind(this);
     this.cocktailClick = this.cocktailClick.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    this.closeDrawer = this.closeDrawer.bind(this);
   }
 
   removeIngredient(ingredient) {
@@ -49,55 +48,39 @@ class CocktailBar extends Component {
   }
 
   cocktailClick(cocktail) {
-    this.setState(
-      {
-        selectedCocktail:cocktail,
-        modalIsOpen: true
-      }
-    );
+    this.setState({ selectedCocktail:cocktail });
   }
 
-  closeModal() {
-    this.setState(
-      {
-        selectedCocktail: {},
-        modalIsOpen: false
-      }
-    )
+  closeDrawer() {
+    this.setState({ selectedCocktail: null });
   }
 
   render() {
     return (
-      <div className="App flex-container">
-        <div className="flex-item flex-basis-50">
-          <BarSupplies ingredients={this.state.ingredients} selectedIngredients={this.state.selectedIngredients} addIngredient={this.addIngredient} removeIngredient={this.removeIngredient}/>
-        </div>
-        <div className="flex-item flex-basis-50">
-          <Cocktails
-            selectedIngredients={this.state.selectedIngredients}
-            ingredients={this.state.ingredients}
-            matchedCocktails={this.state.matchedCocktails}
-            cocktailClick={this.cocktailClick}
-          />
-        </div>
-
-        <Modal
-          isOpen={this.state.modalIsOpen}
-          onAfterOpen={this.afterOpenModal}
-          onRequestClose={this.closeModal}
-          contentLabel="Cocktail"
-        >
-          <div className="flex-container center-text">
-            <div className="flex-item flex-basis-50">
-              <h2> {this.state.selectedCocktail.name} </h2>
-            </div>
-
-            <div className="flex-item flex-basis-50">
-              <i onClick={this.closeModal} className="fa fa-window-close close-button"></i>
-            </div>
+      <div>
+        <div className="App flex-container">
+          <div className="flex-item flex-basis-50">
+            <BarSupplies ingredients={this.state.ingredients} selectedIngredients={this.state.selectedIngredients} addIngredient={this.addIngredient} removeIngredient={this.removeIngredient}/>
           </div>
-        </Modal>
-
+          <div className="flex-item flex-basis-50">
+            <Cocktails
+              selectedIngredients={this.state.selectedIngredients}
+              ingredients={this.state.ingredients}
+              matchedCocktails={this.state.matchedCocktails}
+              cocktailClick={this.cocktailClick}
+            />
+          </div>
+        </div>
+        {this.state.selectedCocktail
+          ? (
+            <Drawer
+              title = {this.state.selectedCocktail.name}
+              method = {this.state.selectedCocktail.method}
+              closeDrawer = {this.closeDrawer}
+            />
+          )
+          : ''
+        }
       </div>
     );
   }

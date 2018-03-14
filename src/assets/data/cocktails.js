@@ -33,19 +33,34 @@ export default  [
       cocktailId: 1,
       name: "Bellini",
       ingredients: [
-        4, 5
+        {
+          ingredientId: 4,
+          amount: "100ml"
+        },
+        {
+          ingredientId: 5,
+          amount: "50ml"
+        }
       ],
+      method: "Pour peach puree into chilled glass and add sparkling wine. Stir gently.",
       imgUrl: bellini
     },
     {
       cocktailId: 2,
       name: "Black Russian",
       ingredients: [
-        6, 7
+        {
+          ingredientId: 6,
+          amount: "50ml"
+        },
+        {
+          ingredientId: 7,
+          amount: "20ml"
+        }
       ],
       imgUrl: black_russian
     },
-    {
+    /*{
       cocktailId: 3,
       name: "Bloody Mary",
       ingredients: [
@@ -268,5 +283,5 @@ export default  [
         40, 28, 57
       ],
       imgUrl: tequila_sunrise
-    }
+    }*/
 ];

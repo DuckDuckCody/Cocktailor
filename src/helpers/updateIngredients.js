@@ -6,5 +6,8 @@ export var removeIngredient = function(selectedIngredients, ingredient) {
 }
 
 export var addIngredient = function(selectedIngredients, ingredient) {
-  return {selectedIngredients: selectedIngredients.concat(ingredient), searchError: false}
+  return {
+    selectedIngredients: selectedIngredients.concat(ingredient),
+    searchError: false
+   }
 }

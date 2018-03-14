@@ -25,7 +25,6 @@ body {
 
 .close-button:hover {
   color: grey;
-  background-color: white;
 }
 
 .scrollable {
@@ -37,6 +36,22 @@ body {
 .half-width {
   width: 50%;
   display: inline-block;
+}
+
+.block {
+  display: block;
+}
+
+.drawer {
+  color: white;
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #2e2e2e;
+  overflow-x: hidden;
 }
 
 .jumbotron {
