@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import IngredientCard from './IngredientCard'
 import CocktailCard from './CocktailCard'
-import {formatIngredientNames} from '../../helpers/formatIngredientNames';
 
 class IngredientCardList extends Component {
   render() {

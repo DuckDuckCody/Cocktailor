@@ -10,6 +10,14 @@
   align-items: center;
 }
 
+.align-content-start {
+  align-content: flex-start;
+}
+
+.float-right {
+  float: right!important;
+}
+
 .flex-item {
   flex: 0 1 auto;
 }

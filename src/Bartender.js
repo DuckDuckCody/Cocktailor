@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import BarSupplies from './components/BarSupplies'
 import Cocktails from './components/Cocktails'
-import Drawer from './components/common/Drawer'
+import CocktailDrawer from './components/common/CocktailDrawer'
 import ingredients from './assets/data/ingredients.js'
 import cocktails from './assets/data/cocktails.js'
 import {validateIngredient} from './helpers/validateIngredients.js'
@@ -73,8 +73,11 @@ class CocktailBar extends Component {
         </div>
         {this.state.selectedCocktail
           ? (
-            <Drawer
+            <CocktailDrawer
               title = {this.state.selectedCocktail.name}
+              ingredients = {this.state.ingredients}
+              selectedIngredients = {this.state.selectedIngredients}
+              cocktailingredients = {this.state.selectedCocktail.ingredients}
               method = {this.state.selectedCocktail.method}
               closeDrawer = {this.closeDrawer}
             />

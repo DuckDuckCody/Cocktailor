@@ -1,14 +1,7 @@
 import React from 'react';
-import {formatIngredientNames} from '../../helpers/formatIngredientNames'
+import {formatIngredientList} from '../../helpers/formatIngredients'
 
 const CocktailCard = (props) => {
-
-  let ingredientNames = formatIngredientNames(
-    props.ingredients,
-    props.selectedIngredients,
-    props.cardData.ingredients
-  )
-
   function handleClick(e) {
     e.preventDefault();
     props.cocktailClick(props.cardData);
@@ -18,7 +11,15 @@ const CocktailCard = (props) => {
     <div className="card cocktail-card flex-container center-text">
       <div className="flex-item flex-basis-50">
         <h3> {props.cardData.name} </h3>
-        <p>{ingredientNames}</p>
+        <ul>
+          {
+            formatIngredientList(
+              props.ingredients,
+              props.selectedIngredients,
+              props.cardData.ingredients
+            )
+          }
+        </ul>
         <button type="button" onClick={handleClick}>
           View Cocktail
         </button>
