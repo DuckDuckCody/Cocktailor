@@ -19,7 +19,6 @@ const Toggle = (props) => {
       </button>
     </div>
   );
-
 }
 
 export default Toggle;

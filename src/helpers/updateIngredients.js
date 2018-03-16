@@ -1,13 +1,14 @@
 import _ from 'lodash';
 import {validateIngredient} from './validateIngredients'
 
-export var removeIngredient = function(selectedIngredients, ingredient) {
-  return _.filter(selectedIngredients, item => item.ingredientId !== ingredient.ingredientId);
+export var removeIngredient = function(ingredient, ingredients) {
+  let ingredientsBuffer = _.clone(ingredients);
+  _.find(ingredientsBuffer, {ingredientId: ingredient.ingredientId}).selected = false;
+  return ({ingredients: ingredientsBuffer});
 }
 
-export var addIngredient = function(selectedIngredients, ingredient) {
-  return {
-    selectedIngredients: selectedIngredients.concat(ingredient),
-    searchError: false
-   }
+export function addIngredient(ingredient, ingredients) {
+  let ingredientsBuffer = _.clone(ingredients);
+  _.find(ingredientsBuffer, {ingredientId: ingredient.ingredientId}).selected = true;
+  return ({ingredients: ingredientsBuffer});
 }

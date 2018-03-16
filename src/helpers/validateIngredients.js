@@ -1,11 +1,11 @@
 import _ from 'lodash';
 
-export function validateIngredient(currentIngredients, ingredient) {
+export function validateIngredient(ingredients, ingredient) {
   if (
     !_.isUndefined(
       _.find(
-        currentIngredients,
-        {ingredientId: ingredient.ingredientId}
+        ingredients,
+        {ingredientId: ingredient.ingredientId, selected: true}
       )
     )
   ) {

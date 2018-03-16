@@ -18,7 +18,6 @@ const CocktailDrawer = (props) => {
         <ul className="flex-item flex-basis-100">
           {formatIngredientList(
             props.ingredients,
-            props.selectedIngredients,
             props.cocktailingredients
           )}
         </ul>

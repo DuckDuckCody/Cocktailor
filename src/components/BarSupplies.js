@@ -7,7 +7,6 @@ class BarSupplies extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentIngredients: [],
       toggledSearch: false,
       searchError: false,
       searchErrorText: ''
@@ -39,8 +38,6 @@ class BarSupplies extends Component {
   }
 
   render() {
-    let ingredients = this.props.ingredients
-
     return (
       <div>
         <div className="flex-container flex-wrap jumbotron">
@@ -61,7 +58,7 @@ class BarSupplies extends Component {
           {/* Search */}
           { this.state.toggledSearch
             ? (<Search
-                searchValues = {ingredients}
+                searchValues = {this.props.ingredients}
                 handleChange = {this.searchChange}
                 error = {this.state.searchError}
                 errorText = {this.state.searchErrorText}
@@ -76,7 +73,7 @@ class BarSupplies extends Component {
         {/* CardList */}
         <CardList
           cardType = 'ingredient'
-          cardData = {this.props.selectedIngredients}
+          cardData = {this.props.ingredients}
           removeCard = {this.removeIngredient}
           keyName = "ingredientId"
           emptyDataTitle = "No ingredients have been added yet"

@@ -15,7 +15,6 @@ const CocktailCard = (props) => {
           {
             formatIngredientList(
               props.ingredients,
-              props.selectedIngredients,
               props.cardData.ingredients
             )
           }

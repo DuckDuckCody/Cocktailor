@@ -7,13 +7,13 @@ import cocktails from './assets/data/cocktails.js'
 import {validateIngredient} from './helpers/validateIngredients.js'
 import {matchCocktails} from './helpers/matchCocktails.js'
 import {removeIngredient, addIngredient} from './helpers/updateIngredients.js'
+import {sortCocktails} from './helpers/sortCocktails.js'
 
 class CocktailBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
       ingredients: ingredients,
-      selectedIngredients: [],
       cocktails: cocktails,
       matchedCocktails: [],
       selectedCocktail: null
@@ -25,30 +25,24 @@ class CocktailBar extends Component {
   }
 
   removeIngredient(ingredient) {
-    this.setState({
-      selectedIngredients: removeIngredient(this.state.selectedIngredients, ingredient)
-    }, function() {
-      this.setState({
-        matchedCocktails: matchCocktails(this.state.cocktails, this.state.selectedIngredients)
-      })
+    this.setState(removeIngredient(ingredient, this.state.ingredients), function() {
+      this.setState(matchCocktails(this.state.cocktails, this.state.ingredients))
     });
   }
 
   addIngredient(ingredient) {
-    let selectedIngredients = this.state.selectedIngredients;
-    this.setState(validateIngredient(selectedIngredients, ingredient), function() {
+    this.setState(validateIngredient(this.state.ingredients, ingredient), function() {
       if (!this.state.searchError) {
-        this.setState(addIngredient(selectedIngredients, ingredient), function() {
-          this.setState({
-            matchedCocktails: matchCocktails(this.state.cocktails, this.state.selectedIngredients)
-          })
+        this.setState(addIngredient(ingredient, this.state.ingredients), function() {
+          this.setState(matchCocktails(this.state.cocktails, this.state.ingredients))
+          //sortCocktails(this.state.selectedIngredients, this.state.matchedCocktails);
         })
       }
     });
   }
 
   cocktailClick(cocktail) {
-    this.setState({ selectedCocktail:cocktail });
+    this.setState({ selectedCocktail: cocktail });
   }
 
   closeDrawer() {
@@ -60,11 +54,14 @@ class CocktailBar extends Component {
       <div>
         <div className="App flex-container">
           <div className="flex-item flex-basis-50">
-            <BarSupplies ingredients={this.state.ingredients} selectedIngredients={this.state.selectedIngredients} addIngredient={this.addIngredient} removeIngredient={this.removeIngredient}/>
+            <BarSupplies
+              ingredients={this.state.ingredients}
+              addIngredient={this.addIngredient}
+              removeIngredient={this.removeIngredient}
+            />
           </div>
           <div className="flex-item flex-basis-50">
             <Cocktails
-              selectedIngredients={this.state.selectedIngredients}
               ingredients={this.state.ingredients}
               matchedCocktails={this.state.matchedCocktails}
               cocktailClick={this.cocktailClick}
@@ -76,7 +73,6 @@ class CocktailBar extends Component {
             <CocktailDrawer
               title = {this.state.selectedCocktail.name}
               ingredients = {this.state.ingredients}
-              selectedIngredients = {this.state.selectedIngredients}
               cocktailingredients = {this.state.selectedCocktail.ingredients}
               method = {this.state.selectedCocktail.method}
               closeDrawer = {this.closeDrawer}

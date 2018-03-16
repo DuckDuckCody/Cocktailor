@@ -8,16 +8,25 @@ class IngredientCardList extends Component {
     if (this.props.cardData.length > 0) {
       switch (this.props.cardType) {
         case 'ingredient':
-          cards = this.props.cardData.map((data) => <IngredientCard cardData={data} key={data[this.props.keyName]} removeCard={this.props.removeCard} />);
+          cards = this.props.cardData.map((data) => {
+            if (data.selected) {
+              return (
+                <IngredientCard
+                  cardData = {data}
+                  key = {data[this.props.keyName]}
+                  removeCard = {this.props.removeCard}
+                />
+              )
+            }
+          });
           break;
         case 'cocktail':
           cards = this.props.cardData.map((data) =>
             <CocktailCard
-              cardData={data}
-              key={data[this.props.keyName]}
-              ingredients={this.props.ingredients}
-              selectedIngredients={this.props.selectedIngredients}
-              cocktailClick={this.props.cocktailClick}
+              cardData = {data}
+              key = {data[this.props.keyName]}
+              ingredients = {this.props.ingredients}
+              cocktailClick = {this.props.cocktailClick}
             />
           );
           break;

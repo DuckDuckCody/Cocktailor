@@ -2,8 +2,12 @@ import _ from 'lodash';
 
 export var matchCocktails = function(cocktails, ingredients) {
   let matchedCocktails = [];
-  let ingredientIds = ingredients.map(ingredient => ingredient.ingredientId);
   let cocktailIngredientIds = [];
+  let ingredientIds = ingredients.map(ingredient => {
+    if(ingredient.selected) {
+      return ingredient.ingredientId
+    }
+  });
 
   _.forEach(cocktails, function(cocktail) {
     cocktailIngredientIds = cocktail.ingredients.map(ingredient => ingredient.ingredientId)
@@ -12,7 +16,7 @@ export var matchCocktails = function(cocktails, ingredients) {
       : "";
   })
 
-  return matchedCocktails
+  return {matchedCocktails: matchedCocktails}
 }
 
 
