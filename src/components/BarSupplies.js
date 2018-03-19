@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import CardList from './common/CardList';
 import Search from './common/Search'
 import Toggle from './common/Toggle'
+import Typography from 'material-ui/Typography';
 
 class BarSupplies extends Component {
   constructor(props) {
@@ -38,39 +39,66 @@ class BarSupplies extends Component {
   }
 
   render() {
+    var style = {
+      pad: {
+        margin: '0 10px'
+      },
+      container: {
+        display: 'flex',
+      },
+      header_container: {
+        height: '60px',
+        display: 'flex',
+        'flex-flow': 'row nowrap',
+        'align-items': 'center',
+        'margin-bottom': '10px'
+      },
+      title: {
+        flex: '75%'
+      },
+      button: {
+        flex: '25%'
+      },
+      search: {
+        flex: '100%'
+      }
+    }
+
     return (
-      <div>
-        <div className="flex-container flex-wrap jumbotron">
-          {/* Title */}
-          <span className="flex-item flex-basis-75">
-            <h2> Bar Supplies </h2>
-          </span>
-          {/* end of Title */}
-          {/* Toggle search button */}
-          <Toggle
-             onToggle = {this.toggleSearch}
-             toggled = {this.state.toggledSearch}
-             inactiveText = "Add Ingredients"
-             activeText = "Cancel"
-             className = "flex-item flex-basis-25 toggle-button"
-          />
-          {/* end of Toggle */}
-          {/* Search */}
-          { this.state.toggledSearch
-            ? (<Search
-                searchValues = {this.props.ingredients}
-                handleChange = {this.searchChange}
-                error = {this.state.searchError}
-                errorText = {this.state.searchErrorText}
-                dismissWarning = {this.dismissWarning}
-                labelKey = "name"
-                valueKey = "ingredientId"
+      <div style={style.pad}>
+        <div style={style.conatiner}>
+          <div style={style.header_container}>
+            <Typography style={style.title} variant='title'>
+              <b> Bar Supplies </b>
+            </Typography>
+
+            <div style={style.button}>
+              <Toggle
+                 onToggle = {this.toggleSearch}
+                 toggled = {this.state.toggledSearch}
+                 inactiveText = "Add Ingredients"
+                 activeText = "Close"
               />
-            ) : ''
-          }
-          {/* end of Search */}
+            </div>
+          </div>
+
+          <div style={style.item}>
+            { this.state.toggledSearch
+              ? (<Search
+                  searchValues = {this.props.ingredients}
+                  handleChange = {this.searchChange}
+                  error = {this.state.searchError}
+                  errorText = {this.state.searchErrorText}
+                  dismissWarning = {this.dismissWarning}
+                  labelKey = "name"
+                  valueKey = "ingredientId"
+                  placeholder = "Ingredient search"
+                />
+              ) : ''
+            }
+          </div>
         </div>
-        {/* CardList */}
+
         <CardList
           cardType = 'ingredient'
           cardData = {this.props.ingredients}
@@ -79,7 +107,6 @@ class BarSupplies extends Component {
           emptyDataTitle = "No ingredients have been added yet"
           emptyDataDesc = " Click add ingredient to add ingredients to your bar supplies"
         />
-        {/* end of CardList */}
       </div>
     );
   }

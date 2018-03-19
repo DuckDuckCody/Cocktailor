@@ -1,9 +1,14 @@
 import _ from 'lodash';
 import React from 'react';
+import Typography from 'material-ui/Typography';
 
 export function formatIngredientList(ingredients, cocktailIngredients) {
   let ingredient = null;
   let formattedIngredients = [];
+
+  var listStyle = {
+    'list-style-type': 'none',
+  }
 
   //todo: try to make this just one map function
 
@@ -13,13 +18,15 @@ export function formatIngredientList(ingredients, cocktailIngredients) {
     })
 
     formattedIngredients.push(
-      <li key={ingredient.ingredientId}>
-        {cocktailIngredient.amount} -
-        {
-          ingredient.selected
-            ? <b> {ingredient.name} </b>
-            : <span> {ingredient.name} </span>
-        }
+      <li key={ingredient.ingredientId} style={listStyle}>
+        <Typography>
+          {cocktailIngredient.amount} -
+          {
+            ingredient.selected
+              ? <b> {ingredient.name} </b>
+              : <span> {ingredient.name} </span>
+          }
+        </Typography>
       </li>
     )
   });

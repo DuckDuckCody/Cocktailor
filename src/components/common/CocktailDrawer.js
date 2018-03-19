@@ -1,4 +1,5 @@
 import React from 'react';
+import Typography from 'material-ui/Typography';
 import {formatIngredientList} from '../../helpers/formatIngredients.js'
 
 const CocktailDrawer = (props) => {
@@ -12,18 +13,18 @@ const CocktailDrawer = (props) => {
         <a className="flex-item flex-basis-100" onClick={handleClose}>
           <i className="close-button fa fa-close float-right"></i>
         </a>
-        <h2 className="flex-item flex-basis-100">
-          {props.title}
-        </h2>
+        <Typography variant="title" className="flex-item flex-basis-100">
+          {props.selectedCocktail.name}
+        </Typography>
         <ul className="flex-item flex-basis-100">
           {formatIngredientList(
             props.ingredients,
-            props.cocktailingredients
+            props.selectedCocktail.ingredients
           )}
         </ul>
-        <p className="flex-item flex-basis-100">
-          {props.method}
-        </p>
+        <Typography>
+          {props.selectedCocktail.method}
+        </Typography>
     </div>
   );
 }

@@ -14,8 +14,16 @@
   align-content: flex-start;
 }
 
+.justify-content-space-evenly {
+  justify-content: space-evenly;
+}
+
 .float-right {
   float: right!important;
+}
+
+.flex-column {
+  flex-direction: column;
 }
 
 .flex-item {
@@ -36,4 +44,12 @@
 
 .flex-basis-25 {
   flex-basis: 25%!important;
+}
+
+.flex-basis-66 {
+  flex-basis: 66%!important;
+}
+
+.flex-basis-33 {
+  flex-basis: 33%!important;
 }

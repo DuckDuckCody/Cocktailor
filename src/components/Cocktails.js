@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
 import CardList from './common/CardList'
+import Typography from 'material-ui/Typography';
 
 const Cocktails = (props) => {
+  var style = {
+    container: {
+      margin: '0 10px'
+    },
+    header_container: {
+      height: '60px',
+      display: 'flex',
+      'flex-flow': 'row nowrap',
+      'align-items': 'center',
+      'margin-bottom': '10px'
+    }
+  }
+
   return (
-    <div className="card-conatiner">
-      <div className="flex-container jumbotron">
+    <div style={style.container}>
+      <div style={style.header_container} className="flex-container">
         {/* Title */}
-        <span className="flex-item flex-basis-75">
-          <h2> Cocktails </h2>
-        </span>
+        <Typography style={style.title} variant='title'>
+          <b> Bar Supplies </b>
+        </Typography>
         {/* end of Title */}
       </div>
       {/* CardList */}

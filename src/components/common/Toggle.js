@@ -1,22 +1,25 @@
 import React from 'react';
+import Button from 'material-ui/Button';
 
 const Toggle = (props) => {
   function toggle() {
     props.onToggle()
   }
 
+  var style = {
+    'button_color': {
+      color: 'grey'
+    }
+  }
+
   return (
-    <div className={props.className}>
-      <button
-        type="button"
-        onClick={toggle}
-        className="button-toggle"
-      >
+    <div>
+      <Button onClick={toggle} style={style.button_color}>
         {props.toggled
           ? props.activeText
           : props.inactiveText
         }
-      </button>
+      </Button>
     </div>
   );
 }

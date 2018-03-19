@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import Card, { CardContent, CardMedia } from 'material-ui/Card';
+import Icon from 'material-ui/Icon';
+import Button from 'material-ui/Button';
+import Typography from 'material-ui/Typography';
 
 class IngredientCard extends Component {
   constructor(props) {
@@ -19,54 +23,68 @@ class IngredientCard extends Component {
   }
 
   render() {
-    let remove = null;
+    let RemoveButton = null;
     if (this.state.removing) {
-      remove = (
+      RemoveButton = (
         <div className="flex-container flex-wrap">
-          <p className="flex-item flex-basis-100">
+          <Typography className="flex-item flex-basis-100">
             Are you sure you want to remove?
-          </p>
-          <button
+          </Typography>
+          <Button
             className="flex-item flex-basis-50"
-            type="button"
             onClick={(e) => this.confirmRemove(false)}
           >
             Cancel
-          </button>
-          <button
+          </Button>
+          <Button
+            color="secondary"
             className="flex-item flex-basis-50"
-            type="button"
             onClick={(e) => this.confirmRemove(true)}
           >
             Remove
-          </button>
+          </Button>
         </div>
         )
     } else {
-      remove = (
-        <button
-          type="button"
-          onClick={this.remove}>
+      RemoveButton = (
+        <Button className="flex-item" onClick={this.remove}>
           Remove
-        </button>
+        </Button>
       )
     }
 
+    var style = {
+      card: {
+        margin: '10px 0'
+      },
+      img: {
+        height: '151px',
+        width: '151px'
+      },
+      deleteIcon: {
+        height: '38px',
+        width: '38px'
+      }
+    };
+
     return (
-      <div className="card flex-container">
-        <div className="flex-item flex-basis-50 center-text">
-          <h3> {this.props.cardData.name} </h3>
-          <p><i> {this.props.cardData.desc} </i></p>
-          {remove}
-        </div>
-        <div className="flex-item flex-basis-50">
-          <img className=" picture-container-small"
-            src={this.props.cardData.imgUrl}
+      <div>
+        <Card className="flex-container justify-content-space-evenly align-items-center center-text" style={style.card}>
+          <div className="flex-container flex-column flex-item flex-basis-66">
+            <CardContent>
+              <Typography variant="headline" className="flex-item">
+                {this.props.cardData.name}
+              </Typography>
+              { RemoveButton }
+            </CardContent>
+          </div>
+          <CardMedia style={style.img} className="flex-item flex-basis-33"
+            image={this.props.cardData.imgUrl}
+            title={this.props.cardData.name}
             alt={this.props.cardData.name}
           />
-        </div>
+        </Card>
       </div>
-
     );
   }
 }

@@ -35,7 +35,7 @@ class CocktailBar extends Component {
       if (!this.state.searchError) {
         this.setState(addIngredient(ingredient, this.state.ingredients), function() {
           this.setState(matchCocktails(this.state.cocktails, this.state.ingredients))
-          //sortCocktails(this.state.selectedIngredients, this.state.matchedCocktails);
+          sortCocktails(this.state.ingredients, this.state.matchedCocktails);
         })
       }
     });
@@ -71,10 +71,8 @@ class CocktailBar extends Component {
         {this.state.selectedCocktail
           ? (
             <CocktailDrawer
-              title = {this.state.selectedCocktail.name}
+              selectedCocktail = {this.state.selectedCocktail}
               ingredients = {this.state.ingredients}
-              cocktailingredients = {this.state.selectedCocktail.ingredients}
-              method = {this.state.selectedCocktail.method}
               closeDrawer = {this.closeDrawer}
             />
           )
