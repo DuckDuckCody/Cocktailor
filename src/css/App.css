@@ -53,8 +53,11 @@ ul, li {
   z-index: 1;
   top: 0;
   right: 0;
-  background-color: #2e2e2e;
+  background-color: white;
   overflow-x: hidden;
+  -webkit-box-shadow: -19px 0px 29px -3px rgba(0,0,0,0.75);
+  -moz-box-shadow: -19px 0px 29px -3px rgba(0,0,0,0.75);
+  box-shadow: -19px 0px 29px -3px rgba(0,0,0,0.75);
 }
 
 .jumbotron {

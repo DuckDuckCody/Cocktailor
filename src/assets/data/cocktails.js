@@ -58,49 +58,139 @@ export default  [
           amount: "20ml"
         }
       ],
+      method: "Pour the ingredients into the old fashioned-glass filled with ice cubes. Stir gently." +
+"Note: for White Russian, float fresh cream on the top and stir gently.",
       imgUrl: black_russian
     },
-    /*{
+    {
       cocktailId: 3,
       name: "Bloody Mary",
       ingredients: [
-        6, 8, 9, 10, 11, 12, 13
+        {
+          ingredientId: 6,
+          amount: "45ml"
+        },
+        {
+          ingredientId: 8,
+          amount: "90ml"
+        },
+        {
+          ingredientId: 9,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 10,
+          amount: "2 Dashes"
+        },
+        {
+          ingredientId: 11,
+          amount: ""
+        },
+        {
+          ingredientId: 12,
+          amount: ""
+        },
+        {
+          ingredientId: 13,
+          amount: ""
+        }
       ],
+      method: "Stir gently, pour all ingredients into highball glass. Garnish with celery and lemon wedge (optional).",
       imgUrl: bloody_mary
     },
     {
       cocktailId: 4,
       name: "Champange Cocktail",
       ingredients: [
-        14, 15, 16, 17
+        {
+            ingredientId: 14,
+            amount: "90ml"
+        },
+        {
+          ingredientId: 15,
+          amount: "10ml"
+        },
+        {
+          ingredientId: 16,
+          amount: "2 Dashes"
+        },
+        {
+          ingredientId: 17,
+          amount: "1 Cube"
+        }
       ],
+      method: "Add dash of Angostura bitter onto sugar cube and drop it into champagne flute. Add cognac followed by pouring gently chilled champagne.",
       imgUrl: champange_cocktail
     },
     {
       cocktailId: 5,
       name: "Cosmopolitan",
       ingredients: [
-        6, 18, 19, 20
+        {
+          ingredientId: 6,
+          amount: "40ml"
+        },
+        {
+          ingredientId: 18,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 19,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 20,
+          amount: "15ml"
+        }
       ],
+      method: "Shake all ingredients in cocktail shaker filled with ice.Strain into a large cocktail glass .Garnish with lime slice.",
       imgUrl: cosmopolitan
     },
     {
       cocktailId: 6,
       name: "Cuba Libre",
       ingredients: [
-        21, 2, 20
+        {
+          ingredientId: 21,
+          amount: "50ml"
+        },
+        {
+          ingredientId: 2,
+          amount: "120ml"
+        },
+        {
+          ingredientId: 20,
+          amount: "10ml"
+        }
       ],
+      method: "Build all ingredients in a highball glass filled with ice. Garnish with lime wedge.",
       imgUrl: cuba_libre
     },
     {
       cocktailId: 7,
       name: "French 75",
       ingredients: [
-        22, 9, 17, 14
+        {
+          ingredientId: 22,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 9,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 17,
+          amount: "2 Pinches"
+        },
+        {
+          ingredientId: 14,
+          amount: "60ml"
+        }
       ],
+      method: "Pour all the ingredients, except champagne, into a shaker. Shake.Strain into a champagne flute.Top up with champagne. Stir gently.",
       imgUrl: french_75
     },
-    {
+    /*{
       cocktailId: 8,
       name: "French Connection",
       ingredients: [

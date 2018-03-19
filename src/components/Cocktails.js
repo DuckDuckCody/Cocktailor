@@ -21,7 +21,7 @@ const Cocktails = (props) => {
       <div style={style.header_container} className="flex-container">
         {/* Title */}
         <Typography style={style.title} variant='title'>
-          <b> Bar Supplies </b>
+          <b> Cocktails </b>
         </Typography>
         {/* end of Title */}
       </div>

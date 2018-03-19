@@ -20,7 +20,11 @@ export function formatIngredientList(ingredients, cocktailIngredients) {
     formattedIngredients.push(
       <li key={ingredient.ingredientId} style={listStyle}>
         <Typography>
-          {cocktailIngredient.amount} -
+          {
+            cocktailIngredient.amount
+              ? <span> {cocktailIngredient.amount} - </span>
+              : ""
+          }
           {
             ingredient.selected
               ? <b> {ingredient.name} </b>
