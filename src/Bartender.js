@@ -16,12 +16,15 @@ class CocktailBar extends Component {
       ingredients: ingredients,
       cocktails: cocktails,
       matchedCocktails: [],
-      selectedCocktail: null
+      selectedCocktail: null,
+      searchError: "",
+      searchErrorText: ""
     }
     this.removeIngredient = this.removeIngredient.bind(this);
     this.addIngredient = this.addIngredient.bind(this);
     this.cocktailClick = this.cocktailClick.bind(this);
     this.closeDrawer = this.closeDrawer.bind(this);
+    this.dismissWarning = this.dismissWarning.bind(this);
   }
 
   removeIngredient(ingredient) {
@@ -49,12 +52,22 @@ class CocktailBar extends Component {
     this.setState({ selectedCocktail: null });
   }
 
+  dismissWarning() {
+    this.setState({
+      searchError: false,
+      searchErrorText: ''
+    })
+  }
+
   render() {
     return (
       <div>
         <div className="App flex-container">
           <div className="flex-item flex-basis-50">
             <BarSupplies
+              dismissWarning = {this.dismissWarning}
+              searchError = {this.state.searchError}
+              searchErrorText = {this.state.searchErrorText}
               ingredients={this.state.ingredients}
               addIngredient={this.addIngredient}
               removeIngredient={this.removeIngredient}

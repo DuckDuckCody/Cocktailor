@@ -8,14 +8,11 @@ class BarSupplies extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      toggledSearch: false,
-      searchError: false,
-      searchErrorText: ''
+      toggledSearch: false
     };
     this.toggleSearch = this.toggleSearch.bind(this);
     this.removeIngredient = this.removeIngredient.bind(this);
     this.searchChange = this.searchChange.bind(this);
-    this.dismissWarning = this.dismissWarning.bind(this);
   }
 
   toggleSearch() {
@@ -29,13 +26,6 @@ class BarSupplies extends Component {
 
   searchChange(ingredient) {
     this.props.addIngredient(ingredient)
-  }
-
-  dismissWarning() {
-    this.setState({
-      searchError: false,
-      searchErrorText: ''
-    })
   }
 
   render() {
@@ -87,9 +77,9 @@ class BarSupplies extends Component {
               ? (<Search
                   searchValues = {this.props.ingredients}
                   handleChange = {this.searchChange}
-                  error = {this.state.searchError}
-                  errorText = {this.state.searchErrorText}
-                  dismissWarning = {this.dismissWarning}
+                  error = {this.props.searchError}
+                  errorText = {this.props.searchErrorText}
+                  dismissWarning = {this.props.dismissWarning}
                   labelKey = "name"
                   valueKey = "ingredientId"
                   placeholder = "Ingredient search"

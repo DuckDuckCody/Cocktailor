@@ -19,6 +19,11 @@ class Search extends Component {
   render() {
     const { selectedOption } = this.state;
     const value = selectedOption && selectedOption[this.props.valueKey];
+    const style = {
+      container: {
+        padding: '15px 0'
+      }
+    }
 
     return (
       <div>
@@ -35,7 +40,7 @@ class Search extends Component {
           />
         </div>
         {this.props.error
-           ? (<div className="flex-container">
+           ? (<div className="flex-container" style={style.container}>
                <span className="flex-item flex-basis-75 error-text">
                  {this.props.errorText}
                </span>
