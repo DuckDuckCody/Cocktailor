@@ -7,7 +7,7 @@ export function formatIngredientList(ingredients, cocktailIngredients) {
   let formattedIngredients = [];
 
   var listStyle = {
-    'list-style-type': 'none',
+    listStyleType: 'none',
   }
 
   //todo: try to make this just one map function

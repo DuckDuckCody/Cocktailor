@@ -11,9 +11,9 @@ export var matchCocktails = function(cocktails, ingredients) {
 
   _.forEach(cocktails, function(cocktail) {
     cocktailIngredientIds = cocktail.ingredients.map(ingredient => ingredient.ingredientId)
-    findOne(ingredientIds, cocktailIngredientIds)
-      ? matchedCocktails.push(cocktail)
-      : "";
+      findOne(ingredientIds, cocktailIngredientIds)
+        ? matchedCocktails.push(cocktail)
+        : "";
   })
 
   return {matchedCocktails: matchedCocktails}

@@ -1,5 +1,4 @@
 import _ from 'lodash';
-import {validateIngredient} from './validateIngredients'
 
 export var removeIngredient = function(ingredient, ingredients) {
   let ingredientsBuffer = _.clone(ingredients);

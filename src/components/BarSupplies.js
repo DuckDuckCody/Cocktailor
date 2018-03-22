@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import CardList from './common/CardList';
 import Search from './common/Search'
 import Toggle from './common/Toggle'
-import Typography from 'material-ui/Typography';
 
 class BarSupplies extends Component {
   constructor(props) {
@@ -33,18 +33,20 @@ class BarSupplies extends Component {
       pad: {
         margin: '0 10px'
       },
-      container: {
-        display: 'flex',
+      divider: {
+
       },
       header_container: {
-        height: '60px',
+        height: '75px',
         display: 'flex',
-        'flex-flow': 'row nowrap',
-        'align-items': 'center',
-        'margin-bottom': '10px'
+        flexFlow: 'row nowrap',
+        alignItems: 'center',
+        marginBottom: '10px',
+        borderBottom: '2px #10C0FD solid'
       },
       title: {
-        flex: '75%'
+        flex: '75%',
+        color: 'white'
       },
       button: {
         flex: '25%'
@@ -56,18 +58,18 @@ class BarSupplies extends Component {
 
     return (
       <div style={style.pad}>
-        <div style={style.conatiner}>
+        <div style={style.divider}>
           <div style={style.header_container}>
-            <Typography style={style.title} variant='title'>
-              <b> Bar Supplies </b>
-            </Typography>
+            <p className = "title" style={style.title}>
+              Bar Supplies
+            </p>
 
             <div style={style.button}>
               <Toggle
                  onToggle = {this.toggleSearch}
                  toggled = {this.state.toggledSearch}
                  inactiveText = "Add Ingredients"
-                 activeText = "Close"
+                 activeText = "Close Ingredient Search"
               />
             </div>
           </div>
@@ -100,6 +102,15 @@ class BarSupplies extends Component {
       </div>
     );
   }
+}
+
+BarSupplies.propTypes = {
+  removeIngredient: PropTypes.func.isRequired,
+  addIngredient: PropTypes.func.isRequired,
+  ingredients: PropTypes.array,
+  searchErrorText: PropTypes.string,
+  searchError: PropTypes.bool,
+  dismissWarning: PropTypes.func
 }
 
 export default BarSupplies;

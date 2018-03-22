@@ -190,95 +190,243 @@ export default  [
       method: "Pour all the ingredients, except champagne, into a shaker. Shake.Strain into a champagne flute.Top up with champagne. Stir gently.",
       imgUrl: french_75
     },
-    /*{
+    {
       cocktailId: 8,
       name: "French Connection",
       ingredients: [
-        15, 24
+        {
+          ingredientId: 15,
+          amount: "35ml"
+        },
+        {
+          ingredientId: 24,
+          amount: "35ml"
+        }
       ],
+      method: "Pour all ingredients directly into old fashioned glass filled with ice cubes. Stir gently.",
       imgUrl: french_connection
     },
     {
       cocktailId: 8,
       name: "God Father",
       ingredients: [
-        25, 24
+        {
+          ingredientId: 25,
+          amount: "35ml"
+        },
+        {
+          ingredientId: 24,
+          amount: "35ml"
+        }
       ],
+      method: "Pour all ingredients directly into old fashioned glass filled with ice cubes. Stir gently.",
       imgUrl: god_father
     },
     {
       cocktailId: 9,
       name: "God Mother",
       ingredients: [
-        6, 24
+        {
+          ingredientId: 6,
+          amount: "35ml"
+        },
+        {
+          ingredientId: 24,
+          amount: "25ml"
+        }
       ],
+      method: "Pour all ingredients directly into old fashioned glass filled with ice cubes. Stir gently.",
       imgUrl: god_father
     },
     {
       cocktailId: 10,
       name: "Golden Dream",
       ingredients: [
-        27, 26, 28, 29
+        {
+          ingredientId: 27,
+          amount: "20ml"
+        },
+        {
+          ingredientId: 26,
+          amount: "20ml"
+        },
+        {
+          ingredientId: 28,
+          amount: "20ml"
+        },
+        {
+          ingredientId: 29,
+          amount: "10ml"
+        }
       ],
+      method: "Pour all ingredients into shaker filled with ice. Shake briskly for few seconds. Strain into chilled cocktail glass.",
       imgUrl: golden_dream
     },
     {
       cocktailId: 11,
       name: "Grasshopper",
       ingredients: [
-        30, 31, 29
+        {
+          ingredientId: 30,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 31,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 29,
+          amount: "30ml"
+        }
       ],
+      method: "Pour all ingredients into shaker filled with ice. Shake briskly for few seconds. Strain into chilled cocktail glass.",
       imgUrl: grasshopper
     },
     {
       cocktailId: 12,
       name: "Harvey Wallbanger",
       ingredients: [
-        6, 27, 28
+        {
+          ingredientId: 6,
+          amount: "45ml"
+        },
+        {
+          ingredientId: 27,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 28,
+          amount: "90ml"
+        }
       ],
+      method: "Pour vodka and orange juice into a highball glass filled with ice. Stir gently and float Galliano on top. Garnish with orange slices and cherry.",
       imgUrl: harvey_wallbanger
     },
     {
       cocktailId: 13,
       name: "Hemingway Special",
       ingredients: [
-        21, 32, 33, 20
+        {
+          ingredientId: 21,
+          amount: "60ml"
+        },
+        {
+          ingredientId: 32,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 33,
+          amount: "40ml"
+        },
+        {
+          ingredientId: 20,
+          amount: "15ml"
+        }
       ],
+      method: "Pour all ingredients into a shaker with ice. Shake. Strain into a double cocktail glass.",
       imgUrl: hemingway_special
     },
     {
       cocktailId: 14,
       name: "Horse's Neck",
       ingredients: [
-        34, 35, 16
+        {
+          ingredientId: 34,
+          amount: "40ml"
+        },
+        {
+          ingredientId: 35,
+          amount: "120ml"
+        },
+        {
+          ingredientId: 16,
+          amount: "1 Dash"
+        }
       ],
+      method: "Pour brandy and ginger ale directly into hi-ball glass with ice cubes. Stir gently. Garnish with rind of one lemon spiral. If required, add dashes of Angostura bitters.",
       imgUrl: horses_neck
     },
     {
       cocktailId: 15,
       name: "Irish Coffee",
       ingredients: [
-        36, 37, 29, 17
+        {
+          ingredientId: 36,
+          amount: "40ml"
+        },
+        {
+          ingredientId: 37,
+          amount: "90ml"
+        },
+        {
+          ingredientId: 29,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 17,
+          amount: "1 teaspoon"
+        }
       ],
+      method: "Warm the Irish whiskey over a burner. Pour into the glass (for hot drink) hot coffee, and add a teaspoon of sugar. Float Cream on top.",
       imgUrl: irish_coffee
     },
     {
       cocktailId: 16,
       name: "Kir",
       ingredients: [
-        38, 39
+        {
+          ingredientId: 38,
+          amount: "90ml"
+        },
+        {
+          ingredientId: 39,
+          amount: "10ml"
+        }
       ],
+      method: "Pour Crème de Cassis into glass, top up with white wine. For Kir Royal: Use champagne instead of white wine.",
       imgUrl: kir
     },
     {
       cocktailId: 17,
       name: "Long Island Ice Tea",
       ingredients: [
-        22, 40, 6, 21, 26, 41, 9, 2
+        {
+          ingredientId: 22,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 40,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 6,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 21,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 26,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 41,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 9,
+          amount: "25ml"
+        },
+        {
+          ingredientId: 2,
+          amount: "1 Dash"
+        }
       ],
+      method: "Add all ingredients into highball glass filled with ice. Stir gently. Garnish with lemon spiral. Serve with straw.",
       imgUrl: long_island_ice_tea
     },
-    {
+    /*{
       cocktailId: 18,
       name: "Mai-Tai",
       ingredients: [

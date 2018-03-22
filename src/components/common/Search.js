@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 
@@ -58,6 +59,17 @@ class Search extends Component {
       </div>
     );
   }
+}
+
+Search.propTypes = {
+  handleChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
+  searchValues: PropTypes.array.isRequired,
+  labelKey: PropTypes.string.isRequired,
+  valueKey: PropTypes.string.isRequired,
+  error: PropTypes.bool,
+  errorText: PropTypes.string,
+  dismissWarning: PropTypes.func
 }
 
 export default Search;

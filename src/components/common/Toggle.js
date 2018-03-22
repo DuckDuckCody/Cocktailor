@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from 'material-ui/Button';
 
 const Toggle = (props) => {
@@ -8,7 +9,8 @@ const Toggle = (props) => {
 
   var style = {
     'button_color': {
-      color: 'grey'
+      color: '#10C0FD',
+      fontFamily: "'Lato', sans-serif"
     }
   }
 
@@ -22,6 +24,13 @@ const Toggle = (props) => {
       </Button>
     </div>
   );
+}
+
+Toggle.propTypes = {
+  onToggle: PropTypes.func.isRequired,
+  toggled: PropTypes.bool.isRequired,
+  activeText: PropTypes.string.isRequired,
+  inactiveText: PropTypes.string.isRequired
 }
 
 export default Toggle;

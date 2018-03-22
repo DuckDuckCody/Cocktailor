@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import CardList from './common/CardList'
-import Typography from 'material-ui/Typography';
+import React from 'react';
+import PropTypes from 'prop-types';
+import CardList from './common/CardList';
 
 const Cocktails = (props) => {
   var style = {
@@ -8,11 +8,12 @@ const Cocktails = (props) => {
       margin: '0 10px'
     },
     header_container: {
-      height: '60px',
+      height: '75px',
       display: 'flex',
-      'flex-flow': 'row nowrap',
-      'align-items': 'center',
-      'margin-bottom': '10px'
+      flexFlow: 'row nowrap',
+      alignItems: 'center',
+      marginBottom: '10px',
+      borderBottom: '2px #FD295D solid'
     }
   }
 
@@ -20,9 +21,9 @@ const Cocktails = (props) => {
     <div style={style.container}>
       <div style={style.header_container} className="flex-container">
         {/* Title */}
-        <Typography style={style.title} variant='title'>
-          <b> Cocktails </b>
-        </Typography>
+        <p className = "title" style={style.title}>
+          Cocktails
+        </p>
         {/* end of Title */}
       </div>
       {/* CardList */}
@@ -38,6 +39,12 @@ const Cocktails = (props) => {
       {/* end of CardList */}
     </div>
   );
+}
+
+Cocktails.propTypes = {
+  cocktailClick: PropTypes.func.isRequired,
+  ingredients: PropTypes.array,
+  matchedCocktails: PropTypes.array
 }
 
 export default Cocktails;

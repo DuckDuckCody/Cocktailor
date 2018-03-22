@@ -17,7 +17,7 @@ class CocktailBar extends Component {
       cocktails: cocktails,
       matchedCocktails: [],
       selectedCocktail: null,
-      searchError: "",
+      searchError: false,
       searchErrorText: ""
     }
     this.removeIngredient = this.removeIngredient.bind(this);

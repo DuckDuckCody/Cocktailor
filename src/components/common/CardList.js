@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import IngredientCard from './IngredientCard'
 import CocktailCard from './CocktailCard'
 
@@ -52,6 +53,17 @@ class IngredientCardList extends Component {
       </div>
     );
   }
+}
+
+IngredientCardList.propTypes = {
+  cardData: PropTypes.array.isRequired,
+  cardType: PropTypes.oneOf(['ingredient', 'cocktail']),
+  keyName: PropTypes.string.isRequired,
+  removeCard: PropTypes.func,
+  ingredients: PropTypes.array,
+  cocktailClick: PropTypes.func,
+  emptyDataTitle: PropTypes.string.isRequired,
+  emptyDataDesc: PropTypes.string.isRequired,
 }
 
 export default IngredientCardList;

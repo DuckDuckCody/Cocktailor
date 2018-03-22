@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Card, { CardContent, CardMedia } from 'material-ui/Card';
-import Icon from 'material-ui/Icon';
-import Button from 'material-ui/Button';
-import Typography from 'material-ui/Typography';
 
 class IngredientCard extends Component {
   constructor(props) {
@@ -23,39 +21,13 @@ class IngredientCard extends Component {
   }
 
   render() {
-    let RemoveButton = null;
-    if (this.state.removing) {
-      RemoveButton = (
-        <div className="flex-container flex-wrap">
-          <Typography className="flex-item flex-basis-100">
-            Are you sure you want to remove?
-          </Typography>
-          <Button
-            className="flex-item flex-basis-50"
-            onClick={(e) => this.confirmRemove(false)}
-          >
-            Cancel
-          </Button>
-          <Button
-            color="secondary"
-            className="flex-item flex-basis-50"
-            onClick={(e) => this.confirmRemove(true)}
-          >
-            Remove
-          </Button>
-        </div>
-        )
-    } else {
-      RemoveButton = (
-        <Button className="flex-item" onClick={this.remove}>
-          Remove
-        </Button>
-      )
-    }
-
-    var style = {
+    const style = {
       card: {
-        margin: '10px 0'
+        margin: '10px 0',
+        backgroundColor: 'rgb(47, 47, 49)'
+      },
+      button: {
+        marginTop: '15px'
       },
       img: {
         height: '151px',
@@ -64,17 +36,56 @@ class IngredientCard extends Component {
       deleteIcon: {
         height: '38px',
         width: '38px'
+      },
+      removeText: {
+        padding: '10px 0'
       }
     };
+
+    let RemoveButton = null;
+    if (this.state.removing) {
+      RemoveButton = (
+        <div className="flex-container flex-wrap">
+          <p className="text normal-text flex-item flex-basis-100" style={style.removeText}>
+            Are you sure you want to remove?
+          </p>
+          <button
+            type="button"
+            className="flex-item flex-basis-50 button default-button"
+            onClick={(e) => this.confirmRemove(false)}
+          >
+            CANCEL
+          </button>
+          <button
+            type="button"
+            className="flex-item flex-basis-50 button delete-button"
+            onClick={(e) => this.confirmRemove(true)}
+          >
+            REMOVE
+          </button>
+        </div>
+        )
+    } else {
+      RemoveButton = (
+        <button
+          type="button"
+          className="flex-item grey-text button default-button"
+          onClick={this.remove}
+          style={style.button}
+        >
+          REMOVE
+        </button>
+      )
+    }
 
     return (
       <div>
         <Card className="flex-container justify-content-space-evenly align-items-center center-text" style={style.card}>
           <div className="flex-container flex-column flex-item flex-basis-66">
             <CardContent>
-              <Typography variant="headline" className="flex-item">
+              <p className="flex-item text large-text white-text">
                 {this.props.cardData.name}
-              </Typography>
+              </p>
               { RemoveButton }
             </CardContent>
           </div>
@@ -87,6 +98,16 @@ class IngredientCard extends Component {
       </div>
     );
   }
+}
+
+IngredientCard.propTypes = {
+  removeCard: PropTypes.func.isRequired,
+  cardData: PropTypes.shape({
+    ingredientId: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    desc: PropTypes.string,
+    imgUrl: PropTypes.string
+  })
 }
 
 export default IngredientCard;
