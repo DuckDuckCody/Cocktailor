@@ -19,12 +19,14 @@ const Cocktails = (props) => {
 
   return (
     <div style={style.container}>
-      <div style={style.header_container} className="flex-container">
-        {/* Title */}
-        <p className = "title" style={style.title}>
-          Cocktails
-        </p>
-        {/* end of Title */}
+      <div className="headerContainer">
+        <div style={style.header_container} className="flex-container ">
+          {/* Title */}
+          <p className = "title" style={style.title}>
+            Cocktails
+          </p>
+          {/* end of Title */}
+        </div>
       </div>
       {/* CardList */}
       <CardList

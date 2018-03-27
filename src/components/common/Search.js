@@ -41,19 +41,20 @@ class Search extends Component {
           />
         </div>
         {this.props.error
-           ? (<div className="flex-container" style={style.container}>
-               <span className="flex-item flex-basis-75 error-text">
-                 {this.props.errorText}
-               </span>
-                 <button
-                   type='button'
-                   className="flex-item flex-basis-25 button-close"
-                   onClick={this.props.dismissWarning}
-                 >
-                   Dismiss &nbsp;
-                   <i className="fa fa-close fa-10x"></i>
-                 </button>
-             </div>)
+           ? (
+               <div className="flex-container" style={style.container}>
+                 <span className="flex-item flex-basis-75 error-text">
+                   {this.props.errorText}
+                 </span>
+                   <button
+                     type='button'
+                     className="flex-item flex-basis-25 button-close"
+                     onClick={this.props.dismissWarning}
+                   >
+                     Dismiss &nbsp;
+                     <i className="fa fa-close fa-10x"></i>
+                   </button>
+               </div>)
            : ""
          }
       </div>

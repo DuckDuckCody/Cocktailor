@@ -1,23 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CardList from './common/CardList';
-import Search from './common/Search'
-import Toggle from './common/Toggle'
+import Search from './common/Search';
 
 class BarSupplies extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      toggledSearch: false
-    };
-    this.toggleSearch = this.toggleSearch.bind(this);
     this.removeIngredient = this.removeIngredient.bind(this);
     this.searchChange = this.searchChange.bind(this);
-  }
-
-  toggleSearch() {
-    let toggled = this.state.toggledSearch;
-    this.setState({toggledSearch: !toggled});
   }
 
   removeIngredient(ingredient) {
@@ -33,10 +23,10 @@ class BarSupplies extends Component {
       pad: {
         margin: '0 10px'
       },
-      divider: {
-
+      headerContainer: {
+        height: '20vh'
       },
-      header_container: {
+      titleContainer: {
         height: '75px',
         display: 'flex',
         flexFlow: 'row nowrap',
@@ -45,11 +35,8 @@ class BarSupplies extends Component {
         borderBottom: '2px #10C0FD solid'
       },
       title: {
-        flex: '75%',
+        flex: '100%',
         color: 'white'
-      },
-      button: {
-        flex: '25%'
       },
       search: {
         flex: '100%'
@@ -58,36 +45,24 @@ class BarSupplies extends Component {
 
     return (
       <div style={style.pad}>
-        <div style={style.divider}>
-          <div style={style.header_container}>
+        <div className="headerContainer">
+          <div style={style.titleContainer}>
             <p className = "title" style={style.title}>
               Bar Supplies
             </p>
-
-            <div style={style.button}>
-              <Toggle
-                 onToggle = {this.toggleSearch}
-                 toggled = {this.state.toggledSearch}
-                 inactiveText = "Add Ingredients"
-                 activeText = "Close Ingredient Search"
-              />
-            </div>
           </div>
 
           <div style={style.item}>
-            { this.state.toggledSearch
-              ? (<Search
-                  searchValues = {this.props.ingredients}
-                  handleChange = {this.searchChange}
-                  error = {this.props.searchError}
-                  errorText = {this.props.searchErrorText}
-                  dismissWarning = {this.props.dismissWarning}
-                  labelKey = "name"
-                  valueKey = "ingredientId"
-                  placeholder = "Ingredient search"
-                />
-              ) : ''
-            }
+            <Search
+              searchValues = {this.props.ingredients}
+              handleChange = {this.searchChange}
+              error = {this.props.searchError}
+              errorText = {this.props.searchErrorText}
+              dismissWarning = {this.props.dismissWarning}
+              labelKey = "name"
+              valueKey = "ingredientId"
+              placeholder = "Ingredient search"
+            />
           </div>
         </div>
 

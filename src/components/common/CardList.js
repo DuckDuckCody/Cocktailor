@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import IngredientCard from './IngredientCard'
 import CocktailCard from './CocktailCard'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class IngredientCardList extends Component {
   render() {
@@ -48,8 +49,14 @@ class IngredientCardList extends Component {
     }
 
     return (
-      <div className="scrollable">
-        {cards}
+      <div className="scrollable cardList" id={this.props.cardType}>
+        <ReactCSSTransitionGroup
+          transitionName="fade"
+          transitionEnterTimeout={300}
+          transitionLeaveTimeout={300}
+        >
+          {cards}
+        </ReactCSSTransitionGroup>
       </div>
     );
   }

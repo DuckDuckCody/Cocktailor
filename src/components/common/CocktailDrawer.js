@@ -20,8 +20,9 @@ const CocktailDrawer = (props) => {
     padding: {
       padding: "15px 0"
     },
-    methodPadding: {
-      padding: "25px 25px"
+    method: {
+      padding: "25px 25px",
+      color: 'black'
     }
   }
 
@@ -42,9 +43,9 @@ const CocktailDrawer = (props) => {
           )}
         </ul>
 
-        <Typography style={style.methodPadding}>
+        <p style={style.method}>
           {props.selectedCocktail.method}
-        </Typography>
+        </p>
     </div>
   );
 }

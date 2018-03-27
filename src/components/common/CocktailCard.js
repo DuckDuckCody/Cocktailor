@@ -51,7 +51,7 @@ const CocktailCard = (props) => {
                 className="flex-item grey-text button default-button"
                 onClick={handleClick}
               >
-                VIEW COCKTAIL
+                VIEW METHOD
               </button>
             </div>
           </CardContent>
