@@ -9,7 +9,7 @@ const Toggle = (props) => {
 
   var style = {
     'button_color': {
-      color: '#10C0FD',
+      color: props.toggled ? '#FD295D' : '#10C0FD',
       fontFamily: "'Lato', sans-serif"
     }
   }

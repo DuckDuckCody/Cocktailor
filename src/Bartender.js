@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import BarSupplies from './components/BarSupplies'
 import Cocktails from './components/Cocktails'
 import CocktailDrawer from './components/common/CocktailDrawer'
+import RemoveModal from './components/common/RemoveModal'
 import ingredients from './assets/data/ingredients.js'
 import cocktails from './assets/data/cocktails.js'
 import {validateIngredient} from './helpers/validateIngredients.js'
@@ -18,13 +19,20 @@ class CocktailBar extends Component {
       matchedCocktails: [],
       selectedCocktail: null,
       searchError: false,
-      searchErrorText: ""
+      searchErrorText: "",
+      removingItem: null
     }
+    this.removeIngredientClick = this.removeIngredientClick.bind(this);
     this.removeIngredient = this.removeIngredient.bind(this);
     this.addIngredient = this.addIngredient.bind(this);
     this.cocktailClick = this.cocktailClick.bind(this);
     this.closeDrawer = this.closeDrawer.bind(this);
     this.dismissWarning = this.dismissWarning.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  removeIngredientClick(ingredient) {
+    this.setState({removingItem: ingredient})
   }
 
   removeIngredient(ingredient) {
@@ -52,6 +60,13 @@ class CocktailBar extends Component {
     this.setState({ selectedCocktail: null });
   }
 
+  closeModal(remove) {
+    remove
+      ? this.removeIngredient(this.state.removingItem)
+      : ""; 
+    this.setState({removingItem: null})
+  }
+
   dismissWarning() {
     this.setState({
       searchError: false,
@@ -70,7 +85,7 @@ class CocktailBar extends Component {
               searchErrorText = {this.state.searchErrorText}
               ingredients={this.state.ingredients}
               addIngredient={this.addIngredient}
-              removeIngredient={this.removeIngredient}
+              removeIngredient={this.removeIngredientClick}
             />
           </div>
           <div className="flex-item flex-basis-50">
@@ -87,6 +102,16 @@ class CocktailBar extends Component {
               selectedCocktail = {this.state.selectedCocktail}
               ingredients = {this.state.ingredients}
               closeDrawer = {this.closeDrawer}
+            />
+          )
+          : ''
+        }
+        {this.state.removingItem
+          ? (
+            <RemoveModal
+              open = {true}
+              closeModal = {this.closeModal}
+              nameRemoving = {this.state.removingItem.name}
             />
           )
           : ''

@@ -5,19 +5,11 @@ import Card, { CardContent, CardMedia } from 'material-ui/Card';
 class IngredientCard extends Component {
   constructor(props) {
     super(props);
-    this.state = { removing: false };
     this.remove = this.remove.bind(this);
-    this.confirmRemove = this.confirmRemove.bind(this);
   }
 
   remove() {
-    this.setState({removing: true});
-  }
-
-  confirmRemove(remove) {
-    remove
-      ? this.props.removeCard(this.props.cardData)
-      : this.setState({removing: false})
+    this.props.removeCard(this.props.cardData)
   }
 
   render() {
@@ -42,42 +34,6 @@ class IngredientCard extends Component {
       }
     };
 
-    let RemoveButton = null;
-    if (this.state.removing) {
-      RemoveButton = (
-        <div className="flex-container flex-wrap">
-          <p className="text normal-text flex-item flex-basis-100" style={style.removeText}>
-            Are you sure you want to remove?
-          </p>
-          <button
-            type="button"
-            className="flex-item flex-basis-50 button default-button"
-            onClick={(e) => this.confirmRemove(false)}
-          >
-            CANCEL
-          </button>
-          <button
-            type="button"
-            className="flex-item flex-basis-50 button delete-button"
-            onClick={(e) => this.confirmRemove(true)}
-          >
-            REMOVE
-          </button>
-        </div>
-        )
-    } else {
-      RemoveButton = (
-        <button
-          type="button"
-          className="flex-item grey-text button default-button"
-          onClick={this.remove}
-          style={style.button}
-        >
-          REMOVE
-        </button>
-      )
-    }
-
     return (
       <div>
         <Card className="flex-container justify-content-space-evenly align-items-center center-text" style={style.card}>
@@ -86,7 +42,14 @@ class IngredientCard extends Component {
               <p className="flex-item text large-text white-text">
                 {this.props.cardData.name}
               </p>
-              { RemoveButton }
+              <button
+                type="button"
+                className="flex-item grey-text button default-button"
+                onClick={this.remove}
+                style={style.button}
+              >
+                REMOVE
+              </button>
             </CardContent>
           </div>
           <CardMedia style={style.img} className="flex-item flex-basis-33"
