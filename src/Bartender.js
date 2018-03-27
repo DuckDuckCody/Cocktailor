@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import BarSupplies from './components/BarSupplies'
 import Cocktails from './components/Cocktails'
 import CocktailDrawer from './components/common/CocktailDrawer'
-import RemoveModal from './components/common/RemoveModal'
+import RemoveIngredientModal from './components/common/RemoveIngredientModal'
+import SnackBar from './components/common/SnackBar'
 import ingredients from './assets/data/ingredients.js'
 import cocktails from './assets/data/cocktails.js'
 import {validateIngredient} from './helpers/validateIngredients.js'
@@ -20,7 +21,8 @@ class CocktailBar extends Component {
       selectedCocktail: null,
       searchError: false,
       searchErrorText: "",
-      removingItem: null
+      removingItem: null,
+      removedItem: null
     }
     this.removeIngredientClick = this.removeIngredientClick.bind(this);
     this.removeIngredient = this.removeIngredient.bind(this);
@@ -29,6 +31,7 @@ class CocktailBar extends Component {
     this.closeDrawer = this.closeDrawer.bind(this);
     this.dismissWarning = this.dismissWarning.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.closeSnackBar = this.closeSnackBar.bind(this);
   }
 
   removeIngredientClick(ingredient) {
@@ -38,6 +41,7 @@ class CocktailBar extends Component {
   removeIngredient(ingredient) {
     this.setState(removeIngredient(ingredient, this.state.ingredients), function() {
       this.setState(matchCocktails(this.state.cocktails, this.state.ingredients))
+      this.setState({removedItem: ingredient})
     });
   }
 
@@ -46,7 +50,7 @@ class CocktailBar extends Component {
       if (!this.state.searchError) {
         this.setState(addIngredient(ingredient, this.state.ingredients), function() {
           this.setState(matchCocktails(this.state.cocktails, this.state.ingredients))
-          sortCocktails(this.state.ingredients, this.state.matchedCocktails);
+          //sortCocktails(this.state.ingredients, this.state.matchedCocktails);
         })
       }
     });
@@ -63,8 +67,16 @@ class CocktailBar extends Component {
   closeModal(remove) {
     remove
       ? this.removeIngredient(this.state.removingItem)
-      : ""; 
+      : "";
     this.setState({removingItem: null})
+  }
+
+  closeSnackBar(undo) {
+    addIngredient(this.state.removedItem)
+    //undo
+      //?
+      //: ''
+    this.setState({removedItem: null});
   }
 
   dismissWarning() {
@@ -108,10 +120,20 @@ class CocktailBar extends Component {
         }
         {this.state.removingItem
           ? (
-            <RemoveModal
+            <RemoveIngredientModal
               open = {true}
               closeModal = {this.closeModal}
               nameRemoving = {this.state.removingItem.name}
+            />
+          )
+          : ''
+        }
+        {this.state.removedItem
+          ? (
+            <SnackBar
+              open = {true}
+              nameRemoved = {this.state.removedItem.name}
+              closeSnackBar = {this.closeSnackBar}
             />
           )
           : ''

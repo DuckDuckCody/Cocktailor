@@ -8,7 +8,7 @@ import Dialog, {
 } from 'material-ui/Dialog';
 import PropTypes from 'prop-types';
 
-class RemoveModal extends React.Component {
+class RemoveIngredientModal extends React.Component {
   handleClose = (remove) => {
     this.props.closeModal(remove);
   };
@@ -54,9 +54,9 @@ class RemoveModal extends React.Component {
   }
 }
 
-RemoveModal.propTypes = {
-  handleClose: PropTypes.func.isRequired,
+RemoveIngredientModal.propTypes = {
+  closeModal: PropTypes.func.isRequired,
   nameRemoving: PropTypes.string.isRequired
 }
 
-export default RemoveModal;
+export default RemoveIngredientModal;
