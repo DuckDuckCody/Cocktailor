@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import React from 'react';
-import Typography from 'material-ui/Typography';
 
 export function formatIngredientList(ingredients, cocktailIngredients) {
   let ingredient = null;

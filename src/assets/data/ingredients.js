@@ -326,5 +326,17 @@ export default  [
       name: "DOM Bénédictine",
       desc: "placeholder",
       imgUrl: ""
+    },
+    {
+      ingredientId: 59,
+      name: "Ginger beverage",
+      desc: "placeholder",
+      imgUrl: ""
+    },
+    {
+      ingredientId: 60,
+      name: "Kirsch",
+      desc: "placeholder",
+      imgUrl: ""
     }
 ];

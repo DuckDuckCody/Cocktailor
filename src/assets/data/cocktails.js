@@ -364,7 +364,7 @@ export default  [
         },
         {
           ingredientId: 17,
-          amount: "1 teaspoon"
+          amount: "1 Teaspoon"
         }
       ],
       method: "Warm the Irish whiskey over a burner. Pour into the glass (for hot drink) hot coffee, and add a teaspoon of sugar. Float Cream on top.",
@@ -426,100 +426,288 @@ export default  [
       method: "Add all ingredients into highball glass filled with ice. Stir gently. Garnish with lemon spiral. Serve with straw.",
       imgUrl: long_island_ice_tea
     },
-    /*{
+    {
       cocktailId: 18,
       name: "Mai-Tai",
       ingredients: [
-        21, 42, 43, 44, 20
+        {
+          ingredientId: 21,
+          amount: "40ml"
+        },
+        {
+          ingredientId: 42,
+          amount: "20ml"
+        },
+        {
+          ingredientId: 43,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 44,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 20,
+          amount: "10ml"
+        }
       ],
+      method: "Shake and strain into highball glass. Garnish with pineapple spear, mint leaves and lime peel. Serve with straw.",
       imgUrl: mai_tai
     },
     {
       cocktailId: 20,
       name: "Margarita",
       ingredients: [
-        40, 18, 20
+        {
+          ingredientId: 40,
+          amount: "35ml"
+        },
+        {
+          ingredientId: 18,
+          amount: "20ml"
+        },
+        {
+          ingredientId: 20,
+          amount: "15ml"
+        }
       ],
+      method: "Pour all ingredients into shaker with ice. Shake well and strain into cocktail glass rimmed with salt",
       imgUrl: margarita
     },
     {
       cocktailId: 21,
       name: "Mimosa",
       ingredients: [
-        14, 28
+        {
+          ingredientId: 14,
+          amount: "75ml"
+        },
+        {
+          ingredientId: 28,
+          amount: "75ml"
+        }
       ],
+      method: "Pour orange juice into flute and gently pour Champagne. Stir gently. Garnish with orange twist (optional). Note: a Buck’s Fizz and a Mimosa are the same drink.",
       imgUrl: mimosa
     },
     {
       cocktailId: 22,
       name: "Mint Julep",
       ingredients: [
-        36, 46, 17, 47
+        {
+          ingredientId: 36,
+          amount: "60ml"
+        },
+        {
+          ingredientId: 46,
+          amount: "4 Sprigs"
+        },
+        {
+          ingredientId: 17,
+          amount: "1 Teaspoon"
+        },
+        {
+          ingredientId: 47,
+          amount: "2 Teaspoons"
+        }
       ],
+      method: "In a highball glass gently muddle the mint, sugar and water. Fill the glass with cracked ice, add Bourbon and stir well until the glass is frost. Garnish with a mint spring.",
       imgUrl: mint_julep
     },
     {
       cocktailId: 23,
       name: "Mojito",
       ingredients: [
-        21, 20, 46, 17, 47
+        {
+          ingredientId: 21,
+          amount: "40ml"
+        },
+        {
+          ingredientId: 20,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 46,
+          amount: "5 Sprigs"
+        },
+        {
+          ingredientId: 17,
+          amount: "2 Teaspoons"
+        },
+        {
+          ingredientId: 47,
+          amount: ""
+        }
       ],
+      method: "Muddle mint springs with sugar and lime juice. Add splash of soda water and fill glass with cracked ice. Pour rum and top with soda water. Garnish with spring of mint leaves and lemon slice. Serve with straw.",
       imgUrl: mojito
     },
     {
       cocktailId: 24,
       name: "Moscow Mule",
       ingredients: [
-        6, 35, 20, 3
+        {
+          ingredientId: 6,
+          amount: "45ml"
+        },
+        {
+          ingredientId: 59,
+          amount: "120ml"
+        },
+        {
+          ingredientId: 20,
+          amount: "5ml"
+        },
+        {
+          ingredientId: 3,
+          amount: "1 Slice"
+        }
       ],
+      method: "Combine the vodka and ginger beer. Add lime juice. Garnish with a lime slice.",
       imgUrl: moscow_mule
     },
     {
       cocktailId: 25,
       name: "Pina Colada",
       ingredients: [
-        21, 48, 49
+        {
+          ingredientId: 21,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 48,
+          amount: "90ml"
+        },
+        {
+          ingredientId: 49,
+          amount: "30ml"
+        }
       ],
+      method: "Blend all the ingredients with ice in a electric blender, pour into a large goblet or Hurricane glass and serve with straws. Garnish with a slice of pineapple with a cocktail cherry.",
       imgUrl: pina_colada
     },
     {
       cocktailId: 26,
       name: "Rose",
       ingredients: [
-        50, 51
+        {
+          ingredientId: 60,
+          amount: "20ml"
+        },
+        {
+          ingredientId: 50,
+          amount: "20ml"
+        },
+        {
+          ingredientId: 51,
+          amount: "3 Dashes"
+        }
       ],
+      method: "Stir all ingredients with ice and strain into a cocktail glass.",
       imgUrl: rose
     },
     {
       cocktailId: 26,
       name: "Sea Breeze",
       ingredients: [
-        6, 19, 33
+        {
+          ingredientId: 6,
+          amount: "40ml"
+        },
+        {
+          ingredientId: 19,
+          amount: "120ml"
+        },
+        {
+          ingredientId: 33,
+          amount: "30ml"
+        }
       ],
+      method: "Build all ingredients in a rock glass filled with ice. Garnish with lime wedge.",
       imgUrl: sea_breeze
     },
     {
       cocktailId: 27,
       name: "Sex on the Beach",
       ingredients: [
-        6, 54, 19, 28
+        {
+          ingredientId: 6,
+          amount: "40ml"
+        },
+        {
+          ingredientId: 54,
+          amount: "20ml"
+        },
+        {
+          ingredientId: 19,
+          amount: "40ml"
+        },
+        {
+          ingredientId: 28,
+          amount: "40ml"
+        }
       ],
+      method: "Build all ingredients in a highball glass filled with ice. Garnish with orange slice.",
       imgUrl: sex_on_the_beach
     },
     {
       cocktailId: 28,
       name: "Singapore Sling",
       ingredients: [
-        22, 55, 18, 58, 57, 48, 20, 16
+        {
+          ingredientId: 22,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 55,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 18,
+          amount: "7.5ml"
+        },
+        {
+          ingredientId: 58,
+          amount: "7.5ml"
+        },
+        {
+          ingredientId: 57,
+          amount: "10ml"
+        },
+        {
+          ingredientId: 48,
+          amount: "120ml"
+        },
+        {
+          ingredientId: 20,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 16,
+          amount: "1 Dash"
+        }
       ],
+      method: "Pour all ingredients into cocktail shaker filled with ice cubes. Shake well. Strain into highball glass. Garnish with pineapple and cocktail cher",
       imgUrl: singapore_sling
     },
     {
       cocktailId: 29,
       name: "Tequila Sunrise",
       ingredients: [
-        40, 28, 57
+        {
+          ingredientId: 40,
+          amount: "45ml"
+        },
+        {
+          ingredientId: 28,
+          amount: "90ml"
+        },
+        {
+          ingredientId: 57,
+          amount: "15ml"
+        }
       ],
+      method: "Pour tequila and orange juice directly into highball with ice cubes. Add a splash of grenadine to create chromatic effect (sunrise), do not stir. Garnish with orange slice and cherry.",
       imgUrl: tequila_sunrise
-    }*/
+    }
 ];

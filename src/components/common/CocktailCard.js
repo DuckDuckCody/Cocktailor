@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {formatIngredientList} from '../../helpers/formatIngredients'
 import Card, { CardContent, CardMedia } from 'material-ui/Card';
-import Button from 'material-ui/Button';
-import Typography from 'material-ui/Typography';
 
 const CocktailCard = (props) => {
   function handleClick(e) {
