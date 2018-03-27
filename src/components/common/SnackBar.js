@@ -8,8 +8,8 @@ class SnackBar extends React.Component {
     if (reason === 'clickaway') {
       return;
     }
-    
-    this.props.closeSnackBar();
+
+    this.props.closeSnackBar(reason === 'undo');
   };
 
   render() {

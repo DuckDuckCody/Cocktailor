@@ -7,7 +7,11 @@ export var removeIngredient = function(ingredient, ingredients) {
 }
 
 export function addIngredient(ingredient, ingredients) {
-  let ingredientsBuffer = _.clone(ingredients);
+
+  console.log('state')
+  console.log(ingredients)
+
+  let ingredientsBuffer = _.clone(ingredients.ingredients);
   _.find(ingredientsBuffer, {ingredientId: ingredient.ingredientId}).selected = true;
   return ({ingredients: ingredientsBuffer});
 }

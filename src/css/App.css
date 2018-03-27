@@ -91,6 +91,14 @@ button, input[type="submit"], input[type="reset"] {
   font-family: 'Lato', sans-serif;
 }
 
+.bold {
+  font-weight: bold;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
 .title {
   font-size: 2.5em;
   font-family: 'Arimo', sans-serif!important;

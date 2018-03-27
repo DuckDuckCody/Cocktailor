@@ -10,6 +10,13 @@ const CocktailDrawer = (props) => {
   }
 
   const style = {
+    list: {
+      padding: "15px 0",
+      color: 'black'
+    },
+    closeIcon: {
+      color: 'black'
+    },
     padding: {
       padding: "15px 0"
     },
@@ -20,7 +27,7 @@ const CocktailDrawer = (props) => {
 
   return (
     <div className="flex-container drawer animated slideInRight center-text flex-wrap align-content-start">
-        <a className="flex-item flex-basis-100" onClick={handleClose}>
+        <a className="flex-item flex-basis-100" onClick={handleClose} style={style.closeIcon}>
           <i className="close-button fa fa-close float-right"></i>
         </a>
 
@@ -28,7 +35,7 @@ const CocktailDrawer = (props) => {
           {props.selectedCocktail.name}
         </Typography>
 
-        <ul className="flex-item flex-basis-100" style={style.padding}>
+        <ul className="flex-item flex-basis-100" style={style.list}>
           {formatIngredientList(
             props.ingredients,
             props.selectedCocktail.ingredients

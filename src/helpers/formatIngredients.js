@@ -8,6 +8,7 @@ export function formatIngredientList(ingredients, cocktailIngredients) {
 
   var listStyle = {
     listStyleType: 'none',
+    padding: '5px 0'
   }
 
   //todo: try to make this just one map function
@@ -18,19 +19,13 @@ export function formatIngredientList(ingredients, cocktailIngredients) {
     })
 
     formattedIngredients.push(
-      <li key={ingredient.ingredientId} style={listStyle}>
-        <Typography>
+      <li key={ingredient.ingredientId} style={listStyle} className={ingredient.selected ? 'bold underline' : null}>
           {
             cocktailIngredient.amount
               ? <span> {cocktailIngredient.amount} - </span>
               : ""
           }
-          {
-            ingredient.selected
-              ? <b> {ingredient.name} </b>
-              : <span> {ingredient.name} </span>
-          }
-        </Typography>
+          <span> {ingredient.name} </span>
       </li>
     )
   });

@@ -48,7 +48,7 @@ class CocktailBar extends Component {
   addIngredient(ingredient) {
     this.setState(validateIngredient(this.state.ingredients, ingredient), function() {
       if (!this.state.searchError) {
-        this.setState(addIngredient(ingredient, this.state.ingredients), function() {
+        this.setState(addIngredient(ingredient, this.state), function() {
           this.setState(matchCocktails(this.state.cocktails, this.state.ingredients))
           //sortCocktails(this.state.ingredients, this.state.matchedCocktails);
         })
@@ -68,14 +68,13 @@ class CocktailBar extends Component {
     remove
       ? this.removeIngredient(this.state.removingItem)
       : "";
-    this.setState({removingItem: null})
+    this.setState({removingItem: null});
   }
 
   closeSnackBar(undo) {
-    addIngredient(this.state.removedItem)
-    //undo
-      //?
-      //: ''
+    undo
+      ? this.addIngredient(this.state.removedItem)
+      : ''
     this.setState({removedItem: null});
   }
 

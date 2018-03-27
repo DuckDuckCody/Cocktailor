@@ -13,7 +13,9 @@ const CocktailCard = (props) => {
 
   var style = {
     card: {
-      margin: '10px 0'
+      margin: '10px 0',
+      backgroundColor: 'rgb(47, 47, 49)',
+      color: 'white'
     },
     img: {
       height: '151px',
@@ -29,11 +31,11 @@ const CocktailCard = (props) => {
       <Card className="flex-container justify-content-space-evenly align-items-center center-text" style={style.card}>
         <div className="flex-container flex-column flex-item flex-basis-66">
           <CardContent>
-            <Typography style={style.padding_bottom} variant="headline" className="flex-item">
+            <p className="flex-item text large-text white-text">
               {props.cardData.name}
-            </Typography>
+            </p>
 
-            <div className="flex-item" style={style.padding_bottom}>
+            <div className="flex-item white-text" style={style.padding_bottom}>
               <ul>
                 {
                   formatIngredientList(
@@ -44,9 +46,13 @@ const CocktailCard = (props) => {
               </ul>
             </div>
             <div className="flex-item" style={style.padding_bottom}>
-              <Button type="button" onClick={handleClick}>
-                View Cocktail
-              </Button>
+              <button
+                type="button"
+                className="flex-item grey-text button default-button"
+                onClick={handleClick}
+              >
+                VIEW COCKTAIL
+              </button>
             </div>
           </CardContent>
         </div>
