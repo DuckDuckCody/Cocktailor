@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import BarSupplies from './components/BarSupplies'
 import Cocktails from './components/Cocktails'
 import CocktailDrawer from './components/common/CocktailDrawer'
+import IngredientDrawer from './components/common/IngredientDrawer'
 import RemoveIngredientModal from './components/common/RemoveIngredientModal'
 import SnackBar from './components/common/SnackBar'
 import ingredients from './assets/data/ingredients.js'
@@ -19,6 +20,7 @@ class CocktailBar extends Component {
       cocktails: cocktails,
       matchedCocktails: [],
       selectedCocktail: null,
+      selectedIngredient: null,
       searchError: false,
       searchErrorText: "",
       removingItem: null,
@@ -27,11 +29,14 @@ class CocktailBar extends Component {
     this.removeIngredientClick = this.removeIngredientClick.bind(this);
     this.removeIngredient = this.removeIngredient.bind(this);
     this.addIngredient = this.addIngredient.bind(this);
-    this.cocktailClick = this.cocktailClick.bind(this);
-    this.closeDrawer = this.closeDrawer.bind(this);
-    this.dismissWarning = this.dismissWarning.bind(this);
+    this.selectCocktail = this.selectCocktail.bind(this);
+    this.closeCocktailDrawer = this.closeCocktailDrawer.bind(this);
+    this.selectIngredient = this.selectIngredient.bind(this);
+    this.closeIngredientDrawer = this.closeIngredientDrawer.bind(this);
+    this.closeOpenDrawers = this.closeOpenDrawers.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.closeSnackBar = this.closeSnackBar.bind(this);
+    this.dismissWarning = this.dismissWarning.bind(this);
   }
 
   removeIngredientClick(ingredient) {
@@ -56,12 +61,31 @@ class CocktailBar extends Component {
     });
   }
 
-  cocktailClick(cocktail) {
+  selectCocktail(cocktail) {
     this.setState({ selectedCocktail: cocktail });
   }
 
-  closeDrawer() {
+  closeCocktailDrawer() {
     this.setState({ selectedCocktail: null });
+  }
+
+  selectIngredient(ingredient) {
+    this.setState({ selectedIngredient: ingredient });
+  }
+
+  closeIngredientDrawer() {
+    this.setState({ selectedIngredient: null});
+  }
+
+  closeOpenDrawers() {
+    if (this.state.selectedIngredient || this.state.selectedCocktail) {
+      this.setState(
+        {
+          selectedCocktail: null,
+          selectedIngredient: null
+        }
+      );
+    }
   }
 
   closeModal(remove) {
@@ -88,7 +112,10 @@ class CocktailBar extends Component {
   render() {
     return (
       <div>
-        <div className="App flex-container">
+        <div
+          className="App flex-container"
+          onClick = {this.closeOpenDrawers}
+        >
           <div className="flex-item flex-basis-50">
             <BarSupplies
               dismissWarning = {this.dismissWarning}
@@ -103,7 +130,8 @@ class CocktailBar extends Component {
             <Cocktails
               ingredients={this.state.ingredients}
               matchedCocktails={this.state.matchedCocktails}
-              cocktailClick={this.cocktailClick}
+              cocktailClick={this.selectCocktail}
+              ingredientClick={this.selectIngredient}
             />
           </div>
         </div>
@@ -112,7 +140,17 @@ class CocktailBar extends Component {
             <CocktailDrawer
               selectedCocktail = {this.state.selectedCocktail}
               ingredients = {this.state.ingredients}
-              closeDrawer = {this.closeDrawer}
+              closeDrawer = {this.closeCocktailDrawer}
+              ingredientClick={this.selectIngredient}
+            />
+          )
+          : ''
+        }
+        {this.state.selectedIngredient
+          ? (
+            <IngredientDrawer
+              selectedIngredient = {this.state.selectedIngredient}
+              closeDrawer = {this.closeIngredientDrawer}
             />
           )
           : ''

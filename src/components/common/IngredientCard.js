@@ -22,12 +22,9 @@ class IngredientCard extends Component {
         marginTop: '15px'
       },
       img: {
-        height: '151px',
-        width: '151px'
-      },
-      deleteIcon: {
-        height: '38px',
-        width: '38px'
+        height: '150px',
+        width: '150px',
+        backgroundSize: 'contain'
       },
       removeText: {
         padding: '10px 0'

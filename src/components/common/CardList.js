@@ -29,6 +29,7 @@ class IngredientCardList extends Component {
               key = {data[this.props.keyName]}
               ingredients = {this.props.ingredients}
               cocktailClick = {this.props.cocktailClick}
+              ingredientClick = {this.props.ingredientClick}
             />
           );
           break;
@@ -69,6 +70,7 @@ IngredientCardList.propTypes = {
   removeCard: PropTypes.func,
   ingredients: PropTypes.array,
   cocktailClick: PropTypes.func,
+  ingredientClick: PropTypes.func,
   emptyDataTitle: PropTypes.string.isRequired,
   emptyDataDesc: PropTypes.string.isRequired,
 }

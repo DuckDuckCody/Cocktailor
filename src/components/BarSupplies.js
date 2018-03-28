@@ -40,7 +40,7 @@ class BarSupplies extends Component {
       },
       search: {
         flex: '100%'
-      }
+    }
     }
 
     return (

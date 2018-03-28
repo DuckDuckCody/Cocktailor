@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {formatIngredientList} from '../../helpers/formatIngredients'
+import {formatIngredientList} from '../../helpers/formatNames'
 import Card, { CardContent, CardMedia } from 'material-ui/Card';
 
 const CocktailCard = (props) => {
-  function handleClick(e) {
+  function handleMethodClick(e) {
     e.preventDefault();
     props.cocktailClick(props.cardData);
+  }
+
+  function handleIngredientClick(ingredient) {
+    props.ingredientClick(ingredient);
   }
 
   var style = {
@@ -15,11 +19,16 @@ const CocktailCard = (props) => {
       backgroundColor: 'rgb(47, 47, 49)',
       color: 'white'
     },
-    img: {
-      height: '151px',
-      width: '151px'
+    wikipedia: {
+      color: 'rgb(153, 153, 153)',
+      fontSize: '1em'
     },
-    'padding_bottom': {
+    img: {
+      height: '150px',
+      width: '150px',
+      backgroundSize: 'contain'
+    },
+    paddingBottom: {
       paddingBottom: '5px'
     }
   };
@@ -29,16 +38,20 @@ const CocktailCard = (props) => {
       <Card className="flex-container justify-content-space-evenly align-items-center center-text" style={style.card}>
         <div className="flex-container flex-column flex-item flex-basis-66">
           <CardContent>
-            <p className="flex-item text large-text white-text">
+            <p
+              className="flex-item text large-text white-text hover-underline"
+              onClick={handleMethodClick}
+            >
               {props.cardData.name}
             </p>
 
-            <div className="flex-item white-text" style={style.padding_bottom}>
+            <div className="flex-item white-text" style={style.paddingBottom}>
               <ul>
                 {
                   formatIngredientList(
                     props.ingredients,
-                    props.cardData.ingredients
+                    props.cardData.ingredients,
+                    handleIngredientClick
                   )
                 }
               </ul>
@@ -47,14 +60,16 @@ const CocktailCard = (props) => {
               <button
                 type="button"
                 className="flex-item grey-text button default-button"
-                onClick={handleClick}
+                onClick={handleMethodClick}
               >
-                VIEW METHOD
+                VIEW COCKTAIL
               </button>
             </div>
           </CardContent>
         </div>
-        <CardMedia style={style.img} className="flex-item flex-basis-33"
+        <CardMedia className="flex-item flex-basis-33 clickable"
+          onClick = {handleMethodClick}
+          style={style.img}
           image={props.cardData.imgUrl}
           title={props.cardData.name}
           alt={props.cardData.name}
@@ -66,6 +81,7 @@ const CocktailCard = (props) => {
 
 CocktailCard.propTypes = {
   cocktailClick: PropTypes.func.isRequired,
+  ingredientClick: PropTypes.func.isRequired,
   ingredients: PropTypes.array.isRequired,
   cardData: PropTypes.shape({
     cocktailId: PropTypes.number.isRequired,

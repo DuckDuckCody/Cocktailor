@@ -34,24 +34,38 @@ html {
   }
 }
 
-#cocktail::-webkit-scrollbar {
-    width: 6px;
-    background-color: #F5F5F5;
-}
-
 ul, li {
   padding: 0;
   margin: 0;
 }
 
 button, input[type="submit"], input[type="reset"] {
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+#ingredientDrawer, #cocktailDrawer  {
+  -webkit-animation-duration: 0.5s; /* Safari 4+ */
+  -moz-animation-duration:    0.5s; /* Fx 5+ */
+  -o-animation-duration:      0.5s; /* Opera 12+ */
+  animation-duration:         0.5s; /* IE 10+, Fx 29+ */
+}
+
+.push-up {
+  z-index: 10;
+}
+
+.clickable {
+  cursor: pointer;
 }
 
 .button {
@@ -101,7 +115,12 @@ button, input[type="submit"], input[type="reset"] {
   font-weight: bold;
 }
 
-.underline {
+.hover-underline {
+  text-decoration: none;
+}
+
+.hover-underline:hover {
+  cursor: pointer;
   text-decoration: underline;
 }
 
@@ -147,11 +166,12 @@ button, input[type="submit"], input[type="reset"] {
   height: 100%;
   width: 50%;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   top: 0;
   right: 0;
   background-color: white;
   overflow-x: hidden;
+  background-color: rgb(47, 47, 49);
   -webkit-box-shadow: -19px 0px 29px -3px rgba(0,0,0,0.75);
   -moz-box-shadow: -19px 0px 29px -3px rgba(0,0,0,0.75);
   box-shadow: -19px 0px 29px -3px rgba(0,0,0,0.75);

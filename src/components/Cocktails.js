@@ -20,7 +20,7 @@ const Cocktails = (props) => {
   return (
     <div style={style.container}>
       <div className="headerContainer">
-        <div style={style.header_container} className="flex-container ">
+        <div style={style.header_container} className="flex-container">
           {/* Title */}
           <p className = "title" style={style.title}>
             Cocktails
@@ -31,6 +31,7 @@ const Cocktails = (props) => {
       {/* CardList */}
       <CardList
         cocktailClick = {props.cocktailClick}
+        ingredientClick = {props.ingredientClick}
         cardType = 'cocktail'
         ingredients = {props.ingredients}
         cardData = {props.matchedCocktails}
@@ -45,6 +46,7 @@ const Cocktails = (props) => {
 
 Cocktails.propTypes = {
   cocktailClick: PropTypes.func.isRequired,
+  ingredientClick: PropTypes.func.isRequired,
   ingredients: PropTypes.array,
   matchedCocktails: PropTypes.array
 }

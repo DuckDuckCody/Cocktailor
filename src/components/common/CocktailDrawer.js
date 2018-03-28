@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Typography from 'material-ui/Typography';
-import {formatIngredientList} from '../../helpers/formatIngredients.js'
+import {formatIngredientList, formatWikipediaLink} from '../../helpers/formatNames.js'
 
 const CocktailDrawer = (props) => {
   function handleClose(e) {
@@ -11,47 +10,62 @@ const CocktailDrawer = (props) => {
 
   const style = {
     list: {
-      padding: "15px 0",
-      color: 'black'
-    },
-    closeIcon: {
-      color: 'black'
-    },
-    padding: {
       padding: "15px 0"
     },
+    closeIcon: {
+      padding: "10px 10px 0 0"
+    },
+    title: {
+      padding: "15px 0",
+      borderBottom: '1px #FD295D solid'
+    },
     method: {
-      padding: "25px 25px",
-      color: 'black'
+      padding: "25px 25px"
     }
   }
 
   return (
-    <div className="flex-container drawer animated slideInRight center-text flex-wrap align-content-start">
-        <a className="flex-item flex-basis-100" onClick={handleClose} style={style.closeIcon}>
-          <i className="close-button fa fa-close float-right"></i>
+    <div
+      className="drawer animated slideInRight flex-container flex-column align-content-start center-text"
+      id="cocktailDrawer"
+    >
+        <a className="flex-item" onClick={handleClose} style={style.closeIcon}>
+          <i className="close-button fa fa-arrow-right float-right"></i>
         </a>
 
-        <Typography variant="title" className="flex-item flex-basis-100" style={style.padding}>
+        <h2 className="flex-item" style={style.title}>
           {props.selectedCocktail.name}
-        </Typography>
+        </h2>
 
-        <ul className="flex-item flex-basis-100" style={style.list}>
+        <ul className="flex-item" style={style.list}>
           {formatIngredientList(
             props.ingredients,
-            props.selectedCocktail.ingredients
+            props.selectedCocktail.ingredients,
+            props.ingredientClick
           )}
         </ul>
 
-        <p style={style.method}>
+        <p className="flex-item" style={style.method}>
           {props.selectedCocktail.method}
         </p>
+
+        <div className="flex-item">
+          <a
+            target="_blank"
+            className="flex-item grey-text button default-button"
+            href={formatWikipediaLink(props.selectedCocktail.name)}
+          >
+            WIKIPEDIA ARTICLE
+          </a>
+        </div>
+
     </div>
   );
 }
 
 CocktailDrawer.propTypes = {
   closeDrawer: PropTypes.func.isRequired,
+  ingredientClick: PropTypes.func.isRequired,
   ingredients: PropTypes.array.isRequired,
   selectedCocktail: PropTypes.shape({
     cocktailId: PropTypes.number.isRequired,
