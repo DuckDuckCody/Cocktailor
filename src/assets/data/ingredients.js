@@ -305,7 +305,7 @@ export default  [
     },
     {
       ingredientId: 54,
-      name: "Peach schnapps",
+      name: "Peach Schnapps",
       desc: "placeholder",
       imgUrl: ""
     },

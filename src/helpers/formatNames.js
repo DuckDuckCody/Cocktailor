@@ -36,8 +36,10 @@ export function formatIngredientList(ingredients, cocktailIngredients, clickFunc
   return formattedIngredients;
 }
 
-export function formatWikipediaLink(name) {
-  const wikipediaLink = "https://www.wikipedia.org/wiki/"
+export function formatIngredientWikiLink(name) {
+  return "https://www.wikipedia.org/wiki/" + name.toLowerCase().split(' ').join('_');
+}
 
-  return wikipediaLink + name.split(' ').map((name) => name.charAt(0).toUpperCase() + name.slice(1)).join('_')
+export function formatCocktailWikiLink(name) {
+  return "https://www.wikipedia.org/wiki/" + name.toLowerCase().split(' ').map((name) => name.charAt(0).toUpperCase() + name.slice(1)).join('_');
 }

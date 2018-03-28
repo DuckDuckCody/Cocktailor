@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {formatWikipediaLink} from '../../helpers/formatNames.js'
+import {formatIngredientWikiLink} from '../../helpers/formatNames.js'
 
 const IngredientDrawer = (props) => {
   function handleClose(e) {
@@ -38,7 +38,7 @@ const IngredientDrawer = (props) => {
           <a
             target="_blank"
             className="flex-item grey-text button default-button"
-            href={formatWikipediaLink(props.selectedIngredient.name)}
+            href={formatIngredientWikiLink(props.selectedIngredient.name)}
           >
             WIKIPEDIA ARTICLE
           </a>

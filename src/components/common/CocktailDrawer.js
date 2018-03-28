@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {formatIngredientList, formatWikipediaLink} from '../../helpers/formatNames.js'
+import {formatIngredientList, formatCocktailWikiLink} from '../../helpers/formatNames.js'
 
 const CocktailDrawer = (props) => {
   function handleClose(e) {
@@ -53,7 +53,7 @@ const CocktailDrawer = (props) => {
           <a
             target="_blank"
             className="flex-item grey-text button default-button"
-            href={formatWikipediaLink(props.selectedCocktail.name)}
+            href={formatCocktailWikiLink(props.selectedCocktail.name)}
           >
             WIKIPEDIA ARTICLE
           </a>
