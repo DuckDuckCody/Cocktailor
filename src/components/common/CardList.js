@@ -17,6 +17,7 @@ class IngredientCardList extends Component {
                   cardData = {data}
                   key = {data[this.props.keyName]}
                   removeCard = {this.props.removeCard}
+                  ingredientClick = {this.props.ingredientClick}
                 />
               )
             }

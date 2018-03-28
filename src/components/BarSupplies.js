@@ -73,6 +73,7 @@ class BarSupplies extends Component {
           keyName = "ingredientId"
           emptyDataTitle = "No ingredients have been added yet"
           emptyDataDesc = " Click add ingredient to add ingredients to your bar supplies"
+          ingredientClick = {this.props.ingredientClick}
         />
       </div>
     );
@@ -80,6 +81,7 @@ class BarSupplies extends Component {
 }
 
 BarSupplies.propTypes = {
+  ingredientClick: PropTypes.func.isRequired,
   removeIngredient: PropTypes.func.isRequired,
   addIngredient: PropTypes.func.isRequired,
   ingredients: PropTypes.array,

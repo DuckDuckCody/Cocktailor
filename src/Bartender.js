@@ -124,6 +124,7 @@ class CocktailBar extends Component {
               ingredients={this.state.ingredients}
               addIngredient={this.addIngredient}
               removeIngredient={this.removeIngredientClick}
+              ingredientClick={this.selectIngredient}
             />
           </div>
           <div className="flex-item flex-basis-50">

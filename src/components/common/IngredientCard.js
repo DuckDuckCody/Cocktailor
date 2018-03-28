@@ -6,6 +6,11 @@ class IngredientCard extends Component {
   constructor(props) {
     super(props);
     this.remove = this.remove.bind(this);
+    this.handleIngredientClick = this.handleIngredientClick.bind(this);
+  }
+
+  handleIngredientClick() {
+    this.props.ingredientClick(this.props.cardData);
   }
 
   remove() {
@@ -36,7 +41,10 @@ class IngredientCard extends Component {
         <Card className="flex-container justify-content-space-evenly align-items-center center-text" style={style.card}>
           <div className="flex-container flex-column flex-item flex-basis-66">
             <CardContent>
-              <p className="flex-item text large-text white-text">
+              <p
+                className="flex-item text large-text white-text hover-underline"
+                onClick={this.handleIngredientClick}
+              >
                 {this.props.cardData.name}
               </p>
               <button
@@ -49,7 +57,9 @@ class IngredientCard extends Component {
               </button>
             </CardContent>
           </div>
-          <CardMedia style={style.img} className="flex-item flex-basis-33"
+          <CardMedia style={style.img}
+            onClick={this.handleIngredientClick}
+            className="flex-item flex-basis-33 clickable"
             image={this.props.cardData.imgUrl}
             title={this.props.cardData.name}
             alt={this.props.cardData.name}
