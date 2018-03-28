@@ -57,7 +57,8 @@ class IngredientCard extends Component {
               </button>
             </CardContent>
           </div>
-          <CardMedia style={style.img}
+          <CardMedia
+            style={style.img}
             onClick={this.handleIngredientClick}
             className="flex-item flex-basis-33 clickable"
             image={this.props.cardData.imgUrl}

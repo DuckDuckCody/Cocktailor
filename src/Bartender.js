@@ -54,8 +54,9 @@ class CocktailBar extends Component {
     this.setState(validateIngredient(this.state.ingredients, ingredient), function() {
       if (!this.state.searchError) {
         this.setState(addIngredient(ingredient, this.state), function() {
-          this.setState(matchCocktails(this.state.cocktails, this.state.ingredients))
-          //sortCocktails(this.state.ingredients, this.state.matchedCocktails);
+          this.setState(matchCocktails(this.state.cocktails, this.state.ingredients), function() {
+            this.setState(sortCocktails(this.state.ingredients, this.state.matchedCocktails));
+          })
         })
       }
     });

@@ -67,7 +67,8 @@ const CocktailCard = (props) => {
             </div>
           </CardContent>
         </div>
-        <CardMedia className="flex-item flex-basis-33 clickable"
+        <CardMedia
+          className="flex-item flex-basis-33 clickable"
           onClick = {handleMethodClick}
           style={style.img}
           image={props.cardData.imgUrl}
