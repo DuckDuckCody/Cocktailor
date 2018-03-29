@@ -113,13 +113,22 @@ class CocktailBar extends Component {
   }
 
   render() {
+    const style = {
+        ingredientBorder: {
+          borderTop: "2px #10C0FD solid"
+        },
+        cocktailBorder: {
+          borderTop: "2px #FD295D solid"
+        }
+    }
+
     return (
       <div>
         <div
-          className="App flex-container"
+          className="App flex-container flex-wrap"
           onClick = {this.closeOpenDrawers}
         >
-          <div className="flex-item flex-basis-50">
+          <div className="flex-item bar-supplies">
             <BarSupplies
               dismissWarning = {this.dismissWarning}
               searchError = {this.state.searchError}
@@ -130,13 +139,27 @@ class CocktailBar extends Component {
               ingredientClick={this.selectIngredient}
             />
           </div>
-          <div className="flex-item flex-basis-50">
+          <div className="flex-item cocktails">
             <Cocktails
               ingredients={this.state.ingredients}
               matchedCocktails={this.state.matchedCocktails}
               cocktailClick={this.selectCocktail}
               ingredientClick={this.selectIngredient}
             />
+          </div>
+          <div className="phone-nav-bar flex-item flex-basis-100 flex-container center-text align-items-center">
+            <div className="flex-item flex-basis-50" style={style.ingredientBorder}>
+              <i className="fa fa-cutlery clickable"></i> <br />
+              <span className="clickable">
+                Ingredients
+              </span>
+            </div>
+            <div className="flex-item flex-basis-50" style={style.cocktailBorder}>
+              <i className="fa fa-glass clickable"></i> <br />
+              <span className="clickable">
+                Cocktails
+              </span>
+            </div>
           </div>
         </div>
         {this.state.selectedCocktail

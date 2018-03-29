@@ -3,7 +3,6 @@
 }
 
 html {
-  max-height: 100%;
   font-family: 'Lato', sans-serif;
   box-sizing: border-box;
   background-color: rgb(34, 34, 34);
@@ -16,22 +15,61 @@ html {
 @media only screen and (min-width: 1200px) {
   body {
     margin: 0 200px;
-    font-size: 16px;
   }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1119px) {
   body {
     margin: 0 50px;
-    font-size: 14px;
   }
 }
 
+/* Phone Layout*/
 @media only screen and (max-width: 599px) {
   body {
     margin: 0 10px;
-    font-size: 8px;
   }
+
+  .bar-supplies, .cocktails {
+    flex-basis: 100%!important;
+  }
+
+  .cocktails {
+    display: none;
+  }
+
+  .phone-nav-bar {
+    display: flex!important;
+    height: 10vh;
+  }
+
+  .headerContainer {
+    height: 15vh!important;
+  }
+
+  .cardList {
+    height: 75vh!important;
+  }
+}
+
+.phone-nav-bar {
+  display: none;
+}
+
+.bar-supplies, .cocktails {
+  flex-basis: 50%;
+}
+
+.phone-nav-bar i {
+  font-size: 3em;
+}
+
+.headerContainer {
+  height: 15vh;
+}
+
+.cardList {
+  height: 85vh;
 }
 
 ul, li {
@@ -138,14 +176,6 @@ a {
 
 .close-button:hover {
   color: grey;
-}
-
-.headerContainer {
-  height: 15vh;
-}
-
-.cardList {
-  height: 85vh;
 }
 
 .scrollable {

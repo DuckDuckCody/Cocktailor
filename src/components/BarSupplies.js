@@ -23,9 +23,6 @@ class BarSupplies extends Component {
       pad: {
         margin: '0 10px'
       },
-      headerContainer: {
-        height: '20vh'
-      },
       titleContainer: {
         height: '75px',
         display: 'flex',
@@ -61,7 +58,7 @@ class BarSupplies extends Component {
               dismissWarning = {this.props.dismissWarning}
               labelKey = "name"
               valueKey = "ingredientId"
-              placeholder = "Ingredient search"
+              placeholder = "Add ingredients here"
             />
           </div>
         </div>
@@ -72,7 +69,7 @@ class BarSupplies extends Component {
           removeCard = {this.removeIngredient}
           keyName = "ingredientId"
           emptyDataTitle = "No ingredients have been added yet"
-          emptyDataDesc = " Click add ingredient to add ingredients to your bar supplies"
+          emptyDataDesc = "Click add ingredient to add ingredients to your bar supplies"
           ingredientClick = {this.props.ingredientClick}
         />
       </div>
