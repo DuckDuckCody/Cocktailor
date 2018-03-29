@@ -2,6 +2,7 @@
   "name": "Bartender",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://zombiexduck.github.io/Bartender",
   "dependencies": {
     "animate.css": "^3.6.1",
     "create-react-app": "^1.5.2",
