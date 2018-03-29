@@ -14,11 +14,9 @@ export function sortCocktails(ingredients, matchedCocktails) {
     cocktail.numberOfSelectedIngredients = selectedIngredients
   })
 
-  return({
+  return ({
     matchedCocktails: _.orderBy(
-      cocktailBuffer,
-      ['numberOfSelectedIngredients', 'name'],
-      ['desc', 'asc']
+      cocktailBuffer, ['numberOfSelectedIngredients', 'name'], ['desc', 'asc']
     )
   });
 }

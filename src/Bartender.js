@@ -45,8 +45,10 @@ class CocktailBar extends Component {
 
   removeIngredient(ingredient) {
     this.setState(removeIngredient(ingredient, this.state.ingredients), function() {
-      this.setState(matchCocktails(this.state.cocktails, this.state.ingredients))
       this.setState({removedItem: ingredient})
+      this.setState(matchCocktails(this.state.cocktails, this.state.ingredients), function() {
+        this.setState(sortCocktails(this.state.ingredients, this.state.matchedCocktails));
+      })
     });
   }
 

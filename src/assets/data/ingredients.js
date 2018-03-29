@@ -1,25 +1,25 @@
-import rum from '../images/ingredients/rum.png'
-import coke from '../images/ingredients/coca-cola.png'
-import lime from '../images/ingredients/lime.png'
+//import rum from '../images/ingredients/rum.png'
+//import coke from '../images/ingredients/coca-cola.png'
+//mport lime from '../images/ingredients/lime.png'
 
 export default  [
     {
       ingredientId: 1,
       name: "Rum",
       desc: "A dark spirit",
-      imgUrl: rum
+      imgUrl: ""
     },
     {
       ingredientId: 2,
       name: "Coca-Cola",
       desc: "A basic mixer",
-      imgUrl: coke
+      imgUrl: ""
     },
     {
       ingredientId: 3,
       name: "Lime",
       desc: "Add a slice or splash to sweeten",
-      imgUrl: lime
+      imgUrl: ""
     },
     {
       ingredientId: 4,
