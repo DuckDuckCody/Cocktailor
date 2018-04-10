@@ -16,7 +16,9 @@ class PhoneNavBar extends React.Component {
     const style = {
       navBar: {
         width: "100%",
-        height: "5vh"
+        height: "10vh",
+        position: "fixed",
+        bottom: 0
       }
     };
     const { value } = this.state;

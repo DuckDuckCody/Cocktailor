@@ -38,6 +38,7 @@ const Cocktails = (props) => {
         keyName = "cocktailId"
         emptyDataTitle = "No cocktails have been matched yet."
         emptyDataDesc = "Add bar supplies to get matched cocktails"
+        viewPortWidth = {props.viewPortWidth}
       />
       {/* end of CardList */}
     </div>
@@ -48,7 +49,8 @@ Cocktails.propTypes = {
   cocktailClick: PropTypes.func.isRequired,
   ingredientClick: PropTypes.func.isRequired,
   ingredients: PropTypes.array,
-  matchedCocktails: PropTypes.array
+  matchedCocktails: PropTypes.array,
+  viewPortWidth: PropTypes.number.isRequired
 }
 
 export default Cocktails;

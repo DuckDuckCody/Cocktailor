@@ -174,6 +174,7 @@ class CocktailBar extends Component {
               addIngredient={this.addIngredient}
               removeIngredient={this.removeIngredientClick}
               ingredientClick={this.selectIngredient}
+              width={this.state.width}
             />
           </div>
           <div
@@ -184,13 +185,16 @@ class CocktailBar extends Component {
               matchedCocktails={this.state.matchedCocktails}
               cocktailClick={this.selectCocktail}
               ingredientClick={this.selectIngredient}
+              viewPortWidth={this.state.width}
             />
           </div>
           {
             this.state.width < 600
-              ? (<PhoneNavBar
+              ? (
+                <PhoneNavBar
                   navClick = {this.navClick}
-                />)
+                />
+              )
               : ""
           }
         </div>

@@ -6,6 +6,12 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 class IngredientCardList extends Component {
   render() {
+    const style = {
+      phonePadding: {
+        paddingBottom: "10vh"
+      }
+    }
+
     let cards = null;
     if (this.props.cardData.length > 0) {
       switch (this.props.cardType) {
@@ -59,6 +65,11 @@ class IngredientCardList extends Component {
         >
           {cards}
         </ReactCSSTransitionGroup>
+        {
+          this.props.viewPortWidth < 600
+            ? <div style={style.phonePadding}></div>
+            : ""
+        }
       </div>
     );
   }
@@ -74,6 +85,7 @@ IngredientCardList.propTypes = {
   ingredientClick: PropTypes.func,
   emptyDataTitle: PropTypes.string.isRequired,
   emptyDataDesc: PropTypes.string.isRequired,
+  viewPortWidth: PropTypes.number.isRequired
 }
 
 export default IngredientCardList;
