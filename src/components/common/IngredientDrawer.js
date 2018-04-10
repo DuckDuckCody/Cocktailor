@@ -9,9 +9,6 @@ const IngredientDrawer = (props) => {
   }
 
   const style = {
-    list: {
-      padding: "15px 0"
-    },
     closeIcon: {
       padding: "10px 10px 0 0"
     },

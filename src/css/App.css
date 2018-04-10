@@ -34,34 +34,17 @@ html {
     flex-basis: 100%!important;
   }
 
-  .cocktails {
-    display: none;
-  }
-
-  .phone-nav-bar {
-    display: flex!important;
-    height: 10vh;
-  }
-
   .headerContainer {
     height: 15vh!important;
   }
 
   .cardList {
-    height: 75vh!important;
+    height: 80vh!important;
   }
-}
-
-.phone-nav-bar {
-  display: none;
 }
 
 .bar-supplies, .cocktails {
   flex-basis: 50%;
-}
-
-.phone-nav-bar i {
-  font-size: 3em;
 }
 
 .headerContainer {
@@ -190,6 +173,10 @@ a {
 
 .block {
   display: block;
+}
+
+.hidden {
+  display: none!important;
 }
 
 .drawer {

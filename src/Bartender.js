@@ -4,6 +4,7 @@ import Cocktails from './components/Cocktails'
 import CocktailDrawer from './components/common/CocktailDrawer'
 import IngredientDrawer from './components/common/IngredientDrawer'
 import RemoveIngredientModal from './components/common/RemoveIngredientModal'
+import PhoneNavBar from './components/common/PhoneNavBar'
 import SnackBar from './components/common/SnackBar'
 import ingredients from './assets/data/ingredients.js'
 import cocktails from './assets/data/cocktails.js'
@@ -16,6 +17,8 @@ class CocktailBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      width: 0,
+      height: 0,
       ingredients: ingredients,
       cocktails: cocktails,
       matchedCocktails: [],
@@ -24,7 +27,9 @@ class CocktailBar extends Component {
       searchError: false,
       searchErrorText: "",
       removingItem: null,
-      removedItem: null
+      removedItem: null,
+      responsiveShowBarSupplies: true,
+      responsiveShowCocktail: false
     }
     this.removeIngredientClick = this.removeIngredientClick.bind(this);
     this.removeIngredient = this.removeIngredient.bind(this);
@@ -37,6 +42,17 @@ class CocktailBar extends Component {
     this.closeModal = this.closeModal.bind(this);
     this.closeSnackBar = this.closeSnackBar.bind(this);
     this.dismissWarning = this.dismissWarning.bind(this);
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    this.navClick = this.navClick.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
   removeIngredientClick(ingredient) {
@@ -112,14 +128,33 @@ class CocktailBar extends Component {
     })
   }
 
-  render() {
-    const style = {
-        ingredientBorder: {
-          borderTop: "2px #10C0FD solid"
-        },
-        cocktailBorder: {
-          borderTop: "2px #FD295D solid"
+  navClick(navValue) {
+    console.log('nav click in bartender');
+    console.log(navValue);
+    navValue === "barSupplies"
+      ? this.setState(
+        {
+          responsiveShowBarSupplies: true,
+          responsiveShowCocktail: false
         }
+      )
+      : this.setState(
+        {
+          responsiveShowBarSupplies: false,
+          responsiveShowCocktail: true
+        }
+      )
+  }
+
+  render() {
+    let barSuppliesVisibility = "flex-item"
+    let cocktailsVisibility = "flex-item"
+    if (this.state.responsiveShowBarSupplies && this.state.width < 600) {
+      barSuppliesVisibility = "flex-item"
+      cocktailsVisibility = "hidden"
+    } else if (this.state.responsiveShowCocktail && this.state.width < 600) {
+      barSuppliesVisibility = "hidden"
+      cocktailsVisibility = "flex-item"
     }
 
     return (
@@ -128,7 +163,9 @@ class CocktailBar extends Component {
           className="App flex-container flex-wrap"
           onClick = {this.closeOpenDrawers}
         >
-          <div className="flex-item bar-supplies">
+          <div
+            className={"bar-supplies " + barSuppliesVisibility}
+          >
             <BarSupplies
               dismissWarning = {this.dismissWarning}
               searchError = {this.state.searchError}
@@ -139,7 +176,9 @@ class CocktailBar extends Component {
               ingredientClick={this.selectIngredient}
             />
           </div>
-          <div className="flex-item cocktails">
+          <div
+            className={"cocktails " + cocktailsVisibility}
+          >
             <Cocktails
               ingredients={this.state.ingredients}
               matchedCocktails={this.state.matchedCocktails}
@@ -147,20 +186,13 @@ class CocktailBar extends Component {
               ingredientClick={this.selectIngredient}
             />
           </div>
-          <div className="phone-nav-bar flex-item flex-basis-100 flex-container center-text align-items-center">
-            <div className="flex-item flex-basis-50" style={style.ingredientBorder}>
-              <i className="fa fa-cutlery clickable"></i> <br />
-              <span className="clickable">
-                Ingredients
-              </span>
-            </div>
-            <div className="flex-item flex-basis-50" style={style.cocktailBorder}>
-              <i className="fa fa-glass clickable"></i> <br />
-              <span className="clickable">
-                Cocktails
-              </span>
-            </div>
-          </div>
+          {
+            this.state.width < 600
+              ? (<PhoneNavBar
+                  navClick = {this.navClick}
+                />)
+              : ""
+          }
         </div>
         {this.state.selectedCocktail
           ? (
