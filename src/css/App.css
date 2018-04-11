@@ -32,7 +32,7 @@ html {
   }
 
   body {
-    margin: 0 10px;
+    margin: 0 0;
   }
 
   .bar-supplies, .cocktails {
@@ -40,11 +40,16 @@ html {
   }
 
   .headerContainer {
-    height: 15vh!important;
+    height: 15%!important;
+    text-align: center!important;
   }
 
   .cardList {
-    height: 75vh!important;
+    height: 75%!important;
+  }
+
+  .drawer {
+    width: 66%!important;
   }
 }
 
@@ -95,6 +100,7 @@ a {
 }
 
 .button {
+  padding: 10px 15px;
   font-size: 1em;
   border-bottom: 1px solid transparent;
   transition: all 0.25s linear;
@@ -109,7 +115,8 @@ a {
 }
 
 .default-button {
-  color: rgb(153, 153, 153);
+  background-color: #00d1b2;
+  color: white!important;
 }
 
 .default-button:hover  {
@@ -241,4 +248,11 @@ a {
 .empty-text-container p {
   color: grey;
   font-style: italic;
+}
+
+/* Material Ui Class Overwrites */
+.MuiBottomNavigationAction-selected-3 {
+    /* selected highlight color of bottom navigation */
+    color: #00d1b2!important;
+    padding-top: 6px;
 }

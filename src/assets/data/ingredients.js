@@ -1,14 +1,4 @@
-//import rum from '../images/ingredients/rum.png'
-//import coke from '../images/ingredients/coca-cola.png'
-//mport lime from '../images/ingredients/lime.png'
-
 export default  [
-    {
-      ingredientId: 1,
-      name: "Rum",
-      desc: "A dark spirit",
-      imgUrl: ""
-    },
     {
       ingredientId: 2,
       name: "Coca-Cola",
@@ -329,7 +319,7 @@ export default  [
     },
     {
       ingredientId: 59,
-      name: "Ginger beverage",
+      name: "Ginger Beer",
       desc: "placeholder",
       imgUrl: ""
     },

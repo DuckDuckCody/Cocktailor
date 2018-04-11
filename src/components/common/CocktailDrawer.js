@@ -30,7 +30,7 @@ const CocktailDrawer = (props) => {
       id="cocktailDrawer"
     >
         <a className="flex-item" onClick={handleClose} style={style.closeIcon}>
-          <i className="close-button fa fa-arrow-right float-right"></i>
+          <i className="close-button fa fa-times float-right"></i>
         </a>
 
         <h2 className="flex-item" style={style.title}>
@@ -52,7 +52,7 @@ const CocktailDrawer = (props) => {
         <div className="flex-item">
           <a
             target="_blank"
-            className="flex-item grey-text button default-button"
+            className="flex-item button default-button"
             href={formatCocktailWikiLink(props.selectedCocktail.name)}
           >
             WIKIPEDIA ARTICLE

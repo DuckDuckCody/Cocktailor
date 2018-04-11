@@ -14,6 +14,10 @@ const Cocktails = (props) => {
       alignItems: 'center',
       marginBottom: '10px',
       borderBottom: '2px #FD295D solid'
+    },
+    title: {
+      flex: '100%',
+      color: 'white'
     }
   }
 

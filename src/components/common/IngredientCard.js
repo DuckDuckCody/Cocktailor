@@ -49,7 +49,7 @@ class IngredientCard extends Component {
               </p>
               <button
                 type="button"
-                className="flex-item grey-text button default-button"
+                className="flex-item button default-button"
                 onClick={this.remove}
                 style={style.button}
               >
@@ -57,14 +57,7 @@ class IngredientCard extends Component {
               </button>
             </CardContent>
           </div>
-          <CardMedia
-            style={style.img}
-            onClick={this.handleIngredientClick}
-            className="flex-item flex-basis-33 clickable"
-            image={this.props.cardData.imgUrl}
-            title={this.props.cardData.name}
-            alt={this.props.cardData.name}
-          />
+          
         </Card>
       </div>
     );

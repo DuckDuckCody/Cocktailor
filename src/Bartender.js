@@ -129,8 +129,6 @@ class CocktailBar extends Component {
   }
 
   navClick(navValue) {
-    console.log('nav click in bartender');
-    console.log(navValue);
     navValue === "barSupplies"
       ? this.setState(
         {
@@ -164,7 +162,7 @@ class CocktailBar extends Component {
           onClick = {this.closeOpenDrawers}
         >
           <div
-            className={"bar-supplies " + barSuppliesVisibility}
+            className={"animated fadeIn bar-supplies " + barSuppliesVisibility}
           >
             <BarSupplies
               dismissWarning = {this.dismissWarning}
@@ -178,7 +176,7 @@ class CocktailBar extends Component {
             />
           </div>
           <div
-            className={"cocktails " + cocktailsVisibility}
+            className={"animated fadeIn cocktails " + cocktailsVisibility}
           >
             <Cocktails
               ingredients={this.state.ingredients}
@@ -214,6 +212,8 @@ class CocktailBar extends Component {
             <IngredientDrawer
               selectedIngredient = {this.state.selectedIngredient}
               closeDrawer = {this.closeIngredientDrawer}
+              ingredients = {this.state.ingredients}
+              addIngredient = {this.addIngredient}
             />
           )
           : ''

@@ -1,11 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {formatIngredientWikiLink} from '../../helpers/formatNames.js'
+import {isIngredientSelected} from '../../helpers/isIngredientSelected.js'
 
 const IngredientDrawer = (props) => {
   function handleClose(e) {
     e.preventDefault();
     props.closeDrawer();
+  }
+
+  function handleAdd(e) {
+    e.preventDefault();
+    props.addIngredient(props.selectedIngredient)
   }
 
   const style = {
@@ -15,8 +21,13 @@ const IngredientDrawer = (props) => {
     title: {
       padding: "15px 0",
       borderBottom: '1px #10C0FD solid'
+    },
+    addIngredientButton: {
+      paddingTop: "25px"
     }
   }
+
+  let ingredientIsSelected = isIngredientSelected(props.selectedIngredient.ingredientId, props.ingredients)
 
   return (
     <div
@@ -24,7 +35,7 @@ const IngredientDrawer = (props) => {
       id="ingredientDrawer"
     >
         <a className="flex-item" onClick={handleClose} style={style.closeIcon}>
-          <i className="close-button fa fa-arrow-right float-right"></i>
+          <i className="close-button fa fa-times float-right"></i>
         </a>
 
         <h2 className="flex-item" style={style.title}>
@@ -34,18 +45,35 @@ const IngredientDrawer = (props) => {
         <div className="flex-item">
           <a
             target="_blank"
-            className="flex-item grey-text button default-button"
+            className="flex-item button default-button"
             href={formatIngredientWikiLink(props.selectedIngredient.name)}
           >
             WIKIPEDIA ARTICLE
           </a>
         </div>
+
+        {
+          !ingredientIsSelected
+            ? (
+              <div
+                className="flex-item"
+                style={style.addIngredientButton}
+              >
+                <button type="button" onClick={handleAdd} className="button default-button">
+                  ADD INGREDIENT TO BAR SUPPLIES
+                </button>
+              </div>
+            )
+            : ""
+        }
     </div>
   );
 }
 
 IngredientDrawer.propTypes = {
   closeDrawer: PropTypes.func.isRequired,
+  addIngredient: PropTypes.func.isRequired,
+  ingredients: PropTypes.array.isRequired,
   selectedIngredient: PropTypes.shape({
     ingredientId: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,

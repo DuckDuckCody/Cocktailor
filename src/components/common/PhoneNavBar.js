@@ -13,12 +13,17 @@ class PhoneNavBar extends React.Component {
   }
 
   render() {
+    //
     const style = {
       navBar: {
         width: "100%",
-        height: "10vh",
+        height: "10%",
         position: "fixed",
-        bottom: 0
+        bottom: 0,
+        backgroundColor: 'rgb(22, 22, 22)'
+      },
+      buttons: {
+        color: 'white'
       }
     };
     const { value } = this.state;
@@ -30,10 +35,15 @@ class PhoneNavBar extends React.Component {
           showLabels
           style = {style.navBar}
         >
-          <BottomNavigationAction label="Bar Supplies" icon={<i className="fa fa-cutlery"></i>} />
+          <BottomNavigationAction
+            label="Bar Supplies"
+            icon={<i className="fa fa-cutlery"></i>}
+            style={style.buttons}
+          />
           <BottomNavigationAction
             label="Cocktail"
             icon={<i className="fa fa-glass"></i>}
+            style={style.buttons}
           />
         </BottomNavigation>
     )
