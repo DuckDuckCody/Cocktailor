@@ -30,7 +30,7 @@ class SnackBar extends React.Component {
           }}
           message={
             <span id="message-id">
-              {this.props.nameRemoved} has been removed
+              {this.props.nameRemoved} {this.props.message}
             </span>}
           action={[
             <Button key="undo" color="secondary" size="small"
@@ -50,6 +50,7 @@ class SnackBar extends React.Component {
 
 SnackBar.propTypes = {
   open: PropTypes.bool.isRequired,
+  message: PropTypes.string.isRequired,
   nameRemoved: PropTypes.string.isRequired,
   closeSnackBar: PropTypes.func.isRequired
 };

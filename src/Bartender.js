@@ -28,6 +28,7 @@ class CocktailBar extends Component {
       searchErrorText: "",
       removingItem: null,
       removedItem: null,
+      addedItem: null,
       responsiveShowBarSupplies: true,
       responsiveShowCocktail: false
     }
@@ -40,7 +41,8 @@ class CocktailBar extends Component {
     this.closeIngredientDrawer = this.closeIngredientDrawer.bind(this);
     this.closeOpenDrawers = this.closeOpenDrawers.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.closeSnackBar = this.closeSnackBar.bind(this);
+    this.closeRemovedSnackBar = this.closeRemovedSnackBar.bind(this);
+    this.closeAddedSnackBar = this.closeAddedSnackBar.bind(this);
     this.dismissWarning = this.dismissWarning.bind(this);
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.navClick = this.navClick.bind(this);
@@ -72,6 +74,7 @@ class CocktailBar extends Component {
     this.setState(validateIngredient(this.state.ingredients, ingredient), function() {
       if (!this.state.searchError) {
         this.setState(addIngredient(ingredient, this.state), function() {
+          this.setState({addedItem: ingredient})
           this.setState(matchCocktails(this.state.cocktails, this.state.ingredients), function() {
             this.setState(sortCocktails(this.state.ingredients, this.state.matchedCocktails));
           })
@@ -114,11 +117,18 @@ class CocktailBar extends Component {
     this.setState({removingItem: null});
   }
 
-  closeSnackBar(undo) {
+  closeRemovedSnackBar(undo) {
     undo
       ? this.addIngredient(this.state.removedItem)
       : ''
     this.setState({removedItem: null});
+  }
+
+  closeAddedSnackBar(undo) {
+    undo
+      ? this.removeIngredient(this.state.addedItem)
+      : ''
+    this.setState({addedItem: null});
   }
 
   dismissWarning() {
@@ -232,8 +242,20 @@ class CocktailBar extends Component {
           ? (
             <SnackBar
               open = {true}
+              message = "has been removed"
               nameRemoved = {this.state.removedItem.name}
-              closeSnackBar = {this.closeSnackBar}
+              closeSnackBar = {this.closeRemovedSnackBar}
+            />
+          )
+          : ''
+        }
+        {this.state.addedItem
+          ? (
+            <SnackBar
+              open = {true}
+              message = "has been added"
+              nameRemoved = {this.state.addedItem.name}
+              closeSnackBar = {this.closeAddedSnackBar}
             />
           )
           : ''
