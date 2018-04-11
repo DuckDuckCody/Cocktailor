@@ -66,7 +66,7 @@ class IngredientCardList extends Component {
           {cards}
         </ReactCSSTransitionGroup>
         {
-          this.props.viewPortWidth < 600
+          this.props.inPhoneLayout
             ? <div style={style.phonePadding}></div>
             : ""
         }
@@ -85,7 +85,7 @@ IngredientCardList.propTypes = {
   ingredientClick: PropTypes.func,
   emptyDataTitle: PropTypes.string.isRequired,
   emptyDataDesc: PropTypes.string.isRequired,
-  viewPortWidth: PropTypes.number.isRequired
+  inPhoneLayout: PropTypes.number
 }
 
 export default IngredientCardList;

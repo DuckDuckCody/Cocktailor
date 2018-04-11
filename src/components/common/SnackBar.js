@@ -14,16 +14,32 @@ class SnackBar extends React.Component {
 
   render() {
     const open = this.props.open
+    const style = {
+      closeButton: {
+        color: 'white'
+      }
+    }
+    //snack bar at top for phones to not overlap with the phone nav bar
+    const anchorOrigin = (
+      this.props.inPhoneLayout
+      ?
+        {
+          vertical: 'top',
+          horizontal: 'left',
+        }
+      :
+        {
+          vertical: 'bottom',
+          horizontal: 'left',
+        }
+    )
 
     return (
       <div>
         <Snackbar
-          anchorOrigin={{
-          vertical: 'bottom',
-            horizontal: 'left',
-          }}
+          anchorOrigin={anchorOrigin}
           open={open}
-          autoHideDuration={6000}
+          autoHideDuration={2500}
           onClose={this.handleClose}
           SnackbarContentProps={{
             'aria-describedby': 'message-id',
@@ -37,7 +53,7 @@ class SnackBar extends React.Component {
               onClick={(e) => this.handleClose(e, 'undo')}>
               UNDO
             </Button>,
-            <Button key="remove" color="secondary" size="small"
+            <Button key="remove" color="secondary" size="small" style={style.closeButton}
               onClick={(e) => this.handleClose()}>
               <i className="fa fa-close"></i>
             </Button>
@@ -52,7 +68,8 @@ SnackBar.propTypes = {
   open: PropTypes.bool.isRequired,
   message: PropTypes.string.isRequired,
   nameRemoved: PropTypes.string.isRequired,
-  closeSnackBar: PropTypes.func.isRequired
+  closeSnackBar: PropTypes.func.isRequired,
+  inPhoneLayout: PropTypes.bool.isRequired
 };
 
 export default SnackBar;

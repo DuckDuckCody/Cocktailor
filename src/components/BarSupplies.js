@@ -37,7 +37,7 @@ class BarSupplies extends Component {
       },
       search: {
         flex: '100%'
-    }
+      }
     }
 
     return (
@@ -71,6 +71,7 @@ class BarSupplies extends Component {
           emptyDataTitle = "No ingredients have been added yet"
           emptyDataDesc = "Click add ingredient to add ingredients to your bar supplies"
           ingredientClick = {this.props.ingredientClick}
+          inPhoneLayout = {this.props.inPhoneLayout}
         />
       </div>
     );
@@ -84,7 +85,8 @@ BarSupplies.propTypes = {
   ingredients: PropTypes.array,
   searchErrorText: PropTypes.string,
   searchError: PropTypes.bool,
-  dismissWarning: PropTypes.func
+  dismissWarning: PropTypes.func,
+  inPhoneLayout: PropTypes.boolean
 }
 
 export default BarSupplies;

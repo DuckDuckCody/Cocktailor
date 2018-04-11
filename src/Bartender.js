@@ -17,8 +17,7 @@ class CocktailBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      width: 0,
-      height: 0,
+      inPhoneLayout: false,
       ingredients: ingredients,
       cocktails: cocktails,
       matchedCocktails: [],
@@ -54,7 +53,7 @@ class CocktailBar extends Component {
   }
 
   updateWindowDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
+    this.setState({ inPhoneLayout: window.innerWidth < 600 });
   }
 
   removeIngredientClick(ingredient) {
@@ -157,10 +156,10 @@ class CocktailBar extends Component {
   render() {
     let barSuppliesVisibility = "flex-item"
     let cocktailsVisibility = "flex-item"
-    if (this.state.responsiveShowBarSupplies && this.state.width < 600) {
+    if (this.state.responsiveShowBarSupplies && this.state.inPhoneLayout) {
       barSuppliesVisibility = "flex-item"
       cocktailsVisibility = "hidden"
-    } else if (this.state.responsiveShowCocktail && this.state.width < 600) {
+    } else if (this.state.responsiveShowCocktail && this.state.inPhoneLayout) {
       barSuppliesVisibility = "hidden"
       cocktailsVisibility = "flex-item"
     }
@@ -182,7 +181,7 @@ class CocktailBar extends Component {
               addIngredient={this.addIngredient}
               removeIngredient={this.removeIngredientClick}
               ingredientClick={this.selectIngredient}
-              width={this.state.width}
+              inPhoneLayout={this.state.inPhoneLayout}
             />
           </div>
           <div
@@ -193,11 +192,11 @@ class CocktailBar extends Component {
               matchedCocktails={this.state.matchedCocktails}
               cocktailClick={this.selectCocktail}
               ingredientClick={this.selectIngredient}
-              viewPortWidth={this.state.width}
+              inPhoneLayout={this.state.inPhoneLayout}
             />
           </div>
           {
-            this.state.width < 600
+            this.state.inPhoneLayout
               ? (
                 <PhoneNavBar
                   navClick = {this.navClick}
@@ -245,6 +244,7 @@ class CocktailBar extends Component {
               message = "has been removed"
               nameRemoved = {this.state.removedItem.name}
               closeSnackBar = {this.closeRemovedSnackBar}
+              inPhoneLayout = {this.state.inPhoneLayout}
             />
           )
           : ''
@@ -256,6 +256,7 @@ class CocktailBar extends Component {
               message = "has been added"
               nameRemoved = {this.state.addedItem.name}
               closeSnackBar = {this.closeAddedSnackBar}
+              inPhoneLayout = {this.state.inPhoneLayout}
             />
           )
           : ''
