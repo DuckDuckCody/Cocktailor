@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CardList from './common/CardList';
-import Search from './common/Search';
 
 class BarSupplies extends Component {
   constructor(props) {
@@ -34,9 +33,6 @@ class BarSupplies extends Component {
       title: {
         flex: '100%',
         color: 'white'
-      },
-      search: {
-        flex: '100%'
       }
     }
 
@@ -48,19 +44,6 @@ class BarSupplies extends Component {
               Bar Supplies
             </p>
           </div>
-
-          <div style={style.item}>
-            <Search
-              searchValues = {this.props.ingredients}
-              handleChange = {this.searchChange}
-              error = {this.props.searchError}
-              errorText = {this.props.searchErrorText}
-              dismissWarning = {this.props.dismissWarning}
-              labelKey = "name"
-              valueKey = "ingredientId"
-              placeholder = "Add ingredients here"
-            />
-          </div>
         </div>
 
         <CardList
@@ -68,8 +51,8 @@ class BarSupplies extends Component {
           cardData = {this.props.ingredients}
           removeCard = {this.removeIngredient}
           keyName = "ingredientId"
-          emptyDataTitle = "No ingredients have been added yet"
-          emptyDataDesc = "Click add ingredient to add ingredients to your bar supplies"
+          emptyDataTitle = "No bar supplies have been added yet"
+          emptyDataDesc = "Click the plus button in the bottom left corder to add bar supplies"
           ingredientClick = {this.props.ingredientClick}
           inPhoneLayout = {this.props.inPhoneLayout}
         />
@@ -86,7 +69,7 @@ BarSupplies.propTypes = {
   searchErrorText: PropTypes.string,
   searchError: PropTypes.bool,
   dismissWarning: PropTypes.func,
-  inPhoneLayout: PropTypes.boolean
+  inPhoneLayout: PropTypes.bool
 }
 
 export default BarSupplies;

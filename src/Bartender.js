@@ -4,8 +4,10 @@ import Cocktails from './components/Cocktails'
 import CocktailDrawer from './components/common/CocktailDrawer'
 import IngredientDrawer from './components/common/IngredientDrawer'
 import RemoveIngredientModal from './components/common/RemoveIngredientModal'
+import AddIngredientModal from './components/common/AddIngredientModal'
 import PhoneNavBar from './components/common/PhoneNavBar'
 import SnackBar from './components/common/SnackBar'
+import FloatingAddButton from './components/common/FloatingAddButton'
 import ingredients from './assets/data/ingredients.js'
 import cocktails from './assets/data/cocktails.js'
 import {validateIngredient} from './helpers/validateIngredients.js'
@@ -29,7 +31,8 @@ class CocktailBar extends Component {
       removedItem: null,
       addedItem: null,
       responsiveShowBarSupplies: true,
-      responsiveShowCocktail: false
+      responsiveShowCocktail: false,
+      addingItems: false
     }
     this.removeIngredientClick = this.removeIngredientClick.bind(this);
     this.removeIngredient = this.removeIngredient.bind(this);
@@ -39,12 +42,15 @@ class CocktailBar extends Component {
     this.selectIngredient = this.selectIngredient.bind(this);
     this.closeIngredientDrawer = this.closeIngredientDrawer.bind(this);
     this.closeOpenDrawers = this.closeOpenDrawers.bind(this);
-    this.closeModal = this.closeModal.bind(this);
+    this.closeRemoveModal = this.closeRemoveModal.bind(this);
+    this.closeAddModal = this.closeAddModal.bind(this);
     this.closeRemovedSnackBar = this.closeRemovedSnackBar.bind(this);
     this.closeAddedSnackBar = this.closeAddedSnackBar.bind(this);
     this.dismissWarning = this.dismissWarning.bind(this);
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     this.navClick = this.navClick.bind(this);
+    this.handleAddButtonClick = this.handleAddButtonClick.bind(this);
+    this.searchChange = this.searchChange.bind(this);
   }
 
   componentDidMount() {
@@ -82,6 +88,14 @@ class CocktailBar extends Component {
     });
   }
 
+  handleAddButtonClick() {
+    this.setState({addingItems: true})
+  }
+
+  searchChange(ingredient) {
+    this.addIngredient(ingredient);
+  }
+
   selectCocktail(cocktail) {
     this.setState({ selectedCocktail: cocktail });
   }
@@ -109,11 +123,15 @@ class CocktailBar extends Component {
     }
   }
 
-  closeModal(remove) {
+  closeRemoveModal(remove) {
     remove
       ? this.removeIngredient(this.state.removingItem)
       : "";
     this.setState({removingItem: null});
+  }
+
+  closeAddModal() {
+    this.setState({addingItems: false})
   }
 
   closeRemovedSnackBar(undo) {
@@ -167,7 +185,7 @@ class CocktailBar extends Component {
     return (
       <div>
         <div
-          className="App flex-container flex-wrap"
+          className="App flex-container flex-no-wrap"
           onClick = {this.closeOpenDrawers}
         >
           <div
@@ -204,6 +222,11 @@ class CocktailBar extends Component {
               )
               : ""
           }
+        <FloatingAddButton
+          inPhoneLayout = {this.state.inPhoneLayout}
+          snackBarIsOpen = {this.state.addedItem || this.state.removedItem}
+          handleClick = {this.handleAddButtonClick}
+        />
         </div>
         {this.state.selectedCocktail
           ? (
@@ -231,8 +254,22 @@ class CocktailBar extends Component {
           ? (
             <RemoveIngredientModal
               open = {true}
-              closeModal = {this.closeModal}
+              closeModal = {this.closeRemoveModal}
               nameRemoving = {this.state.removingItem.name}
+            />
+          )
+          : ''
+        }
+        {this.state.addingItems
+          ? (
+            <AddIngredientModal
+              open={true}
+              closeModal = {this.closeAddModal}
+              ingredients = {this.state.ingredients}
+              searchError = {this.state.searchError}
+              errorText = {this.state.searchErrorText}
+              dismissWarning = {this.dismissWarning}
+              searchChange = {this.searchChange}
             />
           )
           : ''

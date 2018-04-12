@@ -1,6 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withStyles } from 'material-ui/styles';
 import BottomNavigation, { BottomNavigationAction } from 'material-ui/BottomNavigation';
+
+const styles = {
+  root: {
+    color: 'white'
+  }
+}
 
 class PhoneNavBar extends React.Component {
   state = {
@@ -13,39 +20,37 @@ class PhoneNavBar extends React.Component {
   }
 
   render() {
-    //
     const style = {
       navBar: {
         width: "100%",
-        height: "10%",
+        height: "10vh",
         position: "fixed",
         bottom: 0,
         backgroundColor: 'rgb(22, 22, 22)'
-      },
-      buttons: {
-        color: 'white'
       }
     };
-    const { value } = this.state;
 
+    const { value } = this.state;
     return (
       <BottomNavigation
-          value={value}
-          onChange={this.handleChange}
-          showLabels
-          style = {style.navBar}
-        >
-          <BottomNavigationAction
-            label="Bar Supplies"
-            icon={<i className="fa fa-cutlery"></i>}
-            style={style.buttons}
-          />
-          <BottomNavigationAction
-            label="Cocktail"
-            icon={<i className="fa fa-glass"></i>}
-            style={style.buttons}
-          />
-        </BottomNavigation>
+        value={value}
+        onChange={this.handleChange}
+        showLabels
+        style = {style.navBar}
+      >
+        <BottomNavigationAction
+          className="bottomNavButtons"
+          label="Bar Supplies"
+          icon={<i className="fa fa-cutlery"></i>}
+          style={{color: value === 0 ? '#10C0FD' : 'white'}}
+        />
+        <BottomNavigationAction
+          className="bottomNavButtons"
+          label="Cocktail"
+          icon={<i className="fa fa-glass"></i>}
+          style={{color: value === 1 ? '#10C0FD' : 'white'}}
+        />
+      </BottomNavigation>
     )
   }
 }
@@ -54,4 +59,4 @@ PhoneNavBar.propTypes = {
   navClick: PropTypes.func.isRequired
 }
 
-export default PhoneNavBar;
+export default withStyles(styles)(PhoneNavBar);

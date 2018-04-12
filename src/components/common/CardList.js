@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import IngredientCard from './IngredientCard'
 import CocktailCard from './CocktailCard'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import _ from 'lodash'
 
 class IngredientCardList extends Component {
   render() {
@@ -16,18 +17,24 @@ class IngredientCardList extends Component {
     if (this.props.cardData.length > 0) {
       switch (this.props.cardType) {
         case 'ingredient':
-          cards = this.props.cardData.map((data) => {
-            if (data.selected) {
-              return (
-                <IngredientCard
-                  cardData = {data}
-                  key = {data[this.props.keyName]}
-                  removeCard = {this.props.removeCard}
-                  ingredientClick = {this.props.ingredientClick}
-                />
-              )
-            }
-          });
+          let selectedIngredients = _.filter(this.props.cardData, {selected: true})
+          console.log('selectedIngredients')
+          console.log(selectedIngredients)
+          if (selectedIngredients.length !== 0) {
+            console.log('mapping ingredients')
+            cards = selectedIngredients.map((ingredient) => {
+              if (ingredient.selected) {
+                return (
+                  <IngredientCard
+                    cardData = {ingredient}
+                    key = {ingredient[this.props.keyName]}
+                    removeCard = {this.props.removeCard}
+                    ingredientClick = {this.props.ingredientClick}
+                  />
+                )
+              }
+            });
+          }
           break;
         case 'cocktail':
           cards = this.props.cardData.map((data) =>
@@ -45,7 +52,9 @@ class IngredientCardList extends Component {
             Unrecognised Card Type
           </p>
       }
-    } else {
+    }
+
+    if (cards === null || cards.length === 0) {
       cards = (<div className="empty-data-container">
         <h3>
           {this.props.emptyDataTitle}
@@ -85,7 +94,7 @@ IngredientCardList.propTypes = {
   ingredientClick: PropTypes.func,
   emptyDataTitle: PropTypes.string.isRequired,
   emptyDataDesc: PropTypes.string.isRequired,
-  inPhoneLayout: PropTypes.number
+  inPhoneLayout: PropTypes.bool
 }
 
 export default IngredientCardList;

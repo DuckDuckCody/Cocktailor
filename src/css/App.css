@@ -13,6 +13,10 @@ html {
   padding: 0;
 }
 
+div {
+  /*border: 2px blue solid;*/
+}
+
 @media screen and (min-width: 1200px) {
   body {
     margin: 0 200px;
@@ -40,12 +44,12 @@ html {
   }
 
   .headerContainer {
-    height: 15%!important;
+    height: 15vh!important;
     text-align: center!important;
   }
 
   .cardList {
-    height: 75%!important;
+    height: 75vh!important;
   }
 
   .drawer {
@@ -58,11 +62,11 @@ html {
 }
 
 .headerContainer {
-  height: 15vh;
+  height: 10vh;
 }
 
 .cardList {
-  height: 85vh;
+  height: 90vh;
 }
 
 ul, li {
@@ -129,6 +133,10 @@ a {
 
 .white-text {
   color: white!important
+}
+
+.black-text {
+  color: black!important
 }
 
 .large-text {
@@ -250,9 +258,23 @@ a {
   font-style: italic;
 }
 
+.bottomNavButtons {
+  font-size: 1.75em;
+}
+
 /* Material Ui Class Overwrites */
 .MuiBottomNavigationAction-selected-3 {
     /* selected highlight color of bottom navigation */
     color: #00d1b2!important;
     padding-top: 6px;
+}
+
+.paper {
+  flex: 0 1 auto;
+  margin: 32px;
+  display: flex;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: visible!important;
+  flex-direction: column;
 }

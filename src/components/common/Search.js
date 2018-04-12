@@ -48,7 +48,7 @@ class Search extends Component {
                  </span>
                    <button
                      type='button'
-                     className="flex-item flex-basis-25 button-close"
+                     className="flex-item flex-basis-25 button-close black-text"
                      onClick={this.props.dismissWarning}
                    >
                      Dismiss &nbsp;

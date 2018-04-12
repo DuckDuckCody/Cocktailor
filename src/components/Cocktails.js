@@ -40,8 +40,8 @@ const Cocktails = (props) => {
         ingredients = {props.ingredients}
         cardData = {props.matchedCocktails}
         keyName = "cocktailId"
-        emptyDataTitle = "No cocktails have been matched yet."
-        emptyDataDesc = "Add bar supplies to get matched cocktails"
+        emptyDataTitle = "No cocktails have been matched yet"
+        emptyDataDesc = "Click the plus button in the bottom left corder to add bar supplies"
         inPhoneLayout = {props.inPhoneLayout}
       />
       {/* end of CardList */}
@@ -54,7 +54,7 @@ Cocktails.propTypes = {
   ingredientClick: PropTypes.func.isRequired,
   ingredients: PropTypes.array,
   matchedCocktails: PropTypes.array,
-  inPhoneLayout: PropTypes.number
+  inPhoneLayout: PropTypes.bool
 }
 
 export default Cocktails;

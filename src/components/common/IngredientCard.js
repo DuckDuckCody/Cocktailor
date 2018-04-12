@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Card, { CardContent, CardMedia } from 'material-ui/Card';
+import Card, { CardContent } from 'material-ui/Card';
 
 class IngredientCard extends Component {
   constructor(props) {
@@ -57,7 +57,7 @@ class IngredientCard extends Component {
               </button>
             </CardContent>
           </div>
-          
+
         </Card>
       </div>
     );
