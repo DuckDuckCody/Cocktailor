@@ -163,13 +163,13 @@ export default  [
     },
     {
       ingredientId: 29,
-      name: "Cream",
+      name: "Fresh Cream",
       desc: "placeholder",
       imgUrl: ""
     },
     {
       ingredientId: 30,
-      name: "Crème de cacao (white)",
+      name: "Crème de cacao",
       desc: "placeholder",
       imgUrl: ""
     },
@@ -328,5 +328,107 @@ export default  [
       name: "Kirsch",
       desc: "placeholder",
       imgUrl: ""
-    }
+    },
+    {
+      ingredientId: 61,
+      name: "Campari",
+      desc: "placeholder",
+      imgUrl: ""
+    },
+    {
+      ingredientId: 62,
+      name: "Red Vermouth",
+      desc: "placeholder",
+      imgUrl: ""
+    },
+    {
+      ingredientId: 63,
+      name: "Calvados",
+      desc: "placeholder",
+      imgUrl: ""
+    },
+    {
+      ingredientId: 64,
+      name: "Apricot Brandy",
+      desc: "placeholder",
+      imgUrl: ""
+    },
+    {
+      ingredientId: 65,
+      name: "Orange Bitters",
+      desc: "placeholder",
+      imgUrl: ""
+    },
+    {
+      ingredientId: 66,
+      name: "Raspberry Syrup",
+      desc: "placeholder",
+      imgUrl: ""
+    },
+    {
+      ingredientId: 67,
+      name: "Egg White",
+      desc: "placeholder",
+      imgUrl: ""
+    },
+    {
+      ingredientId: 68,
+      name: "Simple Syrup",
+      desc: "placeholder",
+      imgUrl: ""
+    },
+    {
+      ingredientId: 69,
+      name: "Peach Bitters",
+      desc: "placeholder",
+      imgUrl: ""
+    },
+    {
+      ingredientId: 70,
+      name: "Absinth",
+      desc: "placeholder",
+      imgUrl: ""
+    },
+    {
+      ingredientId: 71,
+      name: "Water",
+      desc: "placeholder",
+      imgUrl: ""
+    },
+    {
+      ingredientId: 72,
+      name: "Red Port",
+      desc: "placeholder",
+      imgUrl: ""
+    },
+    {
+      ingredientId: 73,
+      name: "Egg Yolk",
+      desc: "placeholder",
+      imgUrl: ""
+    },
+    {
+      ingredientId: 74,
+      name: "Orange Flower Water",
+      desc: "placeholder",
+      imgUrl: ""
+    },
+    {
+      ingredientId: 75,
+      name: "Vanilla Extract",
+      desc: "placeholder",
+      imgUrl: ""
+    },
+    {
+      ingredientId: 76,
+      name: "Drambule",
+      desc: "placeholder",
+      imgUrl: ""
+    },
+    {
+      ingredientId: 77,
+      name: "Crème de menthe (white)",
+      desc: "placeholder",
+      imgUrl: ""
+    },
 ];

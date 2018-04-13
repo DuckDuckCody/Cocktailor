@@ -29,6 +29,7 @@ import singapore_sling from '../images/cocktails/singapore_sling.jpg'
 import tequila_sunrise from '../images/cocktails/tequila_sunrise.jpg'
 
 export default  [
+    //IBA contemporary classics start
     {
       cocktailId: 1,
       name: "Bellini",
@@ -709,5 +710,647 @@ export default  [
       ],
       method: "Pour tequila and orange juice directly into highball with ice cubes. Add a splash of grenadine to create chromatic effect (sunrise), do not stir. Garnish with orange slice and cherry.",
       imgUrl: tequila_sunrise
-    }
+    },
+    //IBA contemporary classics end
+    //IBA the unforgettables start
+    {
+      cocktailId: 30,
+      name: "Alexander",
+      ingredients: [
+        {
+          ingredientId: 15,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 30,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 29,
+          amount: "30ml"
+        }
+      ],
+      method: "Shake and strain into a chilled cocktail glass. Sprinkle with fresh ground nutmeg.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 31,
+      name: "Americano",
+      ingredients: [
+        {
+          ingredientId: 61,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 62,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 47,
+          amount: "A Splash"
+        }
+      ],
+      method: "Mix the ingredients directly in an old-fashioned glass filled with ice-cubes, add a splash of soda water and garnish with half orange slice.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 32,
+      name: "Angel Face",
+      ingredients: [
+        {
+          ingredientId: 63,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 22,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 64,
+          amount: "30ml"
+        }
+      ],
+      method: "Pour all ingredients into a shaker with ice. Shake. Strain into a cocktail glass.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 33,
+      name: "Aviation",
+      ingredients: [
+        {
+          ingredientId: 22,
+          amount: "45ml"
+        },
+        {
+          ingredientId: 32,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 9,
+          amount: "15ml"
+        }
+      ],
+      method: "Shake and strain into a chilled cocktail glass.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 34,
+      name: "Bacardi",
+      ingredients: [
+        {
+          ingredientId: 21,
+          amount: "45ml"
+        },
+        {
+          ingredientId: 10,
+          amount: "20ml"
+        },
+        {
+          ingredientId: 57,
+          amount: "10ml"
+        }
+      ],
+      method: "Pour all ingredients into shaker with ice cubes, shake well, strain into chilled cocktail glass.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 35,
+      name: "Between the Sheets",
+      ingredients: [
+        {
+          ingredientId: 15,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 21,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 26,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 9,
+          amount: "20ml"
+        }
+      ],
+      method: "Pour all ingredients into shaker with ice cubes, shake, strain into chilled cocktail glass.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 36,
+      name: "Casino",
+      ingredients: [
+        {
+          ingredientId: 22,
+          amount: "40ml"
+        },
+        {
+          ingredientId: 32,
+          amount: "10ml"
+        },
+        {
+          ingredientId: 65,
+          amount: "10ml"
+        },
+        {
+          ingredientId: 9,
+          amount: "20ml"
+        }
+      ],
+      method: "Pour all ingredients into shaker with ice cubes, shake well. Strain into chilled cocktail glass and garnish with a lemon twist and a marachino cherry.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 37,
+      name: "Clover Club",
+      ingredients: [
+        {
+          ingredientId: 22,
+          amount: "45ml"
+        },
+        {
+          ingredientId: 66,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 9,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 67,
+          amount: "A Few Drops"
+        }
+      ],
+      method: "Pour all ingredients into cocktail shaker filled with ice. Shake well. Strain into cocktail glass.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 38,
+      name: "Daiquiri",
+      ingredients: [
+        {
+          ingredientId: 21,
+          amount: "45ml"
+        },
+        {
+          ingredientId: 68,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 20,
+          amount: "25ml"
+        }
+      ],
+      method: "Shake and strain into a cocktail glass.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 39,
+      name: "Derby",
+      ingredients: [
+        {
+          ingredientId: 22,
+          amount: "60ml"
+        },
+        {
+          ingredientId: 69,
+          amount: "2 Drops"
+        },
+        {
+          ingredientId: 46,
+          amount: "2 Leafs"
+        }
+      ],
+      method: "Pour all ingredients into a mixing glass with ice. Stir. Strain into a cocktail glass. Garnish with a fresh mint leaves in the drink.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 40,
+      name: "Dry Martini",
+      ingredients: [
+        {
+          ingredientId: 22,
+          amount: "60ml"
+        },
+        {
+          ingredientId: 50,
+          amount: "10ml"
+        }
+      ],
+      method: "Pour all ingredients into mixing glass with ice cubes. Stir well. Strain in chilled martini glass. Squeeze oil from lemon peel onto the drink, or garnish with olive.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 41,
+      name: "Gin Fizz",
+      ingredients: [
+        {
+          ingredientId: 22,
+          amount: "45ml"
+        },
+        {
+          ingredientId: 23,
+          amount: "10ml"
+        },
+        {
+          ingredientId: 9,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 47,
+          amount: "80ml"
+        }
+      ],
+      method: "Shake all ingredients with ice cubes, except soda water. Pour into tumbler. Top with soda water. Garnish with lemon slice.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 42,
+      name: "Manhattan",
+      ingredients: [
+        {
+          ingredientId: 36,
+          amount: "50ml"
+        },
+        {
+          ingredientId: 62,
+          amount: "10ml"
+        },
+        {
+          ingredientId: 16,
+          amount: "1 Dash"
+        }
+      ],
+      method: "Pour all ingredients into mixing glass with ice cubes. Stir well. Strain into chilled cocktail glass.Garnish with cocktail cherry.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 43,
+      name: "Mary Pickford",
+      ingredients: [
+        {
+          ingredientId: 21,
+          amount: "60ml"
+        },
+        {
+          ingredientId: 32,
+          amount: "10ml"
+        },
+        {
+          ingredientId: 57,
+          amount: "10ml"
+        },
+        {
+          ingredientId: 48,
+          amount: "60ml"
+        }
+      ],
+      method: "Shake and strain into a chilled large cocktail glass.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 44,
+      name: "Monkey Gland",
+      ingredients: [
+        {
+          ingredientId: 22,
+          amount: "50ml"
+        },
+        {
+          ingredientId: 28,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 70,
+          amount: "2 Drops"
+        },
+        {
+          ingredientId: 57,
+          amount: "2 Drops"
+        }
+      ],
+      method: "Shake and strain into a chilled cocktail glass.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 45,
+      name: "Negroni",
+      ingredients: [
+        {
+          ingredientId: 22,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 61,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 62,
+          amount: "30ml"
+        }
+      ],
+      method: "Pour all ingredients directly into old-fashioned glass filled with ice. Stir gently.Garnish with half orange slice.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 46,
+      name: "Old Fashioned",
+      ingredients: [
+        {
+          ingredientId: 36,
+          amount: "45ml"
+        },
+        {
+          ingredientId: 16,
+          amount: "2 Dashes"
+        },
+        {
+          ingredientId: 17,
+          amount: "1 Cube"
+        },
+        {
+          ingredientId: 71,
+          amount: "Few Dashes"
+        }
+      ],
+      method: "Place sugar cube in old-fashioned glass and saturate with bitters, add a dash of plain water. Muddle until dissolve. Fill the glass with ice cubes and add whiskey. Garnish with orange slice and a cocktail cherry.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 47,
+      name: "Paradise",
+      ingredients: [
+        {
+          ingredientId: 22,
+          amount: "35ml"
+        },
+        {
+          ingredientId: 64,
+          amount: "20ml"
+        },
+        {
+          ingredientId: 28,
+          amount: "15ml"
+        }
+      ],
+      method: "Pour all ingredients into cocktail shaker filled with ice. Shake and strain into chilled cocktail glass.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 48,
+      name: "Planter's Punch",
+      ingredients: [
+        {
+          ingredientId: 42,
+          amount: "45ml"
+        },
+        {
+          ingredientId: 28,
+          amount: "35ml"
+        },
+        {
+          ingredientId: 48,
+          amount: "35ml"
+        },
+        {
+          ingredientId: 9,
+          amount: "20ml"
+        },
+        {
+          ingredientId: 57,
+          amount: "10ml"
+        },
+        {
+          ingredientId: 23,
+          amount: "10ml"
+        },
+        {
+          ingredientId: 16,
+          amount: "3 to 4 Dashes"
+        }
+      ],
+      method: "Pour all ingredients, except the bitters, into shaker filled with ice. Shake well. Pour into large glass, filled with ice. Add Angostura bitters, “on top”. Garnish with cocktail cherry and pineapple.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 49,
+      name: "Porto Flip",
+      ingredients: [
+        {
+          ingredientId: 34,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 72,
+          amount: "45ml"
+        },
+        {
+          ingredientId: 73,
+          amount: "10ml"
+        }
+      ],
+      method: "Pour all ingredients into cocktail shaker filled with ice. Shake well. Strain into cocktail glass. Sprinkle with fresh ground nutmeg.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 50,
+      name: "Ramos Gin Fizz",
+      ingredients: [
+        {
+          ingredientId: 22,
+          amount: "45ml"
+        },
+        {
+          ingredientId: 23,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 20,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 9,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 29,
+          amount: "60ml"
+        },
+        {
+          ingredientId: 67,
+          amount: "1 Egg Worth"
+        },
+        {
+          ingredientId: 74,
+          amount: "3 Dashes"
+        },
+        {
+          ingredientId: 75,
+          amount: "2 Drops"
+        }
+      ],
+      method: "Pour all ingredients (except soda) in a mixing glass, dry shake (no ice) for two minutes, add ice and hard shake for another minute. Strain into a highball glass without ice, top with soda.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 51,
+      name: "Rusty Nail",
+      ingredients: [
+        {
+          ingredientId: 36,
+          amount: "45ml"
+        },
+        {
+          ingredientId: 76,
+          amount: "25ml"
+        },
+      ],
+      method: "Pour all ingredients directly into old-fashioned glass filled with ice. Stir gently. Garnish with lemon twist.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 52,
+      name: "Sazerac",
+      ingredients: [
+        {
+          ingredientId: 15,
+          amount: "50ml"
+        },
+        {
+          ingredientId: 70,
+          amount: "10ml"
+        },
+        {
+          ingredientId: 17,
+          amount: "1 Cube"
+        },
+        {
+          ingredientId: 16,
+          amount: "2 Dashes"
+        },
+      ],
+      method: "Rinse a chilled old-fashioned glass with the absinthe, add crushed ice and set it aside. Stir the remaining ingredients over ice and set it aside. Discard the ice and any excess absinthe from the prepared glass, and strain the drink into the glass. Add the Lemon peel for garnish. Note: The original recipe changed after the American Civil War, rye whiskey substituted cognac as it became hard to obtain.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 53,
+      name: "Screwdriver",
+      ingredients: [
+        {
+          ingredientId: 6,
+          amount: "50ml"
+        },
+        {
+          ingredientId: 28,
+          amount: "100ml"
+        }
+      ],
+      method: "Pour all ingredients into a highball glass filled with ice. Stir gently. Garnish with an orange slice.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 54,
+      name: "Sidecar",
+      ingredients: [
+        {
+          ingredientId: 15,
+          amount: "50ml"
+        },
+        {
+          ingredientId: 26,
+          amount: "20ml"
+        },
+        {
+          ingredientId: 9,
+          amount: "20ml"
+        }
+      ],
+      method: "Pour all ingredients into cocktail shaker filled with ice. Shake well and strain into cocktail glass.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 55,
+      name: "Stinger",
+      ingredients: [
+        {
+          ingredientId: 15,
+          amount: "50ml"
+        },
+        {
+          ingredientId: 77,
+          amount: "20ml"
+        }
+      ],
+      method: "Pour all ingredients into a mixing glass with ice. Stir. Strain into a cocktail glass.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 56,
+      name: "Tuxedo",
+      ingredients: [
+        {
+          ingredientId: 22,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 50,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 32,
+          amount: "1/2 Bar Spoon"
+        },
+        {
+          ingredientId: 70,
+          amount: "1/2 Bar Spoon"
+        },
+        {
+          ingredientId: 65,
+          amount: "3 Dashes"
+        }
+      ],
+      method: "Stir all ingredients with ice and strain into cocktail glass. Garnish with a cocktail cherry and a lemon zest twist.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 57,
+      name: "Whisky Sour",
+      ingredients: [
+        {
+          ingredientId: 36,
+          amount: "45ml"
+        },
+        {
+          ingredientId: 23,
+          amount: "15ml"
+        },
+        {
+          ingredientId: 9,
+          amount: "30ml"
+        }
+      ],
+      method: "Dash egg white (Optional: if used shake little harder to foam up the egg white). Pour all ingredients into cocktail shaker filled with ice. Shake well. Strain in cocktail glass. If served ‘On the rocks’, strain ingredients into old-fashioned glass filled with ice. Garnish with half orange slice and maraschino cherry.",
+      imgUrl: ''
+    },
+    {
+      cocktailId: 58,
+      name: "White Lady",
+      ingredients: [
+        {
+          ingredientId: 22,
+          amount: "40ml"
+        },
+        {
+          ingredientId: 26,
+          amount: "30ml"
+        },
+        {
+          ingredientId: 9,
+          amount: "20ml"
+        }
+      ],
+      method: "Add all ingredients into cocktail shaker filled with ice. Shake well and strain into large cocktail glass.",
+      imgUrl: ''
+    },
 ];
