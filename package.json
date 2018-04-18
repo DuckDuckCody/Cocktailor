@@ -1,6 +1,7 @@
 {
-  "name": "Suggest Me Cocktails",
+  "name": "Suggest-Me-Cocktails",
   "version": "0.1.0",
+  "homepage": "http://zombiexduck.github.io/Suggest-Me-Cocktails",
   "private": true,
   "dependencies": {
     "animate.css": "^3.6.1",

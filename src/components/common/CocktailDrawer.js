@@ -20,7 +20,8 @@ const CocktailDrawer = (props) => {
       borderBottom: '1px #FD295D solid'
     },
     method: {
-      padding: "25px 25px"
+      padding: "25px 25px",
+      lineHeight: "1.5em"
     }
   }
 

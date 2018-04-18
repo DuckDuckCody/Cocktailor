@@ -8,6 +8,7 @@ import AddIngredientModal from './components/common/AddIngredientModal'
 import PhoneNavBar from './components/common/PhoneNavBar'
 import SnackBar from './components/common/SnackBar'
 import FloatingAddButton from './components/common/FloatingAddButton'
+import IconBanner from './components/common/IconBanner'
 import ingredients from './assets/data/ingredients.js'
 import cocktails from './assets/data/cocktails.js'
 import {validateIngredient} from './helpers/validateIngredients.js'
@@ -184,6 +185,7 @@ class CocktailBar extends Component {
 
     return (
       <div>
+      
         <div
           className="App flex-container flex-no-wrap"
           onClick = {this.closeOpenDrawers}

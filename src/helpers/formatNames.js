@@ -20,7 +20,7 @@ export function formatIngredientList(ingredients, cocktailIngredients, clickFunc
     formattedIngredients.push(
       <li key={ingredientBuffer.ingredientId}
         style={listStyle}
-        className={ingredientBuffer.selected ? 'bold hover-underline' : 'hover-underline'}
+        className={ingredientBuffer.selected ? 'bold italic hover-underline' : 'hover-underline'}
         onClick={!_.isUndefined(clickFunction) ? (e) => clickFunction(_.cloneDeep(ingredientBuffer)) : null}
       >
           {

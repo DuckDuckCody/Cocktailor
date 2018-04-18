@@ -27,6 +27,35 @@ import sea_breeze from '../images/cocktails/sea_breeze.jpg'
 import sex_on_the_beach from '../images/cocktails/sex_on_beach.jpg'
 import singapore_sling from '../images/cocktails/singapore_sling.jpg'
 import tequila_sunrise from '../images/cocktails/tequila_sunrise.jpg'
+import alexander from '../images/cocktails/alexander.jpg'
+import americano from '../images/cocktails/americano.jpg'
+import angel_face from '../images/cocktails/angel_face.jpg'
+import aviation from '../images/cocktails/aviation.jpg'
+import bacardi from '../images/cocktails/bacardi.jpg'
+import between_sheets from '../images/cocktails/between_sheets.jpg'
+import casino from '../images/cocktails/casino.jpg'
+import clover_club from '../images/cocktails/clover_club.jpg'
+import daiquiri from '../images/cocktails/daiquiri.jpg'
+import derby from '../images/cocktails/derby.jpg'
+import dry_martini from '../images/cocktails/dry_martini.jpg'
+import gin_fizz from '../images/cocktails/gin_fizz.jpg'
+import manhattan from '../images/cocktails/manhattan.jpg'
+import mary_pickford from '../images/cocktails/mary_pickford.jpg'
+import monkey_gland from '../images/cocktails/monkey_gland.jpg'
+import negroni from '../images/cocktails/negroni.jpg'
+import old_fashioned from '../images/cocktails/old_fashioned.jpg'
+import paradise from '../images/cocktails/paradise.jpg'
+import planters_punch from '../images/cocktails/planters_punch.jpg'
+import porto_flip from '../images/cocktails/planters_punch.jpg'
+import ramos_fizz from '../images/cocktails/ramos_fizz.jpg'
+import rusty_nail from '../images/cocktails/rusty_nail.jpg'
+import sazerac from '../images/cocktails/rusty_nail.jpg'
+import screwdriver from '../images/cocktails/screwdriver.jpg'
+import sidecar from '../images/cocktails/sidecar.jpg'
+import stinger from '../images/cocktails/stinger.jpg'
+import tuxedo from '../images/cocktails/tuxedo.jpg'
+import whiskey_sour from '../images/cocktails/whiskey_sour.jpg'
+import white_lady from '../images/cocktails/white_lady.jpg'
 
 export default  [
     //IBA contemporary classics start
@@ -731,7 +760,7 @@ export default  [
         }
       ],
       method: "Shake and strain into a chilled cocktail glass. Sprinkle with fresh ground nutmeg.",
-      imgUrl: ''
+      imgUrl: alexander
     },
     {
       cocktailId: 31,
@@ -751,7 +780,7 @@ export default  [
         }
       ],
       method: "Mix the ingredients directly in an old-fashioned glass filled with ice-cubes, add a splash of soda water and garnish with half orange slice.",
-      imgUrl: ''
+      imgUrl: americano
     },
     {
       cocktailId: 32,
@@ -771,7 +800,7 @@ export default  [
         }
       ],
       method: "Pour all ingredients into a shaker with ice. Shake. Strain into a cocktail glass.",
-      imgUrl: ''
+      imgUrl: angel_face
     },
     {
       cocktailId: 33,
@@ -791,7 +820,7 @@ export default  [
         }
       ],
       method: "Shake and strain into a chilled cocktail glass.",
-      imgUrl: ''
+      imgUrl: aviation
     },
     {
       cocktailId: 34,
@@ -811,7 +840,7 @@ export default  [
         }
       ],
       method: "Pour all ingredients into shaker with ice cubes, shake well, strain into chilled cocktail glass.",
-      imgUrl: ''
+      imgUrl: bacardi
     },
     {
       cocktailId: 35,
@@ -835,7 +864,7 @@ export default  [
         }
       ],
       method: "Pour all ingredients into shaker with ice cubes, shake, strain into chilled cocktail glass.",
-      imgUrl: ''
+      imgUrl: between_sheets
     },
     {
       cocktailId: 36,
@@ -859,7 +888,7 @@ export default  [
         }
       ],
       method: "Pour all ingredients into shaker with ice cubes, shake well. Strain into chilled cocktail glass and garnish with a lemon twist and a marachino cherry.",
-      imgUrl: ''
+      imgUrl: casino
     },
     {
       cocktailId: 37,
@@ -883,7 +912,7 @@ export default  [
         }
       ],
       method: "Pour all ingredients into cocktail shaker filled with ice. Shake well. Strain into cocktail glass.",
-      imgUrl: ''
+      imgUrl: clover_club
     },
     {
       cocktailId: 38,
@@ -903,7 +932,7 @@ export default  [
         }
       ],
       method: "Shake and strain into a cocktail glass.",
-      imgUrl: ''
+      imgUrl: daiquiri
     },
     {
       cocktailId: 39,
@@ -923,7 +952,7 @@ export default  [
         }
       ],
       method: "Pour all ingredients into a mixing glass with ice. Stir. Strain into a cocktail glass. Garnish with a fresh mint leaves in the drink.",
-      imgUrl: ''
+      imgUrl: derby
     },
     {
       cocktailId: 40,
@@ -939,7 +968,7 @@ export default  [
         }
       ],
       method: "Pour all ingredients into mixing glass with ice cubes. Stir well. Strain in chilled martini glass. Squeeze oil from lemon peel onto the drink, or garnish with olive.",
-      imgUrl: ''
+      imgUrl: dry_martini
     },
     {
       cocktailId: 41,
@@ -963,7 +992,7 @@ export default  [
         }
       ],
       method: "Shake all ingredients with ice cubes, except soda water. Pour into tumbler. Top with soda water. Garnish with lemon slice.",
-      imgUrl: ''
+      imgUrl: gin_fizz
     },
     {
       cocktailId: 42,
@@ -983,7 +1012,7 @@ export default  [
         }
       ],
       method: "Pour all ingredients into mixing glass with ice cubes. Stir well. Strain into chilled cocktail glass.Garnish with cocktail cherry.",
-      imgUrl: ''
+      imgUrl: manhattan
     },
     {
       cocktailId: 43,
@@ -1007,7 +1036,7 @@ export default  [
         }
       ],
       method: "Shake and strain into a chilled large cocktail glass.",
-      imgUrl: ''
+      imgUrl: mary_pickford
     },
     {
       cocktailId: 44,
@@ -1031,7 +1060,7 @@ export default  [
         }
       ],
       method: "Shake and strain into a chilled cocktail glass.",
-      imgUrl: ''
+      imgUrl: monkey_gland
     },
     {
       cocktailId: 45,
@@ -1051,7 +1080,7 @@ export default  [
         }
       ],
       method: "Pour all ingredients directly into old-fashioned glass filled with ice. Stir gently.Garnish with half orange slice.",
-      imgUrl: ''
+      imgUrl: negroni
     },
     {
       cocktailId: 46,
@@ -1075,7 +1104,7 @@ export default  [
         }
       ],
       method: "Place sugar cube in old-fashioned glass and saturate with bitters, add a dash of plain water. Muddle until dissolve. Fill the glass with ice cubes and add whiskey. Garnish with orange slice and a cocktail cherry.",
-      imgUrl: ''
+      imgUrl: old_fashioned
     },
     {
       cocktailId: 47,
@@ -1095,7 +1124,7 @@ export default  [
         }
       ],
       method: "Pour all ingredients into cocktail shaker filled with ice. Shake and strain into chilled cocktail glass.",
-      imgUrl: ''
+      imgUrl: paradise
     },
     {
       cocktailId: 48,
@@ -1131,7 +1160,7 @@ export default  [
         }
       ],
       method: "Pour all ingredients, except the bitters, into shaker filled with ice. Shake well. Pour into large glass, filled with ice. Add Angostura bitters, “on top”. Garnish with cocktail cherry and pineapple.",
-      imgUrl: ''
+      imgUrl: planters_punch
     },
     {
       cocktailId: 49,
@@ -1151,7 +1180,7 @@ export default  [
         }
       ],
       method: "Pour all ingredients into cocktail shaker filled with ice. Shake well. Strain into cocktail glass. Sprinkle with fresh ground nutmeg.",
-      imgUrl: ''
+      imgUrl: porto_flip
     },
     {
       cocktailId: 50,
@@ -1191,7 +1220,7 @@ export default  [
         }
       ],
       method: "Pour all ingredients (except soda) in a mixing glass, dry shake (no ice) for two minutes, add ice and hard shake for another minute. Strain into a highball glass without ice, top with soda.",
-      imgUrl: ''
+      imgUrl: ramos_fizz
     },
     {
       cocktailId: 51,
@@ -1207,7 +1236,7 @@ export default  [
         },
       ],
       method: "Pour all ingredients directly into old-fashioned glass filled with ice. Stir gently. Garnish with lemon twist.",
-      imgUrl: ''
+      imgUrl: rusty_nail
     },
     {
       cocktailId: 52,
@@ -1231,7 +1260,7 @@ export default  [
         },
       ],
       method: "Rinse a chilled old-fashioned glass with the absinthe, add crushed ice and set it aside. Stir the remaining ingredients over ice and set it aside. Discard the ice and any excess absinthe from the prepared glass, and strain the drink into the glass. Add the Lemon peel for garnish. Note: The original recipe changed after the American Civil War, rye whiskey substituted cognac as it became hard to obtain.",
-      imgUrl: ''
+      imgUrl: sazerac
     },
     {
       cocktailId: 53,
@@ -1247,7 +1276,7 @@ export default  [
         }
       ],
       method: "Pour all ingredients into a highball glass filled with ice. Stir gently. Garnish with an orange slice.",
-      imgUrl: ''
+      imgUrl: screwdriver
     },
     {
       cocktailId: 54,
@@ -1267,7 +1296,7 @@ export default  [
         }
       ],
       method: "Pour all ingredients into cocktail shaker filled with ice. Shake well and strain into cocktail glass.",
-      imgUrl: ''
+      imgUrl: sidecar
     },
     {
       cocktailId: 55,
@@ -1283,7 +1312,7 @@ export default  [
         }
       ],
       method: "Pour all ingredients into a mixing glass with ice. Stir. Strain into a cocktail glass.",
-      imgUrl: ''
+      imgUrl: stinger
     },
     {
       cocktailId: 56,
@@ -1311,7 +1340,7 @@ export default  [
         }
       ],
       method: "Stir all ingredients with ice and strain into cocktail glass. Garnish with a cocktail cherry and a lemon zest twist.",
-      imgUrl: ''
+      imgUrl: tuxedo
     },
     {
       cocktailId: 57,
@@ -1331,7 +1360,7 @@ export default  [
         }
       ],
       method: "Dash egg white (Optional: if used shake little harder to foam up the egg white). Pour all ingredients into cocktail shaker filled with ice. Shake well. Strain in cocktail glass. If served ‘On the rocks’, strain ingredients into old-fashioned glass filled with ice. Garnish with half orange slice and maraschino cherry.",
-      imgUrl: ''
+      imgUrl: whiskey_sour
     },
     {
       cocktailId: 58,
@@ -1351,6 +1380,6 @@ export default  [
         }
       ],
       method: "Add all ingredients into cocktail shaker filled with ice. Shake well and strain into large cocktail glass.",
-      imgUrl: ''
+      imgUrl: white_lady
     },
 ];

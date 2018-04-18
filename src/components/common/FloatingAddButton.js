@@ -12,7 +12,7 @@ const FloatingAddButton = (props) => {
     addButtonContainerStyle: {
       bottom: !props.inPhoneLayout ? (props.snackBarIsOpen ? '75px' : '25px') : '12.5%',
       position: 'fixed',
-      left: '25px',
+      right: '25px',
       transition: 'bottom 0.25s ease'
     },
     addButtonStyle: {

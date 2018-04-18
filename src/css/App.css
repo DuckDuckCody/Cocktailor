@@ -1,5 +1,5 @@
 *, *:before, *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
@@ -11,10 +11,6 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-div {
-  /*border: 2px blue solid;*/
 }
 
 @media screen and (min-width: 1200px) {
@@ -156,6 +152,10 @@ a {
   font-weight: bold;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .hover-underline {
   text-decoration: none;
 }
@@ -165,8 +165,16 @@ a {
   text-decoration: underline;
 }
 
+.icon-banner {
+  font-size: 2em;
+  height: 10vh;
+  text-align: center;
+  font-family: 'Arimo', sans-serif;
+  font-weight: bold;
+}
+
 .title {
-  font-size: 2.5em;
+  font-size: 1.5em;
   font-family: 'Arimo', sans-serif!important;
   font-weight: bold;
 }
