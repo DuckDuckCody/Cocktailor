@@ -23,12 +23,8 @@ class BarSupplies extends Component {
         margin: '0 10px'
       },
       titleContainer: {
-        height: '75px',
         display: 'flex',
-        flexFlow: 'row nowrap',
-        alignItems: 'center',
-        marginBottom: '10px',
-        borderBottom: '2px #10C0FD solid'
+        textAlign: 'center'
       },
       title: {
         flex: '100%',

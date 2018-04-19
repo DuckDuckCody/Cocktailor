@@ -10,17 +10,16 @@ const CocktailDrawer = (props) => {
 
   const style = {
     list: {
-      padding: "15px 0"
+      padding: "15px 0 0 0"
     },
     closeIcon: {
       padding: "10px 10px 0 0"
     },
     title: {
-      padding: "15px 0",
-      borderBottom: '1px #FD295D solid'
+      padding: "15px 0"
     },
     method: {
-      padding: "25px 25px",
+      padding: "15px 20%",
       lineHeight: "1.5em"
     }
   }

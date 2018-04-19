@@ -16,8 +16,11 @@ const CocktailCard = (props) => {
   var style = {
     card: {
       margin: '10px 0',
-      backgroundColor: 'rgb(47, 47, 49)',
-      color: 'white'
+      color: 'white',
+      background: 'rgb(45,48,60)',
+      background: '-moz-linear-gradient(top, rgba(45,48,60,1) 0%, rgba(53,53,56,1) 100%)' ,
+      background: '-webkit-linear-gradient(top, rgba(45,48,60,1) 0%,rgba(53,53,56,1) 100%)' ,
+      background: 'linear-gradient(to bottom, rgba(45,48,60,1) 0%,rgba(53,53,56,1) 100%)' ,
     },
     wikipedia: {
       color: 'rgb(153, 153, 153)',

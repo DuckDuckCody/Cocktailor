@@ -205,7 +205,7 @@ export default  [
     },
     {
       ingredientId: 36,
-      name: "whiskey",
+      name: "Whiskey",
       desc: "placeholder",
       imgUrl: ""
     },

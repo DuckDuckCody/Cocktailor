@@ -19,11 +19,13 @@ const IngredientDrawer = (props) => {
       padding: "10px 10px 0 0"
     },
     title: {
-      padding: "15px 0",
-      borderBottom: '1px #10C0FD solid'
+      padding: "15px 0"
+    },
+    wikiButton: {
+      marginTop: "25px"
     },
     addIngredientButton: {
-      paddingTop: "25px"
+      marginTop: "25px"
     }
   }
 
@@ -42,7 +44,7 @@ const IngredientDrawer = (props) => {
           {props.selectedIngredient.name}
         </h2>
 
-        <div className="flex-item">
+        <div className="flex-item" style={style.wikiButton}>
           <a
             target="_blank"
             className="flex-item button default-button"

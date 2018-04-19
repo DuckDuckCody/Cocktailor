@@ -185,7 +185,9 @@ class CocktailBar extends Component {
 
     return (
       <div>
-      
+        <div>
+          <IconBanner />
+        </div>
         <div
           className="App flex-container flex-no-wrap"
           onClick = {this.closeOpenDrawers}

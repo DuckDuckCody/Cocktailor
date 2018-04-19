@@ -26,7 +26,7 @@ class PhoneNavBar extends React.Component {
         height: "10vh",
         position: "fixed",
         bottom: 0,
-        backgroundColor: 'rgb(22, 22, 22)'
+        backgroundColor: 'rgb(45, 48, 60)'
       }
     };
 

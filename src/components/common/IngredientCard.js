@@ -21,7 +21,11 @@ class IngredientCard extends Component {
     const style = {
       card: {
         margin: '10px 0',
-        backgroundColor: 'rgb(47, 47, 49)'
+        color: 'white',
+        background: 'rgb(45,48,60)',
+        background: '-moz-linear-gradient(top, rgba(45,48,60,1) 0%, rgba(53,53,56,1) 100%)' ,
+        background: '-webkit-linear-gradient(top, rgba(45,48,60,1) 0%,rgba(53,53,56,1) 100%)' ,
+        background: 'linear-gradient(to bottom, rgba(45,48,60,1) 0%,rgba(53,53,56,1) 100%)' ,
       },
       button: {
         marginTop: '15px'
@@ -41,6 +45,9 @@ class IngredientCard extends Component {
         <Card className="flex-container justify-content-space-evenly align-items-center center-text" style={style.card}>
           <div className="flex-container flex-column flex-item flex-basis-66">
             <CardContent>
+              <div className="flex-item clickable float-right removeIngredientButton" onClick={this.remove}>
+                <i className="fa fa-close flex-item"></i>
+              </div>
               <p
                 className="flex-item text large-text white-text hover-underline"
                 onClick={this.handleIngredientClick}
@@ -50,10 +57,10 @@ class IngredientCard extends Component {
               <button
                 type="button"
                 className="flex-item button default-button"
-                onClick={this.remove}
+                onClick={this.handleIngredientClick}
                 style={style.button}
               >
-                REMOVE
+                VIEW INGREDIENT
               </button>
             </CardContent>
           </div>

@@ -12,8 +12,8 @@ const Cocktails = (props) => {
       display: 'flex',
       flexFlow: 'row nowrap',
       alignItems: 'center',
-      marginBottom: '10px',
-      borderBottom: '2px #FD295D solid'
+      marginBottom: '',
+      textAlign: 'center'
     },
     title: {
       flex: '100%',
