@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Hammer from 'hammerjs';
 import BarSupplies from './components/BarSupplies'
 import Cocktails from './components/Cocktails'
 import CocktailDrawer from './components/common/CocktailDrawer'
@@ -52,11 +53,41 @@ class CocktailBar extends Component {
     this.navClick = this.navClick.bind(this);
     this.handleAddButtonClick = this.handleAddButtonClick.bind(this);
     this.searchChange = this.searchChange.bind(this);
+    this.showBarSupplies = this.showBarSupplies.bind(this);
+    this.showCocktails = this.showCocktails.bind(this);
   }
 
   componentDidMount() {
+    //check if on phone or desktop
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
+
+    //swipe support
+    var hammertime = new Hammer.Manager(document.getElementById('app'), {
+       touchAction: 'auto',
+       inputClass: Hammer.SUPPORT_POINTER_EVENTS ? Hammer.PointerEventInput : Hammer.TouchInput,
+       recognizers: [
+         [Hammer.Swipe, {
+           direction: Hammer.DIRECTION_HORIZONTAL
+         }]
+       ]
+     });
+    hammertime.on('swiperight', this.showBarSupplies);
+    hammertime.on('swipeleft', this.showCocktails);
+  }
+
+  showBarSupplies() {
+    this.setState({
+      responsiveShowBarSupplies: true,
+      responsiveShowCocktail: false
+    })
+  }
+
+  showCocktails() {
+    this.setState({
+      responsiveShowBarSupplies: false,
+      responsiveShowCocktail: true
+    })
   }
 
   updateWindowDimensions() {
@@ -158,18 +189,8 @@ class CocktailBar extends Component {
 
   navClick(navValue) {
     navValue === "barSupplies"
-      ? this.setState(
-        {
-          responsiveShowBarSupplies: true,
-          responsiveShowCocktail: false
-        }
-      )
-      : this.setState(
-        {
-          responsiveShowBarSupplies: false,
-          responsiveShowCocktail: true
-        }
-      )
+      ? this.showBarSupplies()
+      : this.showCocktails()
   }
 
   render() {
@@ -190,6 +211,7 @@ class CocktailBar extends Component {
         </div>
         <div
           className="App flex-container flex-no-wrap"
+          id = "app"
           onClick = {this.closeOpenDrawers}
         >
           <div
@@ -222,6 +244,7 @@ class CocktailBar extends Component {
               ? (
                 <PhoneNavBar
                   navClick = {this.navClick}
+                  responsiveShowBarSupplies = {this.state.responsiveShowBarSupplies}
                 />
               )
               : ""

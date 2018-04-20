@@ -10,12 +10,7 @@ const styles = {
 }
 
 class PhoneNavBar extends React.Component {
-  state = {
-    value: 0
-  }
-
   handleChange = (event, value) => {
-    this.setState({value})
     this.props.navClick(value === 0 ? "barSupplies" : "Cocktails");
   }
 
@@ -30,7 +25,7 @@ class PhoneNavBar extends React.Component {
       }
     };
 
-    const { value } = this.state;
+    const value = this.props.responsiveShowBarSupplies ? 0 : 1
     return (
       <BottomNavigation
         value={value}
@@ -56,7 +51,9 @@ class PhoneNavBar extends React.Component {
 }
 
 PhoneNavBar.propTypes = {
-  navClick: PropTypes.func.isRequired
+  navClick: PropTypes.func.isRequired,
+  //responsiveShowBarSupplies,
+  //responsiveShowCocktail
 }
 
 export default withStyles(styles)(PhoneNavBar);
