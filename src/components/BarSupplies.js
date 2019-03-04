@@ -48,7 +48,7 @@ class BarSupplies extends Component {
           removeCard = {this.removeIngredient}
           keyName = "ingredientId"
           emptyDataTitle = "No bar supplies have been added yet"
-          emptyDataDesc = "Click the plus button in the bottom left corder to add bar supplies"
+          emptyDataDesc = "Click the plus button in the bottom right corner to add bar supplies"
           ingredientClick = {this.props.ingredientClick}
           inPhoneLayout = {this.props.inPhoneLayout}
         />

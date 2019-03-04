@@ -41,7 +41,7 @@ const Cocktails = (props) => {
         cardData = {props.matchedCocktails}
         keyName = "cocktailId"
         emptyDataTitle = "No cocktails have been matched yet"
-        emptyDataDesc = "Click the plus button in the bottom left corder to add bar supplies"
+        emptyDataDesc = "Click the plus button in the bottom right corner to add bar supplies"
         inPhoneLayout = {props.inPhoneLayout}
       />
       {/* end of CardList */}

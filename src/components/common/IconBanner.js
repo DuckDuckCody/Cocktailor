@@ -9,8 +9,7 @@ const IconBanner = (props) => {
 
   return (
     <div className="icon-banner flex-container flex-column justify-content-space-evenly">
-      <span className="flex-item" style={style.font}> Suggest Me </span>
-      <span className="flex-item" style={style.font}> Cocktails </span>
+      <span className="flex-item" style={style.font}> Cocktailor </span>
     </div>
   );
 }
