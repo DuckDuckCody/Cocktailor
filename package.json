@@ -1,7 +1,7 @@
 {
-  "name": "Suggest-Me-Cocktails",
-  "version": "0.1.0",
-  "homepage": "http://zombiexduck.github.io/Suggest-Me-Cocktails",
+  "name": "Cocktailor",
+  "version": "1.0",
+  "homepage": "https://duckduckcody.github.io/Cocktailor/",
   "private": true,
   "dependencies": {
     "animate.css": "^3.6.1",
