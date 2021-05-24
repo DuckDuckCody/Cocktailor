@@ -1,5 +1,5 @@
 {
-  "name": "old-cocktailor",
+  "name": "cocktailor",
   "version": "1.0.0",
   "homepage": "https://duckduckcody.github.io/cocktailor/",
   "private": true,
@@ -9,7 +9,7 @@
     "font-awesome": "^4.7.0",
     "gh-pages": "^1.1.0",
     "hammerjs": "^2.0.8",
-    "material-ui": "^1.0.0-beta.39",
+    "material-ui": "^1.0.0-beta.46",
     "npm": "^6.14.6",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
